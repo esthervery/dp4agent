@@ -1,0 +1,698 @@
+﻿condition,n,rep,dataset,A,B,effort,temperature,max_tokens,answer_ref,answer_agent,correct,exec_ok,exec_err,sig_ok,sig_key,finish_reason,text_len,body_len,prompt_tokens,completion_tokens,reasoning_tokens,cached_tokens,system_fingerprint,latency_s,call_error,body,raw
+B_enone_T0,1,1,001_Forbes,A0,B0,none,0.0,300,19.0,,False,True,,True,"[[""age""], [], [""min""]]",stop,378,364,19802,104,0,0,,3.15,,"def answer(df: pd.DataFrame):
+    df.columns = [
+        'rank', 'personName', 'age', 'finalWorth', 'category', 'source',
+        'country', 'state', 'city', 'organization', 'selfMade', 'gender',
+        'birthDate', 'title', 'philanthropyScore', 'bio', 'about'
+    ]
+
+    # Ignore missing ages and return the youngest billionaire's age.
+    return df['age'].min()","```python
+def answer(df: pd.DataFrame):
+    df.columns = [
+        'rank', 'personName', 'age', 'finalWorth', 'category', 'source',
+        'country', 'state', 'city', 'organization', 'selfMade', 'gender',
+        'birthDate', 'title', 'philanthropyScore', 'bio', 'about'
+    ]
+
+    # Ignore missing ages and return the youngest billionaire's age.
+    return df['age'].min()
+```"
+B_enone_T0,1,2,001_Forbes,A0,B0,none,0.0,300,19.0,19.0,True,True,,True,"[[""age""], [], [""min""]]",stop,255,241,19802,80,0,19799,,2.65,,"df.columns = [
+    'rank', 'personName', 'age', 'finalWorth', 'category', 'source',
+    'country', 'state', 'city', 'organization', 'selfMade', 'gender',
+    'birthDate', 'title', 'philanthropyScore', 'bio', 'about'
+]
+
+return df['age'].min()","```python
+df.columns = [
+    'rank', 'personName', 'age', 'finalWorth', 'category', 'source',
+    'country', 'state', 'city', 'organization', 'selfMade', 'gender',
+    'birthDate', 'title', 'philanthropyScore', 'bio', 'about'
+]
+
+return df['age'].min()
+```"
+B_enone_T0,5,1,003_Love,A0,B0,none,0.0,300,56332.81720430108,56332.81720430108,True,True,,True,"[[], [], [""mean""]]",stop,98,76,21181,31,0,0,,2.94,,"salary_col = 'Gross annual salary (in euros) 💸'
+return df[salary_col].mean()","```python
+    salary_col = 'Gross annual salary (in euros) 💸'
+    return df[salary_col].mean()
+```"
+B_enone_T0,5,2,003_Love,A0,B0,none,0.0,300,56332.81720430108,56332.81720430108,True,True,,True,"[[], [], [""mean""]]",stop,98,76,21181,31,0,21178,,1.84,,"salary_col = 'Gross annual salary (in euros) 💸'
+return df[salary_col].mean()","```python
+    salary_col = 'Gross annual salary (in euros) 💸'
+    return df[salary_col].mean()
+```"
+B_enone_T0,12,1,019_Aircraft,A0,B1,none,0.0,300,524.0,,False,True,,True,"[[""Onboard_Total""], [], [""max""]]",stop,802,788,21504,233,0,0,,2.89,,"def answer(df: pd.DataFrame):
+    df.columns = [
+        'Incident_Date', 'Aircaft_Model', 'Aircaft_Registration',
+        'Aircaft_Operator', 'Aircaft_Nature', 'Incident_Category',
+        'Incident_Cause(es)', 'Incident_Location', 'Aircaft_Damage_Type',
+        'Date', 'Time', 'Arit', 'Aircaft_Engines', 'Onboard_Crew',
+        'Onboard_Passengers', 'Onboard_Total', 'Fatalities',
+        'Aircaft_First_Flight', 'Aircraft_Phase', 'Departure_Airport',
+        'Destination_Airport', 'Ground_Casualties', 'Collision_Casualties'
+    ]
+
+    # Extract the occupant count from strings such as
+    # ""Fatalities: 0 / Occupants: 116"", then return the maximum.
+    occupants = df['Onboard_Total'].str.extract(r'Occupants:\s*(\d+)')[0]
+    return pd.to_numeric(occupants, errors='coerce').max()","```python
+def answer(df: pd.DataFrame):
+    df.columns = [
+        'Incident_Date', 'Aircaft_Model', 'Aircaft_Registration',
+        'Aircaft_Operator', 'Aircaft_Nature', 'Incident_Category',
+        'Incident_Cause(es)', 'Incident_Location', 'Aircaft_Damage_Type',
+        'Date', 'Time', 'Arit', 'Aircaft_Engines', 'Onboard_Crew',
+        'Onboard_Passengers', 'Onboard_Total', 'Fatalities',
+        'Aircaft_First_Flight', 'Aircraft_Phase', 'Departure_Airport',
+        'Destination_Airport', 'Ground_Casualties', 'Collision_Casualties'
+    ]
+
+    # Extract the occupant count from strings such as
+    # ""Fatalities: 0 / Occupants: 116"", then return the maximum.
+    occupants = df['Onboard_Total'].str.extract(r'Occupants:\s*(\d+)')[0]
+    return pd.to_numeric(occupants, errors='coerce').max()
+```"
+B_enone_T0,12,2,019_Aircraft,A0,B1,none,0.0,300,524.0,,False,True,,True,"[[""Onboard_Total""], [], [""max""]]",stop,859,845,21504,245,0,21501,,4.09,,"def answer(df: pd.DataFrame):
+    df.columns = [
+        'Incident_Date', 'Aircaft_Model', 'Aircaft_Registration',
+        'Aircaft_Operator', 'Aircaft_Nature', 'Incident_Category',
+        'Incident_Cause(es)', 'Incident_Location', 'Aircaft_Damage_Type',
+        'Date', 'Time', 'Arit', 'Aircaft_Engines', 'Onboard_Crew',
+        'Onboard_Passengers', 'Onboard_Total', 'Fatalities',
+        'Aircaft_First_Flight', 'Aircraft_Phase', 'Departure_Airport',
+        'Destination_Airport', 'Ground_Casualties', 'Collision_Casualties'
+    ]
+
+    # Extract the occupant count from strings such as
+    # ""Fatalities: 0 / Occupants: 116"", then return the maximum.
+    occupants = (
+        df['Onboard_Total']
+        .astype(str)
+        .str.extract(r'Occupants:\s*(\d+)', expand=False)
+    )
+    return pd.to_numeric(occupants, errors='coerce').max()","```python
+def answer(df: pd.DataFrame):
+    df.columns = [
+        'Incident_Date', 'Aircaft_Model', 'Aircaft_Registration',
+        'Aircaft_Operator', 'Aircaft_Nature', 'Incident_Category',
+        'Incident_Cause(es)', 'Incident_Location', 'Aircaft_Damage_Type',
+        'Date', 'Time', 'Arit', 'Aircaft_Engines', 'Onboard_Crew',
+        'Onboard_Passengers', 'Onboard_Total', 'Fatalities',
+        'Aircaft_First_Flight', 'Aircraft_Phase', 'Departure_Airport',
+        'Destination_Airport', 'Ground_Casualties', 'Collision_Casualties'
+    ]
+
+    # Extract the occupant count from strings such as
+    # ""Fatalities: 0 / Occupants: 116"", then return the maximum.
+    occupants = (
+        df['Onboard_Total']
+        .astype(str)
+        .str.extract(r'Occupants:\s*(\d+)', expand=False)
+    )
+    return pd.to_numeric(occupants, errors='coerce').max()
+```"
+B_enone_T0,18,1,035_Billboard,A4,B0,none,0.0,300,19.0,19.0,True,True,,True,"[[""Lyrics"", ""loc""], [], [""idxmax"", ""len""]]",stop,251,221,19090,67,0,0,,2.13,,"# The columns used to answer the question: ['Rank', 'Lyrics']
+# Find the row with the longest lyrics, ignoring missing lyrics.
+longest_lyrics_idx = df['Lyrics'].str.len().idxmax()
+return df.loc[longest_lyrics_idx, 'Rank']","```python
+    # The columns used to answer the question: ['Rank', 'Lyrics']
+    # Find the row with the longest lyrics, ignoring missing lyrics.
+    longest_lyrics_idx = df['Lyrics'].str.len().idxmax()
+    return df.loc[longest_lyrics_idx, 'Rank']
+```"
+B_enone_T0,18,2,035_Billboard,A4,B0,none,0.0,300,19.0,19.0,True,True,,True,"[[""Lyrics"", ""loc""], [], [""idxmax"", ""len""]]",stop,256,226,19090,68,0,19087,,1.9,,"# The columns used to answer the question: ['Rank', 'Lyrics']
+# Find the row with the longest lyrics, ignoring missing lyrics.
+longest_lyrics_idx = df['Lyrics'].str.len().idxmax()
+return int(df.loc[longest_lyrics_idx, 'Rank'])","```python
+    # The columns used to answer the question: ['Rank', 'Lyrics']
+    # Find the row with the longest lyrics, ignoring missing lyrics.
+    longest_lyrics_idx = df['Lyrics'].str.len().idxmax()
+    return int(df.loc[longest_lyrics_idx, 'Rank'])
+```"
+B_enone_T0,26,1,045_Predict,A2,B0,none,0.0,300,489.0,,False,True,,True,"[[""release_year""], [], [""max"", ""value_counts""]]",stop,158,144,19797,40,0,0,,4.47,,"def answer(df: pd.DataFrame):
+    # Count songs by release year and return the largest count.
+    return df['release_year'].value_counts().max()","```python
+def answer(df: pd.DataFrame):
+    # Count songs by release year and return the largest count.
+    return df['release_year'].value_counts().max()
+```"
+B_enone_T0,26,2,045_Predict,A2,B0,none,0.0,300,489.0,,False,True,,True,"[[""release_year""], [], [""max"", ""value_counts""]]",stop,158,144,19797,40,0,19794,,2.45,,"def answer(df: pd.DataFrame):
+    # Count songs by release year and return the largest count.
+    return df['release_year'].value_counts().max()","```python
+def answer(df: pd.DataFrame):
+    # Count songs by release year and return the largest count.
+    return df['release_year'].value_counts().max()
+```"
+B_enone_T0,41,1,066_IBM_HR,A0,B0,none,0.0,300,40.0,40.0,True,True,,True,"[[""YearsAtCompany""], [], [""max""]]",stop,155,129,20289,42,0,0,,2.14,,"# The columns used to answer the question: ['YearsAtCompany']
+# The type of the answer: number
+
+return df['YearsAtCompany'].max()","```python
+    # The columns used to answer the question: ['YearsAtCompany']
+    # The type of the answer: number
+
+    return df['YearsAtCompany'].max()
+```"
+B_enone_T0,41,2,066_IBM_HR,A0,B0,none,0.0,300,40.0,,False,True,,True,"[[""YearsAtCompany""], [], [""max""]]",stop,855,841,20289,211,0,20286,,2.64,,"def answer(df: pd.DataFrame):
+    df.columns = [
+        'Age', 'Attrition', 'BusinessTravel', 'DailyRate', 'Department',
+        'DistanceFromHome', 'Education', 'EducationField', 'EmployeeCount',
+        'EmployeeNumber', 'EnvironmentSatisfaction', 'Gender', 'HourlyRate',
+        'JobInvolvement', 'JobLevel', 'JobRole', 'JobSatisfaction',
+        'MaritalStatus', 'MonthlyIncome', 'MonthlyRate', 'NumCompaniesWorked',
+        'Over18', 'OverTime', 'PercentSalaryHike', 'PerformanceRating',
+        'RelationshipSatisfaction', 'StandardHours', 'StockOptionLevel',
+        'TotalWorkingYears', 'TrainingTimesLastYear', 'WorkLifeBalance',
+        'YearsAtCompany', 'YearsInCurrentRole', 'YearsSinceLastPromotion',
+        'YearsWithCurrManager'
+    ]
+
+    # IBM tenure is represented by YearsAtCompany.
+    return df['YearsAtCompany'].max()","```python
+def answer(df: pd.DataFrame):
+    df.columns = [
+        'Age', 'Attrition', 'BusinessTravel', 'DailyRate', 'Department',
+        'DistanceFromHome', 'Education', 'EducationField', 'EmployeeCount',
+        'EmployeeNumber', 'EnvironmentSatisfaction', 'Gender', 'HourlyRate',
+        'JobInvolvement', 'JobLevel', 'JobRole', 'JobSatisfaction',
+        'MaritalStatus', 'MonthlyIncome', 'MonthlyRate', 'NumCompaniesWorked',
+        'Over18', 'OverTime', 'PercentSalaryHike', 'PerformanceRating',
+        'RelationshipSatisfaction', 'StandardHours', 'StockOptionLevel',
+        'TotalWorkingYears', 'TrainingTimesLastYear', 'WorkLifeBalance',
+        'YearsAtCompany', 'YearsInCurrentRole', 'YearsSinceLastPromotion',
+        'YearsWithCurrManager'
+    ]
+
+    # IBM tenure is represented by YearsAtCompany.
+    return df['YearsAtCompany'].max()
+```"
+B_enone_T0,52,1,069_Taxonomy,A1,B2,none,0.0,300,316.0,316.0,True,True,,True,"[[""Tier 3"", ""Tier 4""], [], [""sum""]]",stop,137,115,19263,48,0,0,,1.4,,"# Count entries with a value in either Tier 3 or Tier 4.
+return (df['Tier 3'].notna() | df['Tier 4'].notna()).sum()","```python
+    # Count entries with a value in either Tier 3 or Tier 4.
+    return (df['Tier 3'].notna() | df['Tier 4'].notna()).sum()
+```"
+B_enone_T0,52,2,069_Taxonomy,A1,B2,none,0.0,300,316.0,316.0,True,True,,True,"[[""Tier 3"", ""Tier 4""], [], [""sum""]]",stop,137,115,19263,48,0,19260,,1.64,,"# Count entries with a value in either Tier 3 or Tier 4.
+return (df['Tier 3'].notna() | df['Tier 4'].notna()).sum()","```python
+    # Count entries with a value in either Tier 3 or Tier 4.
+    return (df['Tier 3'].notna() | df['Tier 4'].notna()).sum()
+```"
+B_enone_T0,60,1,072_Admissions,A4,B0,none,0.0,300,4.0,4.0,True,True,,True,"[[""CGPA"", ""loc""], [], [""idxmax""]]",stop,233,207,19116,57,0,0,,2.01,,"# The columns used to answer the question: ['CGPA', 'University Rating']
+# Find the applicant with the highest CGPA and return their university rating.
+return df.loc[df['CGPA'].idxmax(), 'University Rating']","```python
+    # The columns used to answer the question: ['CGPA', 'University Rating']
+    # Find the applicant with the highest CGPA and return their university rating.
+    return df.loc[df['CGPA'].idxmax(), 'University Rating']
+```"
+B_enone_T0,60,2,072_Admissions,A4,B0,none,0.0,300,4.0,4.0,True,True,,True,"[[""CGPA"", ""loc""], [], [""idxmax""]]",stop,233,207,19116,57,0,19113,,1.66,,"# The columns used to answer the question: ['CGPA', 'University Rating']
+# Find the applicant with the highest CGPA and return their university rating.
+return df.loc[df['CGPA'].idxmax(), 'University Rating']","```python
+    # The columns used to answer the question: ['CGPA', 'University Rating']
+    # Find the applicant with the highest CGPA and return their university rating.
+    return df.loc[df['CGPA'].idxmax(), 'University Rating']
+```"
+B_enone_T0,77,1,074_Lift,A2,B2,none,0.0,300,100.0,100.0,True,True,,True,"[[""Weight Class"", ""loc""], [""Weight Class==59 kg""], [""min""]]",stop,151,129,19001,48,0,0,,2.07,,"# A 55 kg lifter participates in the 59 kg weight class.
+return df.loc[df['Weight Class'] == '59 kg', 'Amount Lifted (kg)'].min()","```python
+    # A 55 kg lifter participates in the 59 kg weight class.
+    return df.loc[df['Weight Class'] == '59 kg', 'Amount Lifted (kg)'].min()
+```"
+B_enone_T0,77,2,074_Lift,A2,B2,none,0.0,300,100.0,100.0,True,True,,True,"[[""Weight Class"", ""loc""], [""Weight Class==59 kg""], [""min""]]",stop,151,129,19001,48,0,18998,,2.45,,"# A 55 kg lifter participates in the 59 kg weight class.
+return df.loc[df['Weight Class'] == '59 kg', 'Amount Lifted (kg)'].min()","```python
+    # A 55 kg lifter participates in the 59 kg weight class.
+    return df.loc[df['Weight Class'] == '59 kg', 'Amount Lifted (kg)'].min()
+```"
+B_enone_T0,87,1,078_Fires,A4,B2,none,0.0,300,1.0,1.0,True,True,,True,"[[""month""], [], [""idxmax"", ""value_counts""]]",stop,142,120,19327,36,0,0,,1.81,,"# Count fires per month; return the month number with the highest count.
+return int(df['month'].value_counts().idxmax())","```python
+    # Count fires per month; return the month number with the highest count.
+    return int(df['month'].value_counts().idxmax())
+```"
+B_enone_T0,87,2,078_Fires,A4,B2,none,0.0,300,1.0,1.0,True,True,,True,"[[""month""], [], [""idxmax"", ""value_counts""]]",stop,145,123,19327,37,0,19324,,1.28,,"# Count fires by numeric month ID and return the month with the most fires.
+return int(df['month'].value_counts().idxmax())","```python
+    # Count fires by numeric month ID and return the month with the most fires.
+    return int(df['month'].value_counts().idxmax())
+```"
+B_enone_T0.2,1,1,001_Forbes,A0,B0,none,0.2,300,19.0,,False,True,,True,"[[""age""], [], [""min""]]",stop,378,364,19802,104,0,19799,,1.76,,"def answer(df: pd.DataFrame):
+    df.columns = [
+        'rank', 'personName', 'age', 'finalWorth', 'category', 'source',
+        'country', 'state', 'city', 'organization', 'selfMade', 'gender',
+        'birthDate', 'title', 'philanthropyScore', 'bio', 'about'
+    ]
+
+    # Ignore missing ages and return the youngest billionaire's age.
+    return df['age'].min()","```python
+def answer(df: pd.DataFrame):
+    df.columns = [
+        'rank', 'personName', 'age', 'finalWorth', 'category', 'source',
+        'country', 'state', 'city', 'organization', 'selfMade', 'gender',
+        'birthDate', 'title', 'philanthropyScore', 'bio', 'about'
+    ]
+
+    # Ignore missing ages and return the youngest billionaire's age.
+    return df['age'].min()
+```"
+B_enone_T0.2,1,2,001_Forbes,A0,B0,none,0.2,300,19.0,,False,True,,True,"[[""age""], [], [""min""]]",stop,374,360,19802,102,0,19799,,2.06,,"def answer(df: pd.DataFrame):
+    df.columns = [
+        'rank', 'personName', 'age', 'finalWorth', 'category', 'source',
+        'country', 'state', 'city', 'organization', 'selfMade', 'gender',
+        'birthDate', 'title', 'philanthropyScore', 'bio', 'about'
+    ]
+
+    # Ignore missing ages when finding the youngest billionaire.
+    return df['age'].min()","```python
+def answer(df: pd.DataFrame):
+    df.columns = [
+        'rank', 'personName', 'age', 'finalWorth', 'category', 'source',
+        'country', 'state', 'city', 'organization', 'selfMade', 'gender',
+        'birthDate', 'title', 'philanthropyScore', 'bio', 'about'
+    ]
+
+    # Ignore missing ages when finding the youngest billionaire.
+    return df['age'].min()
+```"
+B_enone_T0.2,5,1,003_Love,A0,B0,none,0.2,300,56332.81720430108,56332.81720430108,True,True,,True,"[[""Gross annual salary (in euros) 💸""], [], [""mean""]]",stop,182,168,21181,52,0,21178,,1.84,,"# The columns used to answer the question:
+# ['Gross annual salary (in euros) 💸']
+# The type of the answer: number
+
+return df['Gross annual salary (in euros) 💸'].mean()","```python
+# The columns used to answer the question:
+# ['Gross annual salary (in euros) 💸']
+# The type of the answer: number
+
+return df['Gross annual salary (in euros) 💸'].mean()
+```"
+B_enone_T0.2,5,2,003_Love,A0,B0,none,0.2,300,56332.81720430108,56332.81720430108,True,True,,True,"[[], [], [""mean""]]",stop,98,76,21181,31,0,21178,,1.31,,"salary_col = 'Gross annual salary (in euros) 💸'
+return df[salary_col].mean()","```python
+    salary_col = 'Gross annual salary (in euros) 💸'
+    return df[salary_col].mean()
+```"
+B_enone_T0.2,12,1,019_Aircraft,A0,B1,none,0.2,300,524.0,,False,True,,True,"[[""Onboard_Total""], [], [""max""]]",stop,859,845,21504,245,0,21501,,3.0,,"def answer(df: pd.DataFrame):
+    df.columns = [
+        'Incident_Date', 'Aircaft_Model', 'Aircaft_Registration',
+        'Aircaft_Operator', 'Aircaft_Nature', 'Incident_Category',
+        'Incident_Cause(es)', 'Incident_Location', 'Aircaft_Damage_Type',
+        'Date', 'Time', 'Arit', 'Aircaft_Engines', 'Onboard_Crew',
+        'Onboard_Passengers', 'Onboard_Total', 'Fatalities',
+        'Aircaft_First_Flight', 'Aircraft_Phase', 'Departure_Airport',
+        'Destination_Airport', 'Ground_Casualties', 'Collision_Casualties'
+    ]
+
+    # Extract the occupant count from entries such as
+    # ""Fatalities: 0 / Occupants: 116"", then return the maximum.
+    occupants = (
+        df['Onboard_Total']
+        .astype(str)
+        .str.extract(r'Occupants:\s*(\d+)', expand=False)
+    )
+    return pd.to_numeric(occupants, errors='coerce').max()","```python
+def answer(df: pd.DataFrame):
+    df.columns = [
+        'Incident_Date', 'Aircaft_Model', 'Aircaft_Registration',
+        'Aircaft_Operator', 'Aircaft_Nature', 'Incident_Category',
+        'Incident_Cause(es)', 'Incident_Location', 'Aircaft_Damage_Type',
+        'Date', 'Time', 'Arit', 'Aircaft_Engines', 'Onboard_Crew',
+        'Onboard_Passengers', 'Onboard_Total', 'Fatalities',
+        'Aircaft_First_Flight', 'Aircraft_Phase', 'Departure_Airport',
+        'Destination_Airport', 'Ground_Casualties', 'Collision_Casualties'
+    ]
+
+    # Extract the occupant count from entries such as
+    # ""Fatalities: 0 / Occupants: 116"", then return the maximum.
+    occupants = (
+        df['Onboard_Total']
+        .astype(str)
+        .str.extract(r'Occupants:\s*(\d+)', expand=False)
+    )
+    return pd.to_numeric(occupants, errors='coerce').max()
+```"
+B_enone_T0.2,12,2,019_Aircraft,A0,B1,none,0.2,300,524.0,524.0,True,True,,True,"[[""Onboard_Total""], [], [""max""]]",stop,262,232,21504,69,0,21501,,2.49,,"# The columns used to answer the question: ['Onboard_Total']
+# Extract the occupant counts and return the largest value.
+occupants = df['Onboard_Total'].str.extract(r'Occupants:\s*(\d+)')[0]
+return int(occupants.astype(float).max())","```python
+    # The columns used to answer the question: ['Onboard_Total']
+    # Extract the occupant counts and return the largest value.
+    occupants = df['Onboard_Total'].str.extract(r'Occupants:\s*(\d+)')[0]
+    return int(occupants.astype(float).max())
+```"
+B_enone_T0.2,18,1,035_Billboard,A4,B0,none,0.2,300,19.0,19.0,True,True,,True,"[[""Lyrics"", ""loc""], [], [""idxmax"", ""len""]]",stop,225,195,19090,64,0,19087,,1.91,,"# The columns used to answer the question: ['Rank', 'Lyrics']
+# The type of the answer: number
+
+longest_lyrics_idx = df['Lyrics'].str.len().idxmax()
+return int(df.loc[longest_lyrics_idx, 'Rank'])","```python
+    # The columns used to answer the question: ['Rank', 'Lyrics']
+    # The type of the answer: number
+
+    longest_lyrics_idx = df['Lyrics'].str.len().idxmax()
+    return int(df.loc[longest_lyrics_idx, 'Rank'])
+```"
+B_enone_T0.2,18,2,035_Billboard,A4,B0,none,0.2,300,19.0,19.0,True,True,,True,"[[""Lyrics"", ""loc""], [], [""idxmax"", ""len""]]",stop,260,230,19090,70,0,19087,,1.65,,"# The columns used to answer the question: ['Rank', 'Lyrics']
+# Find the row with the longest lyrics, ignoring missing lyrics.
+longest_lyrics_idx = df['Lyrics'].dropna().str.len().idxmax()
+return df.loc[longest_lyrics_idx, 'Rank']","```python
+    # The columns used to answer the question: ['Rank', 'Lyrics']
+    # Find the row with the longest lyrics, ignoring missing lyrics.
+    longest_lyrics_idx = df['Lyrics'].dropna().str.len().idxmax()
+    return df.loc[longest_lyrics_idx, 'Rank']
+```"
+B_enone_T0.2,26,1,045_Predict,A2,B0,none,0.2,300,489.0,,False,True,,True,"[[""release_year""], [], [""max"", ""value_counts""]]",stop,161,147,19797,41,0,19794,,1.46,,"def answer(df: pd.DataFrame):
+    # Count songs per release year, then return the largest count.
+    return df['release_year'].value_counts().max()","```python
+def answer(df: pd.DataFrame):
+    # Count songs per release year, then return the largest count.
+    return df['release_year'].value_counts().max()
+```"
+B_enone_T0.2,26,2,045_Predict,A2,B0,none,0.2,300,489.0,489.0,True,True,,True,"[[""release_year""], [], [""max"", ""value_counts""]]",stop,132,110,19797,33,0,19794,,1.46,,"# Count songs by release year and return the largest count
+return int(df['release_year'].value_counts().max())","```python
+    # Count songs by release year and return the largest count
+    return int(df['release_year'].value_counts().max())
+```"
+B_enone_T0.2,41,1,066_IBM_HR,A0,B0,none,0.2,300,40.0,,False,True,,True,"[[""YearsAtCompany""], [], [""max""]]",stop,950,936,20289,229,0,20286,,4.36,,"def answer(df: pd.DataFrame):
+    df.columns = [
+        'Age', 'Attrition', 'BusinessTravel', 'DailyRate', 'Department',
+        'DistanceFromHome', 'Education', 'EducationField', 'EmployeeCount',
+        'EmployeeNumber', 'EnvironmentSatisfaction', 'Gender', 'HourlyRate',
+        'JobInvolvement', 'JobLevel', 'JobRole', 'JobSatisfaction',
+        'MaritalStatus', 'MonthlyIncome', 'MonthlyRate', 'NumCompaniesWorked',
+        'Over18', 'OverTime', 'PercentSalaryHike', 'PerformanceRating',
+        'RelationshipSatisfaction', 'StandardHours', 'StockOptionLevel',
+        'TotalWorkingYears', 'TrainingTimesLastYear', 'WorkLifeBalance',
+        'YearsAtCompany', 'YearsInCurrentRole', 'YearsSinceLastPromotion',
+        'YearsWithCurrManager'
+    ]
+
+    # The dataset does not include an IBM-specific tenure column.
+    # YearsAtCompany is the available measure of tenure at the current company.
+    return df['YearsAtCompany'].max()","```python
+def answer(df: pd.DataFrame):
+    df.columns = [
+        'Age', 'Attrition', 'BusinessTravel', 'DailyRate', 'Department',
+        'DistanceFromHome', 'Education', 'EducationField', 'EmployeeCount',
+        'EmployeeNumber', 'EnvironmentSatisfaction', 'Gender', 'HourlyRate',
+        'JobInvolvement', 'JobLevel', 'JobRole', 'JobSatisfaction',
+        'MaritalStatus', 'MonthlyIncome', 'MonthlyRate', 'NumCompaniesWorked',
+        'Over18', 'OverTime', 'PercentSalaryHike', 'PerformanceRating',
+        'RelationshipSatisfaction', 'StandardHours', 'StockOptionLevel',
+        'TotalWorkingYears', 'TrainingTimesLastYear', 'WorkLifeBalance',
+        'YearsAtCompany', 'YearsInCurrentRole', 'YearsSinceLastPromotion',
+        'YearsWithCurrManager'
+    ]
+
+    # The dataset does not include an IBM-specific tenure column.
+    # YearsAtCompany is the available measure of tenure at the current company.
+    return df['YearsAtCompany'].max()
+```"
+B_enone_T0.2,41,2,066_IBM_HR,A0,B0,none,0.2,300,40.0,,False,True,,True,"[[""YearsAtCompany""], [], [""max""]]",stop,804,790,20289,200,0,20286,,3.07,,"def answer(df: pd.DataFrame):
+    df.columns = [
+        'Age', 'Attrition', 'BusinessTravel', 'DailyRate', 'Department',
+        'DistanceFromHome', 'Education', 'EducationField', 'EmployeeCount',
+        'EmployeeNumber', 'EnvironmentSatisfaction', 'Gender', 'HourlyRate',
+        'JobInvolvement', 'JobLevel', 'JobRole', 'JobSatisfaction',
+        'MaritalStatus', 'MonthlyIncome', 'MonthlyRate', 'NumCompaniesWorked',
+        'Over18', 'OverTime', 'PercentSalaryHike', 'PerformanceRating',
+        'RelationshipSatisfaction', 'StandardHours', 'StockOptionLevel',
+        'TotalWorkingYears', 'TrainingTimesLastYear', 'WorkLifeBalance',
+        'YearsAtCompany', 'YearsInCurrentRole', 'YearsSinceLastPromotion',
+        'YearsWithCurrManager'
+    ]
+
+    return df['YearsAtCompany'].max()","```python
+def answer(df: pd.DataFrame):
+    df.columns = [
+        'Age', 'Attrition', 'BusinessTravel', 'DailyRate', 'Department',
+        'DistanceFromHome', 'Education', 'EducationField', 'EmployeeCount',
+        'EmployeeNumber', 'EnvironmentSatisfaction', 'Gender', 'HourlyRate',
+        'JobInvolvement', 'JobLevel', 'JobRole', 'JobSatisfaction',
+        'MaritalStatus', 'MonthlyIncome', 'MonthlyRate', 'NumCompaniesWorked',
+        'Over18', 'OverTime', 'PercentSalaryHike', 'PerformanceRating',
+        'RelationshipSatisfaction', 'StandardHours', 'StockOptionLevel',
+        'TotalWorkingYears', 'TrainingTimesLastYear', 'WorkLifeBalance',
+        'YearsAtCompany', 'YearsInCurrentRole', 'YearsSinceLastPromotion',
+        'YearsWithCurrManager'
+    ]
+
+    return df['YearsAtCompany'].max()
+```"
+B_enone_T0.2,52,1,069_Taxonomy,A1,B2,none,0.2,300,316.0,316.0,True,True,,True,"[[""Tier 3"", ""Tier 4""], [], [""sum""]]",stop,137,115,19263,48,0,19260,,1.78,,"# Count entries with a value in either Tier 3 or Tier 4.
+return (df['Tier 3'].notna() | df['Tier 4'].notna()).sum()","```python
+    # Count entries with a value in either Tier 3 or Tier 4.
+    return (df['Tier 3'].notna() | df['Tier 4'].notna()).sum()
+```"
+B_enone_T0.2,52,2,069_Taxonomy,A1,B2,none,0.2,300,316.0,316.0,True,True,,True,"[[""Tier 3"", ""Tier 4""], [], [""sum""]]",stop,137,115,19263,48,0,19260,,1.23,,"# Count entries with a value in either Tier 3 or Tier 4.
+return (df['Tier 3'].notna() | df['Tier 4'].notna()).sum()","```python
+    # Count entries with a value in either Tier 3 or Tier 4.
+    return (df['Tier 3'].notna() | df['Tier 4'].notna()).sum()
+```"
+B_enone_T0.2,60,1,072_Admissions,A4,B0,none,0.2,300,4.0,4.0,True,True,,True,"[[""CGPA"", ""loc""], [], [""idxmax""]]",stop,172,146,19116,45,0,19113,,1.8,,"# Find the applicant with the highest CGPA and return their university's rating.
+idx = df['CGPA'].idxmax()
+return df.loc[idx, 'University Rating']","```python
+    # Find the applicant with the highest CGPA and return their university's rating.
+    idx = df['CGPA'].idxmax()
+    return df.loc[idx, 'University Rating']
+```"
+B_enone_T0.2,60,2,072_Admissions,A4,B0,none,0.2,300,4.0,4.0,True,True,,True,"[[""CGPA"", ""loc""], [], [""idxmax""]]",stop,170,144,19116,44,0,19113,,1.84,,"# Find the applicant with the highest CGPA and return their university rating.
+idx = df['CGPA'].idxmax()
+return df.loc[idx, 'University Rating']","```python
+    # Find the applicant with the highest CGPA and return their university rating.
+    idx = df['CGPA'].idxmax()
+    return df.loc[idx, 'University Rating']
+```"
+B_enone_T0.2,77,1,074_Lift,A2,B2,none,0.2,300,100.0,,False,True,,True,"[[""Weight Class""], [""?>=55"", ""target_class?None""], []]",stop,450,291,19001,116,0,18998,,2.32,,"# Find the weight class containing 55 kg, then return the lowest amount
+# lifted in that class.
+weight_classes = df['Weight Class'].dropna().unique()
+target_class = next(
+    (wc for wc in weight_classes
+     if int(wc.split()[0]) >= 55),
+    None
+)
+
+if target_class is None:
+    return None","```python
+    # Find the weight class containing 55 kg, then return the lowest amount
+    # lifted in that class.
+    weight_classes = df['Weight Class'].dropna().unique()
+    target_class = next(
+        (wc for wc in weight_classes
+         if int(wc.split()[0]) >= 55),
+        None
+    )
+
+    if target_class is None:
+        return None
+
+    return df.loc[
+        df['Weight Class'] == target_class,
+        'Amount Lifted (kg)'
+    ].min()
+```"
+B_enone_T0.2,77,2,074_Lift,A2,B2,none,0.2,300,100.0,100.0,True,True,,True,"[[""Weight Class"", ""loc""], [""Weight Class==59 kg""], [""min""]]",stop,151,129,19001,48,0,18998,,1.32,,"# A 55 kg lifter participates in the 59 kg weight class.
+return df.loc[df['Weight Class'] == '59 kg', 'Amount Lifted (kg)'].min()","```python
+    # A 55 kg lifter participates in the 59 kg weight class.
+    return df.loc[df['Weight Class'] == '59 kg', 'Amount Lifted (kg)'].min()
+```"
+B_enone_T0.2,87,1,078_Fires,A4,B2,none,0.2,300,1.0,9.0,False,True,,True,"[[""month""], [], [""idxmin"", ""value_counts""]]",stop,141,119,19327,37,0,19324,,2.42,,"# Count fires per month; return the month number with the fewest fires.
+return int(df['month'].value_counts().idxmin())","```python
+    # Count fires per month; return the month number with the fewest fires.
+    return int(df['month'].value_counts().idxmin())
+```"
+B_enone_T0.2,87,2,078_Fires,A4,B2,none,0.2,300,1.0,1.0,True,True,,True,"[[""month""], [], [""idxmax"", ""value_counts""]]",stop,145,123,19327,37,0,19324,,1.82,,"# Count fires by numeric month ID and return the month with the most fires.
+return int(df['month'].value_counts().idxmax())","```python
+    # Count fires by numeric month ID and return the month with the most fires.
+    return int(df['month'].value_counts().idxmax())
+```"
+B_enone_T1,1,1,001_Forbes,A0,B0,none,1.0,300,19.0,19.0,True,True,,True,"[[""age""], [], [""min""]]",stop,255,241,19802,80,0,19799,,1.33,,"df.columns = [
+    'rank', 'personName', 'age', 'finalWorth', 'category', 'source',
+    'country', 'state', 'city', 'organization', 'selfMade', 'gender',
+    'birthDate', 'title', 'philanthropyScore', 'bio', 'about'
+]
+
+return df['age'].min()","```python
+df.columns = [
+    'rank', 'personName', 'age', 'finalWorth', 'category', 'source',
+    'country', 'state', 'city', 'organization', 'selfMade', 'gender',
+    'birthDate', 'title', 'philanthropyScore', 'bio', 'about'
+]
+
+return df['age'].min()
+```"
+B_enone_T1,1,2,001_Forbes,A0,B0,none,1.0,300,19.0,19.0,True,True,,True,"[[""age""], [], [""min""]]",stop,301,287,19802,89,0,19799,,1.53,,"df.columns = [
+    'rank', 'personName', 'age', 'finalWorth', 'category', 'source',
+    'country', 'state', 'city', 'organization', 'selfMade', 'gender',
+    'birthDate', 'title', 'philanthropyScore', 'bio', 'about'
+]
+
+# Ignore missing ages and return the minimum.
+return df['age'].min()","```python
+df.columns = [
+    'rank', 'personName', 'age', 'finalWorth', 'category', 'source',
+    'country', 'state', 'city', 'organization', 'selfMade', 'gender',
+    'birthDate', 'title', 'philanthropyScore', 'bio', 'about'
+]
+
+# Ignore missing ages and return the minimum.
+return df['age'].min()
+```"
+B_enone_T1,5,1,003_Love,A0,B0,none,1.0,300,56332.81720430108,,False,True,,True,"[[], [], [""mean""]]",stop,128,114,21181,39,0,21178,,1.31,,"def answer(df: pd.DataFrame):
+    salary_col = 'Gross annual salary (in euros) 💸'
+    return df[salary_col].mean()","```python
+def answer(df: pd.DataFrame):
+    salary_col = 'Gross annual salary (in euros) 💸'
+    return df[salary_col].mean()
+```"
+B_enone_T1,5,2,003_Love,A0,B0,none,1.0,300,56332.81720430108,,False,True,,True,"[[], [], [""mean""]]",stop,128,114,21181,39,0,21178,,1.62,,"def answer(df: pd.DataFrame):
+    salary_col = 'Gross annual salary (in euros) 💸'
+    return df[salary_col].mean()","```python
+def answer(df: pd.DataFrame):
+    salary_col = 'Gross annual salary (in euros) 💸'
+    return df[salary_col].mean()
+```"
+B_enone_T1,12,1,019_Aircraft,A0,B1,none,1.0,300,524.0,,False,True,,True,"[[""Onboard_Total""], [], [""max""]]",stop,683,669,21504,202,0,21501,,2.46,,"def answer(df: pd.DataFrame):
+    df.columns = [
+        'Incident_Date', 'Aircaft_Model', 'Aircaft_Registration',
+        'Aircaft_Operator', 'Aircaft_Nature', 'Incident_Category',
+        'Incident_Cause(es)', 'Incident_Location', 'Aircaft_Damage_Type',
+        'Date', 'Time', 'Arit', 'Aircaft_Engines', 'Onboard_Crew',
+        'Onboard_Passengers', 'Onboard_Total', 'Fatalities',
+        'Aircaft_First_Flight', 'Aircraft_Phase', 'Departure_Airport',
+        'Destination_Airport', 'Ground_Casualties', 'Collision_Casualties'
+    ]
+
+    occupants = df['Onboard_Total'].str.extract(r'Occupants:\s*(\d+)')[0]
+    return pd.to_numeric(occupants, errors='coerce').max()","```python
+def answer(df: pd.DataFrame):
+    df.columns = [
+        'Incident_Date', 'Aircaft_Model', 'Aircaft_Registration',
+        'Aircaft_Operator', 'Aircaft_Nature', 'Incident_Category',
+        'Incident_Cause(es)', 'Incident_Location', 'Aircaft_Damage_Type',
+        'Date', 'Time', 'Arit', 'Aircaft_Engines', 'Onboard_Crew',
+        'Onboard_Passengers', 'Onboard_Total', 'Fatalities',
+        'Aircaft_First_Flight', 'Aircraft_Phase', 'Departure_Airport',
+        'Destination_Airport', 'Ground_Casualties', 'Collision_Casualties'
+    ]
+
+    occupants = df['Onboard_Total'].str.extract(r'Occupants:\s*(\d+)')[0]
+    return pd.to_numeric(occupants, errors='coerce').max()
+```"
+B_enone_T1,12,2,019_Aircraft,A0,B1,none,1.0,300,524.0,,False,True,,True,"[[""Onboard_Total""], [], [""max""]]",stop,683,669,21504,202,0,21501,,2.42,,"def answer(df: pd.DataFrame):
+    df.columns = [
+        'Incident_Date', 'Aircaft_Model', 'Aircaft_Registration',
+        'Aircaft_Operator', 'Aircaft_Nature', 'Incident_Category',
+        'Incident_Cause(es)', 'Incident_Location', 'Aircaft_Damage_Type',
+        'Date', 'Time', 'Arit', 'Aircaft_Engines', 'Onboard_Crew',
+        'Onboard_Passengers', 'Onboard_Total', 'Fatalities',
+        'Aircaft_First_Flight', 'Aircraft_Phase', 'Departure_Airport',
+        'Destination_Airport', 'Ground_Casualties', 'Collision_Casualties'
+    ]
+
+    occupants = df['Onboard_Total'].str.extract(r'Occupants:\s*(\d+)')[0]
+    return pd.to_numeric(occupants, errors='coerce').max()","```python
+def answer(df: pd.DataFrame):
+    df.columns = [
+        'Incident_Date', 'Aircaft_Model', 'Aircaft_Registration',
+        'Aircaft_Operator', 'Aircaft_Nature', 'Incident_Category',
+        'Incident_Cause(es)', 'Incident_Location', 'Aircaft_Damage_Type',
+        'Date', 'Time', 'Arit', 'Aircaft_Engines', 'Onboard_Crew',
+        'Onboard_Passengers', 'Onboard_Total', 'Fatalities',
+        'Aircaft_First_Flight', 'Aircraft_Phase', 'Departure_Airport',
+        'Destination_Airport', 'Ground_Casualties', 'Collision_Casualties'
+    ]
+
+    occupants = df['Onboard_Total'].str.extract(r'Occupants:\s*(\d+)')[0]
+    return pd.to_numeric(occupants, errors='coerce').max()
+```"
+B_enone_T1,18,1,035_Billboard,A4,B0,none,1.0,300,19.0,19.0,True,True,,True,"[[""Lyrics"", ""loc""], [], [""idxmax"", ""len""]]",stop,260,230,19090,70,0,19087,,1.93,,"# The columns used to answer the question: ['Rank', 'Lyrics']
+# Find the row with the longest lyrics, ignoring missing lyrics.
+longest_lyrics_idx = df['Lyrics'].dropna().str.len().idxmax()
+return df.loc[longest_lyrics_idx, 'Rank']","```python
+    # The columns used to answer the question: ['Rank', 'Lyrics']
+    # Find the row with the longest lyrics, ignoring missing lyrics.
+    longest_lyrics_idx = df['Lyrics'].dropna().str.len().idxmax()
+    return df.loc[longest_lyrics_idx, 'Rank']
+```"
+B_enone_T1,18,2,035_Billboard,A4,B0,none,1.0,300,19.0,19.0,True,True,,True,"[[""Lyrics"", ""loc""], [], [""idxmax"", ""len""]]",stop,220,190,19090,63,0,19087,,1.72,,"# The columns used to answer the question: ['Rank', 'Lyrics']
+# The type of the answer: number
+
+longest_lyrics_idx = df['Lyrics'].str.len().idxmax()
+return df.loc[longest_lyrics_idx, 'Rank']","```python
+    # The columns used to answer the question: ['Rank', 'Lyrics']
+    # The type of the answer: number
+
+    longest_lyrics_idx = df['Lyrics'].str.len().idxmax()
+    return df.loc[longest_lyrics_idx, 'Rank']
+```"
+B_enone_T1,26,1,045_Predict,A2,B0,none,1.0,300,489.0,,False,True,,True,"[[""release_year""], [], [""max"", ""value_counts""]]",stop,119,105,19797,33,0,19794,,1.31,,"def answer(df: pd.DataFrame):
+    counts = df['release_year'].value_counts()
+    return int(counts.max())","```python
+def answer(df: pd.DataFrame):
+    counts = df['release_year'].value_counts()
+    return int(counts.max())
+```"
+B_enone_T1,26,2,045_Predict,A2,B0,none,1.0,300,489.0,489.0,True,True,,True,"[[""release_year""], [], [""max"", ""value_counts""]]",stop,138,116,19797,35,0,19794,,1.74,,"# Count songs per release year; the largest count is the answer.
+return int(df['release_year'].value_counts().max())","```python
+    # Count songs per release year; the largest count is the answer.
+    return int(df['release_year'].value_counts().max())
+```"
+B_enone_T1,41,1,066_IBM_HR,A0,B0,none,1.0,300,40.0,40.0,True,True,,True,"[[""YearsAtCompany""], [], [""max""]]",stop,154,128,20289,42,0,20286,,1.4,,"# The columns used to answer the question: ['YearsAtCompany']
+# The type of the answer: number
+return df['YearsAtCompany'].max()","```python
+    # The columns used to answer the question: ['YearsAtCompany']
+    # The type of the answer: number
+    return df['YearsAtCompany'].max()
+```"
+B_enone_T1,41,2,066_IBM_HR,A0,B0,none,1.0,300,40.0,40.0,True,True,,True,"[[""YearsAtCompany""], [], [""max""]]",stop,120,98,20289,31,0,20286,,1.84,,"# IBM is the company represented by all records in this dataset.
+return df['YearsAtCompany'].max()","```python
+    # IBM is the company represented by all records in this dataset.
+    return df['YearsAtCompany'].max()
+```"
+B_enone_T1,52,1,069_Taxonomy,A1,B2,none,1.0,300,316.0,,False,True,,True,"[[""Tier 3"", ""Tier 4""], [], [""sum""]]",stop,172,158,19263,57,0,19260,,1.58,,"def answer(df: pd.DataFrame):
+    # Count entries with a value in either Tier 3 or Tier 4.
+    return int((df['Tier 3'].notna() | df['Tier 4'].notna()).sum())","```python
+def answer(df: pd.DataFrame):
+    # Count entries with a value in either Tier 3 or Tier 4.
+    return int((df['Tier 3'].notna() | df['Tier 4'].notna()).sum())
+```"
+B_enone_T1,52,2,069_Taxonomy,A1,B2,none,1.0,300,316.0,316.0,True,True,,True,"[[""Tier 3"", ""Tier 4""], [], [""sum""]]",stop,129,107,19263,47,0,19260,,1.23,,"# Count entries with a value in Tier 3 or Tier 4
+return (df['Tier 3'].notna() | df['Tier 4'].notna()).sum()","```python
+    # Count entries with a value in Tier 3 or Tier 4
+    return (df['Tier 3'].notna() | df['Tier 4'].notna()).sum()
+```"
+B_enone_T1,60,1,072_Admissions,A4,B0,none,1.0,300,4.0,4.0,True,True,,True,"[[""CGPA"", ""loc""], [], [""idxmax""]]",stop,172,146,19116,45,0,19113,,1.6,,"# Find the applicant with the highest CGPA and return their university's rating.
+idx = df['CGPA'].idxmax()
+return df.loc[idx, 'University Rating']","```python
+    # Find the applicant with the highest CGPA and return their university's rating.
+    idx = df['CGPA'].idxmax()
+    return df.loc[idx, 'University Rating']
+```"
+B_enone_T1,60,2,072_Admissions,A4,B0,none,1.0,300,4.0,4.0,True,True,,True,"[[""CGPA"", ""loc""], [], [""idxmax""]]",stop,170,144,19116,44,0,19113,,1.62,,"# Find the applicant with the highest CGPA and return their university rating.
+idx = df['CGPA'].idxmax()
+return df.loc[idx, 'University Rating']","```python
+    # Find the applicant with the highest CGPA and return their university rating.
+    idx = df['CGPA'].idxmax()
+    return df.loc[idx, 'University Rating']
+```"
+B_enone_T1,77,1,074_Lift,A2,B2,none,1.0,300,100.0,100.0,True,True,,True,"[[""Weight Class"", ""loc""], [""Weight Class==59 kg""], [""min""]]",stop,176,150,19001,54,0,18998,,2.32,,"# A 55 kg lifter participates in the 59 kg weight class.
+amount = df.loc[df['Weight Class'] == '59 kg', 'Amount Lifted (kg)'].min()
+return int(amount)","```python
+    # A 55 kg lifter participates in the 59 kg weight class.
+    amount = df.loc[df['Weight Class'] == '59 kg', 'Amount Lifted (kg)'].min()
+    return int(amount)
+```"
+B_enone_T1,77,2,074_Lift,A2,B2,none,1.0,300,100.0,,False,True,,True,"[[""Weight Class"", ""loc""], [""Weight Class==59 kg""], [""min""]]",stop,273,259,19001,84,0,18998,,2.33,,"def answer(df: pd.DataFrame):
+    df.columns = ['Lifter Name', 'Age', 'Weight Class', 'Lift Type', 'Amount Lifted (kg)']
+
+    # A 55 kg lifter participates in the 59 kg weight class.
+    return df.loc[df['Weight Class'] == '59 kg', 'Amount Lifted (kg)'].min()","```python
+def answer(df: pd.DataFrame):
+    df.columns = ['Lifter Name', 'Age', 'Weight Class', 'Lift Type', 'Amount Lifted (kg)']
+
+    # A 55 kg lifter participates in the 59 kg weight class.
+    return df.loc[df['Weight Class'] == '59 kg', 'Amount Lifted (kg)'].min()
+```"
+B_enone_T1,87,1,078_Fires,A4,B2,none,1.0,300,1.0,9.0,False,True,,True,"[[""month""], [], [""idxmin"", ""value_counts""]]",stop,143,121,19327,37,0,19324,,1.6,,"# Count fires by month and return the month number with the fewest fires.
+return int(df['month'].value_counts().idxmin())","```python
+    # Count fires by month and return the month number with the fewest fires.
+    return int(df['month'].value_counts().idxmin())
+```"
+B_enone_T1,87,2,078_Fires,A4,B2,none,1.0,300,1.0,1.0,True,True,,True,"[[""month""], [], [""idxmax"", ""value_counts""]]",stop,146,124,19327,37,0,19324,,1.64,,"# Count fires in each month; return the month number with the highest count.
+return int(df['month'].value_counts().idxmax())","```python
+    # Count fires in each month; return the month number with the highest count.
+    return int(df['month'].value_counts().idxmax())
+```"

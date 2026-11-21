@@ -1,0 +1,454 @@
+# TODO: complete the following function. It should give the answer to: Which are the top 6 clubs in terms of the average potential score of their players?
+def answer(df: pd.DataFrame):
+    """
+        #,Column,Dtype,Types of Elements,Values
+        0,ID<gx:number>,uint32,[<class 'int'>],
+        1,Name<gx:text>,category,[<class 'str'>],5 example values are [' L. Suárez', ' K. De Bruyne', ' Bruno Fernandes', ' A. Griezmann', ' M. Acuña']
+        2,Age<gx:number>,uint8,[<class 'int'>],
+        3,Photo<gx:url>,category,[<class 'str'>],5 example values are ['https://cdn.sofifa.com/players/176/580/20_60.png', 'https://cdn.sofifa.com/players/192/985/20_60.png', 'https://cdn.sofifa.com/players/212/198/20_60.png', 'https://cdn.sofifa.com/players/194/765/20_60.png', 'https://cdn.sofifa.com/players/224/334/20_60.png']
+        4,Nationality<gx:category>,category,[<class 'str'>],5 example values are ['Uruguay', 'Belgium', 'Portugal', 'France', 'Argentina']
+        5,Overall<gx:number>,uint8,[<class 'int'>],
+        6,Potential<gx:number>,uint8,[<class 'int'>],
+        7,Club<gx:category>,category,[<class 'str'>, <class 'float'>],5 example values are ['Atlético Madrid', 'Manchester City', 'Manchester United', 'FC Barcelona', 'Sevilla FC']
+        8,Value_€<gx:currency>,uint32,[<class 'int'>],
+        9,Wage_€<gx:currency>,uint32,[<class 'int'>],
+        10,Preferred Foot<gx:category>,category,[<class 'str'>],All values are ['Right', 'Left']
+        11,International Reputation<gx:number>,uint8,[<class 'int'>],
+        12,Weak Foot<gx:number>,uint8,[<class 'int'>],
+        13,Skill Moves<gx:number>,uint8,[<class 'int'>],
+        14,Work Rate<gx:category>,category,[<class 'str'>],5 example values are ['High/ Medium', 'High/ High', 'Medium/ Medium', 'Medium/ High', 'Medium/ Low']
+        15,Position<gx:category>,category,[<class 'str'>, <class 'float'>],5 example values are ['RS', 'RCM', 'CAM', 'RW', 'LB']
+        16,Joined<gx:date>,category,[<class 'str'>, <class 'float'>],5 example values are ['Sep 25, 2020', 'Aug 30, 2015', 'Jan 30, 2020', 'Jul 12, 2019', 'Sep 14, 2020']
+        17,Contract Valid Until<gx:date>,category,[<class 'str'>, <class 'float'>],5 example values are ['2022', '2023', '2025', '2024', '2021']
+        18,Height_ft<gx:number>,float64,[<class 'float'>],
+        19,Weight_lbs<gx:number>,uint8,[<class 'int'>],
+        20,Crossing<gx:number>,uint8,[<class 'int'>],
+        21,Finishing<gx:number>,uint8,[<class 'int'>],
+        22,HeadingAccuracy<gx:number>,uint8,[<class 'int'>],
+        23,ShortPassing<gx:number>,uint8,[<class 'int'>],
+        24,Volleys<gx:number>,uint8,[<class 'int'>],
+        25,Dribbling<gx:number>,uint8,[<class 'int'>],
+        26,Curve<gx:number>,uint8,[<class 'int'>],
+        27,FKAccuracy<gx:number>,uint8,[<class 'int'>],
+        28,LongPassing<gx:number>,uint8,[<class 'int'>],
+        29,BallControl<gx:number>,uint8,[<class 'int'>],
+        30,Acceleration<gx:number>,uint8,[<class 'int'>],
+        31,SprintSpeed<gx:number>,uint8,[<class 'int'>],
+        32,Agility<gx:number>,uint8,[<class 'int'>],
+        33,Reactions<gx:number>,uint8,[<class 'int'>],
+        34,Balance<gx:number>,uint8,[<class 'int'>],
+        35,ShotPower<gx:number>,uint8,[<class 'int'>],
+        36,Jumping<gx:number>,uint8,[<class 'int'>],
+        37,Stamina<gx:number>,uint8,[<class 'int'>],
+        38,Strength<gx:number>,uint8,[<class 'int'>],
+        39,LongShots<gx:number>,uint8,[<class 'int'>],
+        40,Aggression<gx:number>,uint8,[<class 'int'>],
+        41,Interceptions<gx:number>,uint8,[<class 'int'>],
+        42,Positioning<gx:number>,uint8,[<class 'int'>],
+        43,Vision<gx:number>,uint8,[<class 'int'>],
+        44,Penalties<gx:number>,uint8,[<class 'int'>],
+        45,Composure<gx:number>,uint8,[<class 'int'>],
+        46,Marking<gx:number>,category,[<class 'float'>],All values are []
+        47,StandingTackle<gx:number>,uint8,[<class 'int'>],
+        48,SlidingTackle<gx:number>,uint8,[<class 'int'>],
+        49,GKDiving<gx:number>,uint8,[<class 'int'>],
+        50,GKHandling<gx:number>,uint8,[<class 'int'>],
+        51,GKKicking<gx:number>,uint8,[<class 'int'>],
+        52,GKPositioning<gx:number>,uint8,[<class 'int'>],
+        53,GKReflexes<gx:number>,uint8,[<class 'int'>],
+        54,Best Position<gx:category>,category,[<class 'str'>],5 example values are ['ST', 'CAM', 'LB', 'CM', 'CDM']
+        55,Best Overall Rating<gx:number>,uint8,[<class 'int'>],
+        56,DefensiveAwareness<gx:number>,uint8,[<class 'int'>],
+        57,General Postion<gx:category>,category,[<class 'str'>],All values are ['FWD', 'MD', 'DF', 'GK']
+        58,Legend,bool,[<class 'bool'>],
+    """
+
+
+    df.columns = ['ID<gx:number>', 'Name<gx:text>', 'Age<gx:number>', 'Photo<gx:url>', 'Nationality<gx:category>', 'Overall<gx:number>', 'Potential<gx:number>', 'Club<gx:category>', 'Value_€<gx:currency>', 'Wage_€<gx:currency>', 'Preferred Foot<gx:category>', 'International Reputation<gx:number>', 'Weak Foot<gx:number>', 'Skill Moves<gx:number>', 'Work Rate<gx:category>', 'Position<gx:category>', 'Joined<gx:date>', 'Contract Valid Until<gx:date>', 'Height_ft<gx:number>', 'Weight_lbs<gx:number>', 'Crossing<gx:number>', 'Finishing<gx:number>', 'HeadingAccuracy<gx:number>', 'ShortPassing<gx:number>', 'Volleys<gx:number>', 'Dribbling<gx:number>', 'Curve<gx:number>', 'FKAccuracy<gx:number>', 'LongPassing<gx:number>', 'BallControl<gx:number>', 'Acceleration<gx:number>', 'SprintSpeed<gx:number>', 'Agility<gx:number>', 'Reactions<gx:number>', 'Balance<gx:number>', 'ShotPower<gx:number>', 'Jumping<gx:number>', 'Stamina<gx:number>', 'Strength<gx:number>', 'LongShots<gx:number>', 'Aggression<gx:number>', 'Interceptions<gx:number>', 'Positioning<gx:number>', 'Vision<gx:number>', 'Penalties<gx:number>', 'Composure<gx:number>', 'Marking<gx:number>', 'StandingTackle<gx:number>', 'SlidingTackle<gx:number>', 'GKDiving<gx:number>', 'GKHandling<gx:number>', 'GKKicking<gx:number>', 'GKPositioning<gx:number>', 'GKReflexes<gx:number>', 'Best Position<gx:category>', 'Best Overall Rating<gx:number>', 'DefensiveAwareness<gx:number>', 'General Postion<gx:category>', 'Legend']
+    
+    # The columns used to answer the question: ['Club<gx:category>', 'Potential<gx:number>']
+    # The types of the columns used to answer the question: ['category', 'number[uint8]']
+    # The type of the answer: list[category]
+
+    # Step 1: Group the dataframe by 'Club' and calculate the mean of the 'Potential' column for each group
+    avg_potential_per_club = df.groupby('Club<gx:category>')['Potential<gx:number>'].mean()
+    
+    # Step 2: Use nlargest to get the top 6 clubs with the highest average potential
+    top_6_clubs = avg_potential_per_club.nlargest(6).index.tolist()
+    
+    # Return the list of top 6 clubs
+    return top_6_clubs
+    
+# TODO: complete the following function. It should give the answer to: How many players have the position 'ST'?
+def answer(df: pd.DataFrame):
+    """
+        #,Column,Dtype,Types of Elements,Values
+        0,ID<gx:number>,uint32,[<class 'int'>],
+        1,Name<gx:text>,category,[<class 'str'>],5 example values are [' L. Suárez', ' K. De Bruyne', ' Bruno Fernandes', ' A. Griezmann', ' M. Acuña']
+        2,Age<gx:number>,uint8,[<class 'int'>],
+        3,Photo<gx:url>,category,[<class 'str'>],5 example values are ['https://cdn.sofifa.com/players/176/580/20_60.png', 'https://cdn.sofifa.com/players/192/985/20_60.png', 'https://cdn.sofifa.com/players/212/198/20_60.png', 'https://cdn.sofifa.com/players/194/765/20_60.png', 'https://cdn.sofifa.com/players/224/334/20_60.png']
+        4,Nationality<gx:category>,category,[<class 'str'>],5 example values are ['Uruguay', 'Belgium', 'Portugal', 'France', 'Argentina']
+        5,Overall<gx:number>,uint8,[<class 'int'>],
+        6,Potential<gx:number>,uint8,[<class 'int'>],
+        7,Club<gx:category>,category,[<class 'str'>, <class 'float'>],5 example values are ['Atlético Madrid', 'Manchester City', 'Manchester United', 'FC Barcelona', 'Sevilla FC']
+        8,Value_€<gx:currency>,uint32,[<class 'int'>],
+        9,Wage_€<gx:currency>,uint32,[<class 'int'>],
+        10,Preferred Foot<gx:category>,category,[<class 'str'>],All values are ['Right', 'Left']
+        11,International Reputation<gx:number>,uint8,[<class 'int'>],
+        12,Weak Foot<gx:number>,uint8,[<class 'int'>],
+        13,Skill Moves<gx:number>,uint8,[<class 'int'>],
+        14,Work Rate<gx:category>,category,[<class 'str'>],5 example values are ['High/ Medium', 'High/ High', 'Medium/ Medium', 'Medium/ High', 'Medium/ Low']
+        15,Position<gx:category>,category,[<class 'str'>, <class 'float'>],5 example values are ['RS', 'RCM', 'CAM', 'RW', 'LB']
+        16,Joined<gx:date>,category,[<class 'str'>, <class 'float'>],5 example values are ['Sep 25, 2020', 'Aug 30, 2015', 'Jan 30, 2020', 'Jul 12, 2019', 'Sep 14, 2020']
+        17,Contract Valid Until<gx:date>,category,[<class 'str'>, <class 'float'>],5 example values are ['2022', '2023', '2025', '2024', '2021']
+        18,Height_ft<gx:number>,float64,[<class 'float'>],
+        19,Weight_lbs<gx:number>,uint8,[<class 'int'>],
+        20,Crossing<gx:number>,uint8,[<class 'int'>],
+        21,Finishing<gx:number>,uint8,[<class 'int'>],
+        22,HeadingAccuracy<gx:number>,uint8,[<class 'int'>],
+        23,ShortPassing<gx:number>,uint8,[<class 'int'>],
+        24,Volleys<gx:number>,uint8,[<class 'int'>],
+        25,Dribbling<gx:number>,uint8,[<class 'int'>],
+        26,Curve<gx:number>,uint8,[<class 'int'>],
+        27,FKAccuracy<gx:number>,uint8,[<class 'int'>],
+        28,LongPassing<gx:number>,uint8,[<class 'int'>],
+        29,BallControl<gx:number>,uint8,[<class 'int'>],
+        30,Acceleration<gx:number>,uint8,[<class 'int'>],
+        31,SprintSpeed<gx:number>,uint8,[<class 'int'>],
+        32,Agility<gx:number>,uint8,[<class 'int'>],
+        33,Reactions<gx:number>,uint8,[<class 'int'>],
+        34,Balance<gx:number>,uint8,[<class 'int'>],
+        35,ShotPower<gx:number>,uint8,[<class 'int'>],
+        36,Jumping<gx:number>,uint8,[<class 'int'>],
+        37,Stamina<gx:number>,uint8,[<class 'int'>],
+        38,Strength<gx:number>,uint8,[<class 'int'>],
+        39,LongShots<gx:number>,uint8,[<class 'int'>],
+        40,Aggression<gx:number>,uint8,[<class 'int'>],
+        41,Interceptions<gx:number>,uint8,[<class 'int'>],
+        42,Positioning<gx:number>,uint8,[<class 'int'>],
+        43,Vision<gx:number>,uint8,[<class 'int'>],
+        44,Penalties<gx:number>,uint8,[<class 'int'>],
+        45,Composure<gx:number>,uint8,[<class 'int'>],
+        46,Marking<gx:number>,category,[<class 'float'>],All values are []
+        47,StandingTackle<gx:number>,uint8,[<class 'int'>],
+        48,SlidingTackle<gx:number>,uint8,[<class 'int'>],
+        49,GKDiving<gx:number>,uint8,[<class 'int'>],
+        50,GKHandling<gx:number>,uint8,[<class 'int'>],
+        51,GKKicking<gx:number>,uint8,[<class 'int'>],
+        52,GKPositioning<gx:number>,uint8,[<class 'int'>],
+        53,GKReflexes<gx:number>,uint8,[<class 'int'>],
+        54,Best Position<gx:category>,category,[<class 'str'>],5 example values are ['ST', 'CAM', 'LB', 'CM', 'CDM']
+        55,Best Overall Rating<gx:number>,uint8,[<class 'int'>],
+        56,DefensiveAwareness<gx:number>,uint8,[<class 'int'>],
+        57,General Postion<gx:category>,category,[<class 'str'>],All values are ['FWD', 'MD', 'DF', 'GK']
+        58,Legend,bool,[<class 'bool'>],
+    """
+
+
+    df.columns = ['ID<gx:number>', 'Name<gx:text>', 'Age<gx:number>', 'Photo<gx:url>', 'Nationality<gx:category>', 'Overall<gx:number>', 'Potential<gx:number>', 'Club<gx:category>', 'Value_€<gx:currency>', 'Wage_€<gx:currency>', 'Preferred Foot<gx:category>', 'International Reputation<gx:number>', 'Weak Foot<gx:number>', 'Skill Moves<gx:number>', 'Work Rate<gx:category>', 'Position<gx:category>', 'Joined<gx:date>', 'Contract Valid Until<gx:date>', 'Height_ft<gx:number>', 'Weight_lbs<gx:number>', 'Crossing<gx:number>', 'Finishing<gx:number>', 'HeadingAccuracy<gx:number>', 'ShortPassing<gx:number>', 'Volleys<gx:number>', 'Dribbling<gx:number>', 'Curve<gx:number>', 'FKAccuracy<gx:number>', 'LongPassing<gx:number>', 'BallControl<gx:number>', 'Acceleration<gx:number>', 'SprintSpeed<gx:number>', 'Agility<gx:number>', 'Reactions<gx:number>', 'Balance<gx:number>', 'ShotPower<gx:number>', 'Jumping<gx:number>', 'Stamina<gx:number>', 'Strength<gx:number>', 'LongShots<gx:number>', 'Aggression<gx:number>', 'Interceptions<gx:number>', 'Positioning<gx:number>', 'Vision<gx:number>', 'Penalties<gx:number>', 'Composure<gx:number>', 'Marking<gx:number>', 'StandingTackle<gx:number>', 'SlidingTackle<gx:number>', 'GKDiving<gx:number>', 'GKHandling<gx:number>', 'GKKicking<gx:number>', 'GKPositioning<gx:number>', 'GKReflexes<gx:number>', 'Best Position<gx:category>', 'Best Overall Rating<gx:number>', 'DefensiveAwareness<gx:number>', 'General Postion<gx:category>', 'Legend']
+    
+    # The columns used to answer the question: ['Position<gx:category>']
+    # The types of the columns used to answer the question: ['category']
+    # The type of the answer: number
+
+    
+    # Create a boolean mask for rows where Position is 'ST'
+    is_st_position = df['Position<gx:category>'] == 'ST'
+    
+    # Count the rows where the mask is True
+    st_player_count = df[is_st_position].shape[0]
+    
+    # Return the count of players with 'ST' position
+    return st_player_count
+    
+# TODO: complete the following function. It should give the answer to: Are there food items with 'Nuts' as their sub group?
+def answer(df: pd.DataFrame):
+    """
+        #,Column,Dtype,Types of Elements,Values
+        0,FOOD NAME,category,[<class 'str'>],5 example values are ['Angelica', 'Savoy cabbage', 'Silver linden', 'Kiwi', 'Allium (Onion)']
+        1,SCIENTIFIC NAME,category,[<class 'str'>, <class 'float'>],5 example values are ['Angelica keiskei', 'Brassica oleracea var. sabauda', 'Tilia argentea', 'Actinidia chinensis', 'Allium']
+        2,GROUP,category,[<class 'str'>, <class 'float'>],5 example values are ['Herbs and Spices', 'Vegetables', 'Fruits', 'Nuts', 'Cereals and cereal products']
+        3,SUB GROUP,category,[<class 'str'>, <class 'float'>],5 example values are ['Herbs', 'Cabbages', 'Tropical fruits', 'Onion-family vegetables', 'Nuts']
+    """
+
+
+    df.columns = ['FOOD NAME', 'SCIENTIFIC NAME', 'GROUP', 'SUB GROUP']
+    
+    # The columns used to answer the question: ['SUB GROUP']
+    # The types of the columns used to answer the question: ['category']
+    # The type of the answer: boolean
+
+    # Check if 'Nuts' is present in the 'SUB GROUP' column
+    return 'Nuts' in df['SUB GROUP'].values
+    
+# TODO: complete the following function. It should give the answer to: What are the number of appearances of the 3 most common groups?
+def answer(df: pd.DataFrame):
+    """
+        #,Column,Dtype,Types of Elements,Values
+        0,FOOD NAME,category,[<class 'str'>],5 example values are ['Angelica', 'Savoy cabbage', 'Silver linden', 'Kiwi', 'Allium (Onion)']
+        1,SCIENTIFIC NAME,category,[<class 'str'>, <class 'float'>],5 example values are ['Angelica keiskei', 'Brassica oleracea var. sabauda', 'Tilia argentea', 'Actinidia chinensis', 'Allium']
+        2,GROUP,category,[<class 'str'>, <class 'float'>],5 example values are ['Herbs and Spices', 'Vegetables', 'Fruits', 'Nuts', 'Cereals and cereal products']
+        3,SUB GROUP,category,[<class 'str'>, <class 'float'>],5 example values are ['Herbs', 'Cabbages', 'Tropical fruits', 'Onion-family vegetables', 'Nuts']
+    """
+
+
+    df.columns = ['FOOD NAME', 'SCIENTIFIC NAME', 'GROUP', 'SUB GROUP']
+    
+    # The columns used to answer the question: ['GROUP']
+    # The types of the columns used to answer the question: ['category']
+    # The type of the answer: list[number]
+
+    # Get the 3 most common groups and return their counts as a list
+    return df['GROUP'].value_counts().nlargest(3).tolist()
+    
+# TODO: complete the following function. It should give the answer to: Is there a roller coaster in the dataset that operates at a speed more than 100 mph?
+def answer(df: pd.DataFrame):
+    """
+        #,Column,Dtype,Types of Elements,Values
+        0,coaster_name,category,[<class 'str'>],5 example values are ['Switchback Railway', 'Flip Flap Railway', 'Switchback Railway (Euclid Beach Park)', 'Loop the Loop (Coney Island)', "Loop the Loop (Young's Pier)"]
+        1,Length,category,[<class 'str'>, <class 'float'>],5 example values are ['600\xa0ft (180\xa0m)', '1,452\xa0ft (443\xa0m)', '4,500\xa0ft (1,400\xa0m)', '967\xa0m (3,173\xa0ft)', '2,865\xa0ft (873\xa0m)']
+        2,Speed,str,[<class 'str'>, <class 'float'>],
+        3,Location,category,[<class 'str'>],5 example values are ['Coney Island', 'Sea Lion Park', 'Cleveland, Ohio, United States', 'Other', 'Lakemont Park']
+        4,Status,category,[<class 'str'>, <class 'float'>],5 example values are ['Removed', 'Closed', 'Operating', 'Not Currently Operating', 'In Production']
+        5,Opening date,category,[<class 'str'>, <class 'float'>],5 example values are ['June\xa016,\xa01884', '1895', '1901', '1902', 'June\xa06,\xa01907']
+        6,Type,category,[<class 'str'>],5 example values are ['Wood', 'Other', 'Steel', 'Wood\xa0– Side friction', 'Wood\xa0– Shuttle']
+        7,Manufacturer,category,[<class 'str'>, <class 'float'>],5 example values are ['LaMarcus Adna Thompson', 'Lina Beecher', 'Edwin Prescott', 'George Francis Meyer', 'Federal Construction Company']
+        8,Height restriction,category,[<class 'float'>, <class 'str'>],5 example values are ['46\xa0in (117\xa0cm)', '100\xa0cm (3\xa0ft 3\xa0in)', '48\xa0in (122\xa0cm)', '42\xa0in (107\xa0cm)', '50\xa0in (127\xa0cm)']
+        9,Model,category,[<class 'str'>, <class 'float'>],5 example values are ['Lift Packed', 'Racing', 'Wooden Coaster', 'Wooden', 'Scenic Railway']
+        10,Height,category,[<class 'str'>, <class 'float'>],5 example values are ['50 ft (15 m)', '40 ft (12 m)', '41 ft (12 m)', '60 ft (18 m)', '72.5 ft (22.1 m)']
+        11,Inversions,float64,[<class 'float'>],
+        12,Lift/launch system,category,[<class 'str'>, <class 'float'>],5 example values are ['gravity', 'Chain lift', 'Cable lift hill', 'Chain lift hill', 'Chain']
+        13,Cost,category,[<class 'float'>, <class 'str'>],5 example values are ['$50,000', '$75,000', '$140,000', '$50,000 USD', '£25,000 (1922)']
+        14,Trains,str,[<class 'float'>, <class 'str'>],
+        15,Park section,category,[<class 'str'>, <class 'float'>],5 example values are ['Coney Island Cyclone Site', 'Mardi Gras', 'Cyclone Bay', 'Nickelodeon Land', 'The Hollow']
+        16,Duration,category,[<class 'str'>, <class 'float'>],5 example values are ['1:00', '1 minute 30 seconds', '1:32', '1:58', '1:52']
+        17,Capacity,str,[<class 'str'>, <class 'float'>],
+        18,G-force,category,[<class 'str'>, <class 'float'>],5 example values are ['2.9', '12', '3.7', '4 Gs', '3.75']
+        19,Designer,category,[<class 'str'>, <class 'float'>],5 example values are ['LaMarcus Adna Thompson', 'Lina Beecher', 'Edward A. Green', 'Edward Joy Morris', 'Christopher Feucht, Welcome Mosley']
+        20,Max vertical angle,category,[<class 'str'>, <class 'float'>],5 example values are ['30°', '25°', '64°', '45°', '52°']
+        21,Drop,category,[<class 'str'>, <class 'float'>],5 example values are ['43\xa0ft (13\xa0m)', '9\xa0ft (2.7\xa0m)', '50\xa0ft (15\xa0m)', '70\xa0ft (21\xa0m)', '88\xa0ft (27\xa0m)']
+        22,Soft opening date,category,[<class 'float'>, <class 'str'>],5 example values are ['April\xa013,\xa01979', 'April\xa022,\xa01981', '27 March 1985', 'May\xa01,\xa01989', 'April\xa03,\xa01992']
+        23,Fast Lane available,category,[<class 'float'>, <class 'str'>],All values are ['Fast Lane available']
+        24,Replaced,category,[<class 'float'>, <class 'str'>],5 example values are ['Switchback Railway', 'Pippin', 'Giant Racer', 'Green Dragon', 'Carrousel (relocated within park, 1972)']
+        25,Track layout,category,[<class 'str'>, <class 'float'>],5 example values are ['Gravity pulled coaster', 'Möbius Loop', 'Figure Eight', 'Martin & Vleminckx', 'Terrain, Out and Back roller coaster']
+        26,Fastrack available,category,[<class 'float'>, <class 'str'>],All values are ['Fastrack available']
+        27,Soft opening date.1,category,[<class 'float'>, <class 'str'>],5 example values are ['April\xa013,\xa01979', 'April\xa022,\xa01981', '27 March 1985', 'May\xa01,\xa01989', 'April\xa03,\xa01992']
+        28,Closing date,category,[<class 'float'>, <class 'str'>],5 example values are ['1902', '1910', '1912', '1907', '1930s']
+        29,Opened,category,[<class 'float'>, <class 'str'>],5 example values are ['1895', '1955', 'August\xa04,\xa01961', 'July\xa01,\xa01974', '1956']
+        30,Replaced by,category,[<class 'float'>, <class 'str'>],5 example values are ['Giant Racer', 'Wildcat', "Kozmo's Kurves", 'Batman The Escape', 'Star Jet']
+        31,Website,category,[<class 'float'>, <class 'str'>],5 example values are ['Official website', 'Six Flags Great Adventure', 'www.miadventure.com', 'Archived Official Website', 'municipal website']
+        32,Flash Pass Available,category,[<class 'float'>, <class 'str'>],All values are ['Flash Pass Available']
+        33,Must transfer from wheelchair,category,[<class 'float'>, <class 'str'>],All values are ['Must transfer from wheelchair']
+        34,Theme,category,[<class 'float'>, <class 'str'>],5 example values are ['Swiss mountain', 'America', 'Spaceflight', 'Jungle', 'Gothic']
+        35,Single rider line available,category,[<class 'float'>, <class 'str'>],All values are ['Single rider line available']
+        36,Restraint Style,category,[<class 'float'>, <class 'str'>],5 example values are ['Lap Bar', 'Over-the-shoulder', 'Individual ratcheting lap bar, formerly individual shoulder harness', 'Seat Belt / Lap Bar', 'Over the Shoulder Restraints']
+        37,Flash Pass available,category,[<class 'float'>, <class 'str'>],All values are ['Flash Pass available']
+        38,Acceleration,str,[<class 'float'>, <class 'str'>],
+        39,Restraints,category,[<class 'float'>, <class 'str'>],5 example values are ['Single Lap Bar', 'Seat belt', 'T-bars With Seatbelt', 'Over-the-shoulders restraint', 'Over the shoulder restraints']
+        40,Name,category,[<class 'float'>, <class 'str'>],5 example values are ['Bavarian Mountain Railroad', 'Iron Wolf', 'Dragon Coaster', "The Joker's Revenge", 'Zambezi Zinger']
+        41,year_introduced,uint16,[<class 'int'>],
+        42,latitude,float64,[<class 'float'>],
+        43,longitude,float64,[<class 'float'>],
+        44,Type_Main,category,[<class 'str'>],All values are ['Wood', 'Other', 'Steel']
+        45,opening_date_clean,datetime64[us, UTC],[<class 'pandas.Timestamp'>, <class 'pandas.api.typing.NaTType'>],
+        46,speed1,category,[<class 'str'>, <class 'float'>],5 example values are ['6 mph ', '10 mph ', '40 mph ', '60 km/h ', '53 mph ']
+        47,speed2,category,[<class 'str'>, <class 'float'>],5 example values are ['9.7 km/h', '16 km/h', '64 km/h', '37 mph', '85 km/h']
+        48,speed1_value,float64,[<class 'float'>],
+        49,speed1_unit,category,[<class 'str'>, <class 'float'>],All values are ['mph', 'km/h']
+        50,speed_mph,float64,[<class 'float'>],
+        51,height_value,float64,[<class 'float'>],
+        52,height_unit,category,[<class 'str'>, <class 'float'>],All values are ['ft', 'm']
+        53,height_ft,float64,[<class 'float'>],
+        54,Inversions_clean,uint8,[<class 'int'>],
+        55,Gforce_clean,float64,[<class 'float'>],
+    """
+
+
+    df.columns = ['coaster_name', 'Length', 'Speed', 'Location', 'Status', 'Opening date', 'Type', 'Manufacturer', 'Height restriction', 'Model', 'Height', 'Inversions', 'Lift/launch system', 'Cost', 'Trains', 'Park section', 'Duration', 'Capacity', 'G-force', 'Designer', 'Max vertical angle', 'Drop', 'Soft opening date', 'Fast Lane available', 'Replaced', 'Track layout', 'Fastrack available', 'Soft opening date.1', 'Closing date', 'Opened', 'Replaced by', 'Website', 'Flash Pass Available', 'Must transfer from wheelchair', 'Theme', 'Single rider line available', 'Restraint Style', 'Flash Pass available', 'Acceleration', 'Restraints', 'Name', 'year_introduced', 'latitude', 'longitude', 'Type_Main', 'opening_date_clean', 'speed1', 'speed2', 'speed1_value', 'speed1_unit', 'speed_mph', 'height_value', 'height_unit', 'height_ft', 'Inversions_clean', 'Gforce_clean']
+    
+    # The columns used to answer the question: [speed_mph]
+    # The types of the columns used to answer the question: ['number[double]']
+    # The type of the answer: boolean
+
+    # Check if any value in the 'speed_mph' column is greater than 100, and return True if so
+    return (df['speed_mph'] > 100).any()
+    
+# TODO: complete the following function. It should give the answer to: On which date was the highest maximum temperature recorded?
+def answer(df: pd.DataFrame):
+    """
+        #,Column,Dtype,Types of Elements,Values
+        0,DATE,datetime64[us, UTC],[<class 'pandas.Timestamp'>],
+        1,PRCP,float64,[<class 'float'>],
+        2,SNOW,float64,[<class 'float'>],
+        3,SNWD,float64,[<class 'float'>],
+        4,TMIN,float64,[<class 'float'>],
+        5,TMAX,float64,[<class 'float'>],
+    """
+
+
+    df.columns = ['DATE', 'PRCP', 'SNOW', 'SNWD', 'TMIN', 'TMAX']
+    
+    # The columns used to answer the question: [DATE, TMAX]
+    # The types of the columns used to answer the question: ['date[ns, UTC]', 'number[UInt8]']
+    # The type of the answer: category
+
+    # Find the date corresponding to the highest TMAX value.
+    # - `idxmax()` finds the index of the row where TMAX is highest.
+    # - Use this index to fetch the corresponding DATE value.
+    highest_temp_date = df.loc[df['TMAX'].idxmax(), 'DATE']
+    
+    return highest_temp_date
+    
+# TODO: complete the following function. It should give the answer to: On which date was the deepest snow depth recorded?
+def answer(df: pd.DataFrame):
+    """
+        #,Column,Dtype,Types of Elements,Values
+        0,DATE,datetime64[us, UTC],[<class 'pandas.Timestamp'>],
+        1,PRCP,float64,[<class 'float'>],
+        2,SNOW,float64,[<class 'float'>],
+        3,SNWD,float64,[<class 'float'>],
+        4,TMIN,float64,[<class 'float'>],
+        5,TMAX,float64,[<class 'float'>],
+    """
+
+
+    df.columns = ['DATE', 'PRCP', 'SNOW', 'SNWD', 'TMIN', 'TMAX']
+    
+    # The columns used to answer the question: [DATE, SNWD]
+    # The types of the columns used to answer the question: ['date[ns, UTC]', 'number[UInt8]']
+    # The type of the answer: category
+
+    # Use nlargest to find the row with the maximum snow depth (SNWD)
+    deepest_snow_date = df.nlargest(1, 'SNWD')['DATE'].iloc[0]
+    
+    # Return the date corresponding to the deepest snow depth
+    return deepest_snow_date
+    
+# TODO: complete the following function. It should give the answer to: What are the top 3 overall scores in the dataset?
+def answer(df: pd.DataFrame):
+    """
+        #,Column,Dtype,Types of Elements,Values
+        0,ID<gx:number>,uint32,[<class 'int'>],
+        1,Name<gx:text>,category,[<class 'str'>],5 example values are [' L. Suárez', ' K. De Bruyne', ' Bruno Fernandes', ' A. Griezmann', ' M. Acuña']
+        2,Age<gx:number>,uint8,[<class 'int'>],
+        3,Photo<gx:url>,category,[<class 'str'>],5 example values are ['https://cdn.sofifa.com/players/176/580/20_60.png', 'https://cdn.sofifa.com/players/192/985/20_60.png', 'https://cdn.sofifa.com/players/212/198/20_60.png', 'https://cdn.sofifa.com/players/194/765/20_60.png', 'https://cdn.sofifa.com/players/224/334/20_60.png']
+        4,Nationality<gx:category>,category,[<class 'str'>],5 example values are ['Uruguay', 'Belgium', 'Portugal', 'France', 'Argentina']
+        5,Overall<gx:number>,uint8,[<class 'int'>],
+        6,Potential<gx:number>,uint8,[<class 'int'>],
+        7,Club<gx:category>,category,[<class 'str'>, <class 'float'>],5 example values are ['Atlético Madrid', 'Manchester City', 'Manchester United', 'FC Barcelona', 'Sevilla FC']
+        8,Value_€<gx:currency>,uint32,[<class 'int'>],
+        9,Wage_€<gx:currency>,uint32,[<class 'int'>],
+        10,Preferred Foot<gx:category>,category,[<class 'str'>],All values are ['Right', 'Left']
+        11,International Reputation<gx:number>,uint8,[<class 'int'>],
+        12,Weak Foot<gx:number>,uint8,[<class 'int'>],
+        13,Skill Moves<gx:number>,uint8,[<class 'int'>],
+        14,Work Rate<gx:category>,category,[<class 'str'>],5 example values are ['High/ Medium', 'High/ High', 'Medium/ Medium', 'Medium/ High', 'Medium/ Low']
+        15,Position<gx:category>,category,[<class 'str'>, <class 'float'>],5 example values are ['RS', 'RCM', 'CAM', 'RW', 'LB']
+        16,Joined<gx:date>,category,[<class 'str'>, <class 'float'>],5 example values are ['Sep 25, 2020', 'Aug 30, 2015', 'Jan 30, 2020', 'Jul 12, 2019', 'Sep 14, 2020']
+        17,Contract Valid Until<gx:date>,category,[<class 'str'>, <class 'float'>],5 example values are ['2022', '2023', '2025', '2024', '2021']
+        18,Height_ft<gx:number>,float64,[<class 'float'>],
+        19,Weight_lbs<gx:number>,uint8,[<class 'int'>],
+        20,Crossing<gx:number>,uint8,[<class 'int'>],
+        21,Finishing<gx:number>,uint8,[<class 'int'>],
+        22,HeadingAccuracy<gx:number>,uint8,[<class 'int'>],
+        23,ShortPassing<gx:number>,uint8,[<class 'int'>],
+        24,Volleys<gx:number>,uint8,[<class 'int'>],
+        25,Dribbling<gx:number>,uint8,[<class 'int'>],
+        26,Curve<gx:number>,uint8,[<class 'int'>],
+        27,FKAccuracy<gx:number>,uint8,[<class 'int'>],
+        28,LongPassing<gx:number>,uint8,[<class 'int'>],
+        29,BallControl<gx:number>,uint8,[<class 'int'>],
+        30,Acceleration<gx:number>,uint8,[<class 'int'>],
+        31,SprintSpeed<gx:number>,uint8,[<class 'int'>],
+        32,Agility<gx:number>,uint8,[<class 'int'>],
+        33,Reactions<gx:number>,uint8,[<class 'int'>],
+        34,Balance<gx:number>,uint8,[<class 'int'>],
+        35,ShotPower<gx:number>,uint8,[<class 'int'>],
+        36,Jumping<gx:number>,uint8,[<class 'int'>],
+        37,Stamina<gx:number>,uint8,[<class 'int'>],
+        38,Strength<gx:number>,uint8,[<class 'int'>],
+        39,LongShots<gx:number>,uint8,[<class 'int'>],
+        40,Aggression<gx:number>,uint8,[<class 'int'>],
+        41,Interceptions<gx:number>,uint8,[<class 'int'>],
+        42,Positioning<gx:number>,uint8,[<class 'int'>],
+        43,Vision<gx:number>,uint8,[<class 'int'>],
+        44,Penalties<gx:number>,uint8,[<class 'int'>],
+        45,Composure<gx:number>,uint8,[<class 'int'>],
+        46,Marking<gx:number>,category,[<class 'float'>],All values are []
+        47,StandingTackle<gx:number>,uint8,[<class 'int'>],
+        48,SlidingTackle<gx:number>,uint8,[<class 'int'>],
+        49,GKDiving<gx:number>,uint8,[<class 'int'>],
+        50,GKHandling<gx:number>,uint8,[<class 'int'>],
+        51,GKKicking<gx:number>,uint8,[<class 'int'>],
+        52,GKPositioning<gx:number>,uint8,[<class 'int'>],
+        53,GKReflexes<gx:number>,uint8,[<class 'int'>],
+        54,Best Position<gx:category>,category,[<class 'str'>],5 example values are ['ST', 'CAM', 'LB', 'CM', 'CDM']
+        55,Best Overall Rating<gx:number>,uint8,[<class 'int'>],
+        56,DefensiveAwareness<gx:number>,uint8,[<class 'int'>],
+        57,General Postion<gx:category>,category,[<class 'str'>],All values are ['FWD', 'MD', 'DF', 'GK']
+        58,Legend,bool,[<class 'bool'>],
+    """
+
+
+    df.columns = ['ID<gx:number>', 'Name<gx:text>', 'Age<gx:number>', 'Photo<gx:url>', 'Nationality<gx:category>', 'Overall<gx:number>', 'Potential<gx:number>', 'Club<gx:category>', 'Value_€<gx:currency>', 'Wage_€<gx:currency>', 'Preferred Foot<gx:category>', 'International Reputation<gx:number>', 'Weak Foot<gx:number>', 'Skill Moves<gx:number>', 'Work Rate<gx:category>', 'Position<gx:category>', 'Joined<gx:date>', 'Contract Valid Until<gx:date>', 'Height_ft<gx:number>', 'Weight_lbs<gx:number>', 'Crossing<gx:number>', 'Finishing<gx:number>', 'HeadingAccuracy<gx:number>', 'ShortPassing<gx:number>', 'Volleys<gx:number>', 'Dribbling<gx:number>', 'Curve<gx:number>', 'FKAccuracy<gx:number>', 'LongPassing<gx:number>', 'BallControl<gx:number>', 'Acceleration<gx:number>', 'SprintSpeed<gx:number>', 'Agility<gx:number>', 'Reactions<gx:number>', 'Balance<gx:number>', 'ShotPower<gx:number>', 'Jumping<gx:number>', 'Stamina<gx:number>', 'Strength<gx:number>', 'LongShots<gx:number>', 'Aggression<gx:number>', 'Interceptions<gx:number>', 'Positioning<gx:number>', 'Vision<gx:number>', 'Penalties<gx:number>', 'Composure<gx:number>', 'Marking<gx:number>', 'StandingTackle<gx:number>', 'SlidingTackle<gx:number>', 'GKDiving<gx:number>', 'GKHandling<gx:number>', 'GKKicking<gx:number>', 'GKPositioning<gx:number>', 'GKReflexes<gx:number>', 'Best Position<gx:category>', 'Best Overall Rating<gx:number>', 'DefensiveAwareness<gx:number>', 'General Postion<gx:category>', 'Legend']
+    
+    # The columns used to answer the question: ['Overall<gx:number>']
+    # The types of the columns used to answer the question: ['number[uint8]']
+    # The type of the answer: list[number]
+
+    # Pick the top 3 values from the 'Overall<gx:number>' column
+    top_3_overall = df['Overall<gx:number>'].nlargest(3)
+    
+    # Return the top 3 values as a list
+    return top_3_overall.tolist()
+    
+# TODO: complete the following function. It should give the answer to: What's the gender of the billionaire with the highest philanthropy score?
+def answer(df: pd.DataFrame):
+    """
+        #,Column,Dtype,Types of Elements,Values
+        0,rank,uint16,[<class 'int'>],
+        1,personName,category,[<class 'str'>],5 example values are ['Elon Musk', 'Jeff Bezos', 'Bernard Arnault & family', 'Bill Gates', 'Warren Buffett']
+        2,age,float64,[<class 'float'>],
+        3,finalWorth,uint32,[<class 'int'>],
+        4,category,category,[<class 'str'>],5 example values are ['Automotive', 'Technology', 'Fashion & Retail', 'Finance & Investments', 'Diversified']
+        5,source,category,[<class 'str'>],5 example values are ['Tesla, SpaceX', 'Amazon', 'LVMH', 'Microsoft', 'Berkshire Hathaway']
+        6,country,category,[<class 'str'>, <class 'float'>],5 example values are ['United States', 'France', 'India', 'Mexico', 'China']
+        7,state,category,[<class 'str'>, <class 'float'>],5 example values are ['Texas', 'Washington', 'Nebraska', 'California', 'Hawaii']
+        8,city,category,[<class 'str'>, <class 'float'>],5 example values are ['Austin', 'Seattle', 'Paris', 'Medina', 'Omaha']
+        9,organization,category,[<class 'str'>, <class 'float'>],5 example values are ['Tesla', 'Amazon', 'LVMH Moët Hennessy Louis Vuitton', 'Bill & Melinda Gates Foundation', 'Berkshire Hathaway']
+        10,selfMade,bool,[<class 'bool'>],
+        11,gender,category,[<class 'str'>, <class 'float'>],All values are ['M', 'F']
+        12,birthDate,datetime64[us, UTC],[<class 'pandas.Timestamp'>, <class 'pandas.api.typing.NaTType'>],
+        13,title,category,[<class 'str'>, <class 'float'>],5 example values are ['CEO', 'Entrepreneur', 'Chairman and CEO', 'Cofounder', 'Cofounder and board member']
+        14,philanthropyScore,float64,[<class 'float'>],
+        15,bio,str,[<class 'str'>],
+        16,about,str,[<class 'str'>, <class 'float'>],
+    """
+
+
+    df.columns = ['rank', 'personName', 'age', 'finalWorth', 'category', 'source', 'country', 'state', 'city', 'organization', 'selfMade', 'gender', 'birthDate', 'title', 'philanthropyScore', 'bio', 'about']
+    
+    # The columns used to answer the question: ['philanthropyScore', 'gender']
+    # The types of the columns used to answer the question: ['number[UInt8]', 'category']
+    # The type of the answer: category
+
+    # Find the row with the highest philanthropy score by sorting the dataframe based on 'philanthropyScore' in descending order
+    top_philanthropist = df.loc[df['philanthropyScore'].idxmax()]
+    
+    # Extract the 'gender' of that person (the row with the highest philanthropy score)
+    return top_philanthropist['gender']
+    
+# TODO: complete the following function. It should give the answer to: What is the highest Credit_Limit?
+def answer(df: pd.DataFrame):
+    """
+        #,Column,Dtype,Types of Elements,Values
+        0,Card_Number,str,[<class 'str'>],
+        1,Card_Family,str,[<class 'str'>],
+        2,Credit_Limit,int64,[<class 'int'>],
+        3,Cust_ID,str,[<class 'str'>],
+    """
+
+
+    df.columns = ['Card_Number', 'Card_Family', 'Credit_Limit', 'Cust_ID']
+    
+    # The columns used to answer the question: 

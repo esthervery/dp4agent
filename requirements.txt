@@ -1,0 +1,31 @@
+# pip install -r requirements.txt
+
+pandas>=2.0             # 3.0.5
+pyarrow>=14.0           # 25.0.1
+datasets>=2.14          # 5.0.1
+huggingface_hub>=0.20   
+
+# KCI 논문 관련 패키지
+matplotlib
+scipy
+
+# Agent 관련 패키지
+transformers 
+torch 
+accelerate 
+huggingface_hub 
+sentence-transformers
+
+# 아테네 연구소 에이전트 파이프라인용 
+numpy
+tqdm
+python-dotenv
+datasets
+databench_eval
+boto3
+ollama
+pyyaml
+openai
+
+# 추가 실험 1
+tiktoken

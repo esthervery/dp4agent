@@ -1,0 +1,10 @@
+outputs/
+data/
+data_old/
+competition/
+__pycache__/
+.env
+
+*.pyc
+*/.cache/
+.ipynb_checkpoints/
