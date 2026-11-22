@@ -388,6 +388,16 @@ def close(a, b) -> bool:
 
 
 # ---------------------------------------------------------------- 파일럿
+SEED_DEFAULT = 20261123
+
+
+def pick_questions(qs: pd.DataFrame, k: int = 10, seed: int = SEED_DEFAULT) -> pd.DataFrame:
+    """245문항에서 k개를 무작위 추출(재현 가능). 뽑힌 목록은 CSV 로도 남긴다."""
+    out = qs.sample(n=min(k, len(qs)), random_state=seed).sort_values("n").reset_index(drop=True)
+    out.to_csv(RESULT_DIR / f"pilot_questions_seed{seed}.csv", index=False, encoding="utf-8-sig")
+    return out
+
+
 def run_pilot(client, questions: pd.DataFrame, ref: pd.DataFrame, out_csv: pathlib.Path,
               condition: str, n_rep: int = 2, model: str = MODEL_DEFAULT,
               temperature: float = TEMP_DEFAULT, max_tokens: int = MAXTOK_DEFAULT,
@@ -509,6 +519,7 @@ def summarize(runs: pd.DataFrame, by_condition: bool = False):
             "finish=length": int((ok["finish_reason"] == "length").sum()),
             "본문 비어있음": int((ok["body_len"] == 0).sum()),
             "실행 성공률 %": round(ok["exec_ok"].mean() * 100, 1),
+            "실행 오류 건수": int((~ok["exec_ok"].astype(bool)).sum()),
             "값 None %": round(ok["null_answer"].mean() * 100, 1) if "null_answer" in ok else None,
             "하네스 위반 %": round(ok["def_written"].mean() * 100, 1) if "def_written" in ok else None,
             "서명 추출 %": round(ok["sig_ok"].mean() * 100, 1),
@@ -517,6 +528,8 @@ def summarize(runs: pd.DataFrame, by_condition: bool = False):
                 lambda s: s.astype(str).value_counts().max() / len(s)).mean() * 100, 1),
             "의도 일관성 %": round(per_q["sig_key"].apply(
                 lambda s: s.value_counts().max() / len(s)).mean() * 100, 1),
+            "응답시간 평균s": round(ok["latency_s"].mean(), 1),
+            "응답시간 합계min": round(ok["latency_s"].sum() / 60, 1),
             "출력토큰 평균": round(cout.mean(), 1),
             "사고토큰 평균": round(ok["reasoning_tokens"].fillna(0).mean(), 1),
             "캐시hit 평균": round(cin.mean(), 1),
