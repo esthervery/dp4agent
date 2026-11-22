@@ -57,6 +57,18 @@ if (REPO / "core").exists():
 
 DATA = ROOT / "data" / "tables"
 
+RESULT_DIR = ROOT / "result"                     # 실험 산출물 저장 위치
+RESULT_DIR.mkdir(parents=True, exist_ok=True)
+
+
+def _out(path) -> pathlib.Path:
+    """산출물 경로를 lab/result/ 아래로 정규화한다(상대 이름만 주면 여기로 저장)."""
+    p = pathlib.Path(path)
+    if p.parent in (pathlib.Path("."), ROOT):
+        p = RESULT_DIR / p.name
+    p.parent.mkdir(parents=True, exist_ok=True)
+    return p
+
 
 # --------------------------------------------------- 하네스 (Claude 프리필 대체)
 # 업스트림은 지시문 없이 Claude 어시스턴트 프리필만 사용:
@@ -385,6 +397,7 @@ def run_pilot(client, questions: pd.DataFrame, ref: pd.DataFrame, out_csv: pathl
 
     재개 키 = (condition, n, rep). 갈래 A/B 를 같은 CSV 에 쌓아도 충돌하지 않는다.
     """
+    out_csv = _out(out_csv)
     ref_map = dict(zip(ref["n"], ref["answer_ref"]))
     done = set()
     if out_csv.exists():
@@ -412,7 +425,7 @@ def run_pilot(client, questions: pd.DataFrame, ref: pd.DataFrame, out_csv: pathl
                 continue
             base = {"condition": condition, "n": n, "rep": rep,
                     "dataset": q["dataset"], "A": q.get("A"), "B": q.get("B"),
-                    "harness": HARNESS_VERSION,
+                    "harness": HARNESS_VERSION, "model": model,
                     "effort": reasoning_effort, "temperature": temperature,
                     "max_tokens": max_tokens}
             try:
@@ -464,6 +477,7 @@ def run_branch(client, questions: pd.DataFrame, ref: pd.DataFrame, out_csv: path
                branch: str, n_rep: int = 2, model: str = MODEL_DEFAULT,
                verbose: bool = True) -> pd.DataFrame:
     """갈래 A/B 를 한 번에. 조건 라벨은 f"{branch}_e{effort}_T{temp}"."""
+    out_csv = _out(out_csv)
     cfg = PILOT_A if branch.upper() == "A" else PILOT_B
     for eff in cfg["efforts"]:
         for t in cfg["temps"]:

@@ -80,18 +80,22 @@ class WithoutSRZeroShot(prompt_generators.ZeroShotGenerator):
 # ======================================================================
 # 2. OpenAI Answerer (프리필 → user 메시지 접기)
 # ======================================================================
-_CONTINUE_INSTRUCTION = """\
-You are completing a Python function. Below is an unfinished code block.
-Continue it EXACTLY where it stops and output ONLY the continuation.
+# 업스트림은 지시문 없이 Claude 어시스턴트 프리필만 쓴다:
+#   ClaudeMessageEmbeddingPromptGenerator.__call__ -> chat.add_assistant_message(txt[:-1])
+# 즉 어시스턴트 턴이 "# The columns used to answer the question: " 직전까지 채워져 있고,
+# 모델은 그 지점에서 이어 쓰기만 한다. Chat Completions 에는 프리필이 없으므로
+# 아래 문장이 프리필이 하던 역할을 대신한다. 프리필이 이미 보장하던 사실만 적는다.
+HARNESS_VERSION = "prefill_emul_v1"
 
-Rules:
-- Do not repeat any part of the given code.
-- Do not write explanations and do not use markdown code fences.
-- Your first line continues the last, unfinished line of the given code.
-- Every following line of the function body is indented by exactly 4 spaces
-  (nested blocks add 4 more).
-- Finish with a single top-level `return` statement.
-"""
+HARNESS = (
+    "\n"
+    "# Continue the code above from the exact point where it stops.\n"
+    "# The line above is unfinished: complete the column list first, then write the body of the function.\n"
+    "# Output the body only, inside a single ```python fenced block.\n"
+    "# Start the body at the indentation of the line above (4 spaces).\n"
+    "# Do not open a new function: continue the current one and do not restart with `def`.\n"
+    "# End with a single `return` statement.\n"
+)
 
 _FENCE = re.compile(r"^\s*```[a-zA-Z]*\s*$")
 
@@ -125,18 +129,23 @@ class OpenAIAnswerer:
 
     @staticmethod
     def _flatten(payload) -> str:
+        """Chat Completions 에는 프리필이 없으므로 HARNESS 를 지시문으로 붙인다.
+
+        HARNESS 는 맨 끝에 둔다 — 마지막으로 읽히는 지시가 "위 코드의 멈춘 지점에서
+        이어 쓰라" 이도록 업스트림 프리필과 같은 위치 조건을 만든다.
+        """
         if isinstance(payload, str):
-            return _CONTINUE_INSTRUCTION + "\n" + payload
+            return payload + HARNESS
         user_parts, assistant_parts = [], []
         for m in payload["messages"]:
             text = "".join(c["text"] for c in m["content"])
             (user_parts if m["role"] == "user" else assistant_parts).append(text)
-        chunks = [_CONTINUE_INSTRUCTION]
+        chunks = []
         if user_parts:
             chunks.append("\n\n".join(user_parts))
         chunks.append("### Unfinished code (continue from the very end):\n"
                       + "\n\n".join(assistant_parts))
-        return "\n\n".join(chunks)
+        return "\n\n".join(chunks) + HARNESS
 
     @staticmethod
     def _normalize(text: str) -> str:
