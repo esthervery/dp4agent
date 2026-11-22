@@ -8,7 +8,7 @@
   · 반복     : 문항 우선(question-major) — 같은 문항의 N회를 연속 실행
 
 이 모듈이 하는 일
-  build_prompt(...)   : 문항 1건 → P2 프롬프트 문자열
+  build_prompt(...)   : 문항 1건 → P2 프롬프트 + HARNESS(SamEval의 클로드 코드 프리필 대체 지시문)
   call_llm(...)       : OpenAI Chat Completions 1회 호출 (finish_reason 수집)
   extract_body(...)   : 응답에서 함수 본문 추출
   run_code(...)       : 본문 실행 → 반환값
@@ -56,6 +56,38 @@ if (REPO / "core").exists():
     sys.path.insert(0, str(REPO))
 
 DATA = ROOT / "data" / "tables"
+
+
+# --------------------------------------------------- 하네스 (Claude 프리필 대체)
+# 업스트림은 지시문 없이 Claude 어시스턴트 프리필만 사용:
+# ClaudeMessageEmbeddingPromptGenerator.__call__ -> chat.add_assistant_message(txt[:-1])
+# 아래 문장이 프리필이 하던 역할을 대신한다. 프리필 방식이 이미 보장하던 사실만 적는다.
+HARNESS_VERSION = "prefill_emul_v1"
+
+HARNESS = (
+    "\n"
+    "# Continue the code above from the exact point where it stops.\n"
+    "# The line above is unfinished: complete the column list first, "
+    "then write the body of the function.\n"
+    "# Output the body only, inside a single ```python fenced block.\n"
+    "# Start the body at the indentation of the line above (4 spaces).\n"
+    "# Do not open a new function: continue the current one and do not restart with `def`.\n"
+    "# End with a single `return` statement.\n"
+)
+
+_PP = None
+
+
+def _pp():
+    """SamEval 후처리기 TillReturnLinePostProcessorMultipleIndents (lazy)."""
+    global _PP
+    if _PP is None:
+        from core.postprocessors import (
+            TillReturnLinePostProcessorMultipleIndents as _C,
+        )
+        _PP = _C(None, prefix=4,
+                 first_prefix="    # The columns used to answer the question: ")
+    return _PP
 
 
 # ------------------------------------------------------------ 프롬프트
@@ -121,7 +153,7 @@ def build_prompt(row: dict) -> str:
         "column_types": row.get("column_types") or [],
     }
     payload = _PG_CACHE["p2"](q)
-    return _flatten(payload)
+    return _flatten(payload) + HARNESS
 
 
 def _flatten(payload: Any) -> str:
@@ -217,20 +249,30 @@ _FENCE = re.compile(r"^\s*```")
 
 
 def extract_body(text: str) -> str:
-    """응답 → 함수 본문. 첫 `return ...` 줄까지 포함하고 나머지는 버린다."""
+    """응답 → 함수 본문 (펜스 줄 제거 + 첫 `return` 줄까지).
+    들여쓰기 보정은 SamEval 후처리기가 담당한다.
+    """
     lines = [l for l in text.split("\n") if not _FENCE.match(l)]
     out = []
     for l in lines:
         out.append(l)
         if re.match(r"^\s*return\b", l):
             break
-    body = "\n".join(out).strip("\n")
-    return textwrap.dedent(body).rstrip()
+    return "\n".join(out).strip("\n")
 
 
 def build_source(body: str, columns: list[str]) -> str:
-    indented = textwrap.indent(body, "    ")
-    return f"def answer(df: pd.DataFrame):\n    df.columns = {list(columns)!r}\n{indented}\n"
+    """본문 → 실행 소스. SamEval TillReturnLinePostProcessorMultipleIndents 경유.
+
+    이 후처리기는 줄마다 prefix(4)를 빼고 다시 4칸을 붙이므로 입력 첫 줄이 4칸에
+    있어야 중첩이 보존된다(업스트림은 Claude 프리필로 이 상태를 보장한다).
+    """
+    # 1) 공통 들여쓰기 제거로 첫 줄을 0에 맞춘다
+    # 2) 4칸으로 감싸 PP 가 기대하는 상태를 만든다
+    block = _pp()(textwrap.indent(textwrap.dedent(body), "    "))
+    return (f"def answer(df: pd.DataFrame):\n"
+            f"    df.columns = {list(columns)!r}\n"
+            f"{block}\n")
 
 
 def run_code(body: str, df: pd.DataFrame, columns: list[str], timeout_s: int = TIMEOUT_S):
@@ -347,6 +389,12 @@ def run_pilot(client, questions: pd.DataFrame, ref: pd.DataFrame, out_csv: pathl
     done = set()
     if out_csv.exists():
         prev = pd.read_csv(out_csv, encoding="utf-8-sig")
+        # 하네스 판이 다른 기존 행은 재개 대상에서 제외한다.
+        # (조건명을 그대로 두고 CSV 를 이어 써도 스킵되지 않는다)
+        if "harness" in prev:
+            prev = prev[prev["harness"].fillna("") == HARNESS_VERSION]
+        elif "condition" in prev:
+            prev = prev.iloc[0:0]
         if "condition" in prev:
             done = set(zip(prev["condition"], prev["n"], prev["rep"]))
         if verbose:
@@ -364,6 +412,7 @@ def run_pilot(client, questions: pd.DataFrame, ref: pd.DataFrame, out_csv: pathl
                 continue
             base = {"condition": condition, "n": n, "rep": rep,
                     "dataset": q["dataset"], "A": q.get("A"), "B": q.get("B"),
+                    "harness": HARNESS_VERSION,
                     "effort": reasoning_effort, "temperature": temperature,
                     "max_tokens": max_tokens}
             try:
@@ -383,6 +432,9 @@ def run_pilot(client, questions: pd.DataFrame, ref: pd.DataFrame, out_csv: pathl
                 "answer_ref": ref_map.get(n), "answer_agent": val,
                 "correct": hit, "exec_ok": err is None, "exec_err": err or "",
                 "sig_ok": sg["ok"], "sig_key": sig_key(sg),
+                # 하네스 준수 여부와 "예외는 없지만 값이 None" 인 누수 기록
+                "def_written": bool(re.search(r"^\s*def\s+\w+\s*\(", body, re.M)),
+                "null_answer": val is None,
                 "finish_reason": res["finish_reason"],
                 "text_len": len(res["text"]), "body_len": len(body),
                 "prompt_tokens": res["prompt_tokens"],
@@ -444,6 +496,8 @@ def summarize(runs: pd.DataFrame, by_condition: bool = False):
             "finish=length": int((ok["finish_reason"] == "length").sum()),
             "본문 비어있음": int((ok["body_len"] == 0).sum()),
             "실행 성공률 %": round(ok["exec_ok"].mean() * 100, 1),
+            "값 None %": round(ok["null_answer"].mean() * 100, 1) if "null_answer" in ok else None,
+            "하네스 위반 %": round(ok["def_written"].mean() * 100, 1) if "def_written" in ok else None,
             "서명 추출 %": round(ok["sig_ok"].mean() * 100, 1),
             "정답률 %": round(ok["correct"].mean() * 100, 1),
             "값 일관성 %": round(per_q["answer_agent"].apply(
