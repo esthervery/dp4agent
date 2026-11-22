@@ -945,8 +945,94 @@ def _(df): return num(df[_col(df,"Quantity")]).max()
 @q("065_RFM|dev|308")
 def _(df): return int(eq(df[_col(df,"Country")],"United Kingdom").sum())
 
+# ============================================================ 추가 11건
+# 기존 245건에서 빠졌던 문항. 키 규약은 위와 동일(dataset|split|n, n = index+1).
+def _blank(s: pd.Series) -> pd.Series:
+    """'비어있음' 판정: NaN, 빈 문자열, 공백만."""
+    t = s.astype("string")
+    return t.isna() | (t.str.strip().fillna("") == "")
+
+
+@q("006_London|train|111")
+def _(df):
+    # How many listings don't have a valid price?  columns_used = ['price']
+    return int((~_blank(df[_col(df, "price")])).sum())
+
+
+@q("019_Aircraft|train|373")
+def _(df):
+    # How many incidents resulted in non-zero fatalities?  columns_used = ['Fatalities']
+    f = pd.to_numeric(df[_col(df, "Fatalities")], errors="coerce")
+    return int((f.fillna(0) > 0).sum())
+
+
+@q("028_Predict|train|553")
+def _(df):
+    # How many individuals have an insulin level above 150?  columns_used = ['Insulin']
+    v = pd.to_numeric(df[_col(df, "Insulin")], errors="coerce")
+    return int((v > 150).sum())
+
+
+@q("029_NYTimes|train|572")
+def _(df):
+    # How many articles were published on '2021-01-02'?  columns_used = ['date']
+    d = pd.to_datetime(df[_col(df, "date")], errors="coerce", utc=True)
+    return int((d.dt.normalize() == pd.Timestamp("2021-01-02", tz="UTC")).sum())
+
+
+@q("045_Predict|train|894")
+def _(df):
+    # How many unique artists are there in the dataset?  columns_used = ['artists']
+    s = df[_col(df, "artists")].explode()
+    return int(s.dropna().astype(str).str.strip().replace("", np.nan).dropna().nunique())
+
+
+@q("045_Predict|train|895")
+def _(df):
+    # What's the average song duration in the dataset?  columns_used = ['duration_ms']
+    return float(pd.to_numeric(df[_col(df, "duration_ms")], errors="coerce").mean())
+
+
+@q("046_120|train|914")
+def _(df):
+    # How many unique teams are there in the dataset?  columns_used = ['Team']
+    return int(df[_col(df, "Team")].nunique())
+
+
+@q("046_120|train|917")
+def _(df):
+    # How many athletes participated in the year with the most participants?
+    # columns_used = ['Year']  → Year 최빈값으로 필터한 뒤 '행 수'.
+    y = df[_col(df, "Year")]
+    return int((y == y.value_counts().idxmax()).sum())
+
+
+@q("050_ING|dev|5")
+def _(df):
+    # How many unique authors are in the dataset?  columns_used = ['author_name']
+    return int(df[_col(df, "author_name")].nunique())
+
+
+@q("054_Joe|dev|88")
+def _(df):
+    # How many times has the most mentioned user been mentioned?
+    # columns_used = ['mention_names<gx:list[category]>'] → 펼쳐 사용자별 횟수의 최댓값
+    s = df[_col(df, "mention_names<gx:list[category]>")].explode()
+    s = s.dropna().astype(str).str.strip().replace("", np.nan).dropna()
+    return int(s.value_counts().max()) if len(s) else 0
+
+
+@q("060_Bakery|dev|208")
+def _(df):
+    # How many different IDs are in the transactions made during the afternoon?
+    # columns_used = ['Transaction', 'period_day']
+    p = df[_col(df, "period_day")].astype("string").str.strip().str.lower()
+    sub = df[p == "afternoon"]
+    return int(sub[_col(sub, "Transaction")].nunique())
+
+
 # ---------------------------------------------------------------- 실행
-def run(work="qa_base245.csv", out="answers_ref_245.csv"):
+def run(work="qa_base256.csv", out="answers_ref_256.csv"):
     w = pd.read_csv(work, encoding="utf-8-sig")
     rows = []
     for _, r in w.iterrows():

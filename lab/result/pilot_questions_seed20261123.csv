@@ -1,0 +1,11 @@
+﻿split,row,dataset,question,answer,columns_used,column_types,columns_used_raw,n
+train,52,003_Love,What's the median age of the respondents?,33.0,"[""What is your age? 👶🏻👵🏻""]","[""number[uint8]""]",['What is your age? 👶🏻👵🏻],13
+train,150,008_Tornados,What is the highest magnitude of tornado recorded in the dataset?,5.0,"[""mag""]","[""number[int8]""]",[mag],28
+train,409,021_Telco,How many unique customers are there in the dataset?,7043.0,"[""customerID""]","[""category""]",['customerID],76
+train,569,029_NYTimes,How many unique material types are there in the dataset?,16.0,"[""material_type""]","[""category""]",['material_type],107
+train,690,035_Billboard,In which year was the song with the highest rank produced?,1965.0,"[""Rank"", ""Year""]","[""number[uint8]"", ""number[uint16]""]","['Rank', 'Year]",130
+train,713,036_US,How many unique destinations are there in the dataset?,3219.0,"[""dest""]","[""number[uint32]""]",['dest],133
+train,715,036_US,What's the highest count value in the dataset?,40580.0,"[""count""]","[""number[uint16]""]",['count],135
+train,754,038_Stroke,What is the average age of people who smoke?,47.09632446134347,"[""smoking_status"", ""age""]","[""category"", ""number[UInt8]""]","['smoking_status', 'age]",142
+dev,247,062_Trump,How many tweets were posted in 2018?,2891.0,"[""date""]","[""date[ns, UTC]""]",['date],233
+dev,305,065_RFM,What is the average unit price?,4.611113626088513,"[""UnitPrice""]","[""number[double]""]",['UnitPrice],243
