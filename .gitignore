@@ -1,6 +1,7 @@
 outputs/
-data/
-data_old/
+data/databench/
+data/qa/
+data/tables/
 competition/
 __pycache__/
 .env
