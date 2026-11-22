@@ -74,14 +74,13 @@ def _out(path) -> pathlib.Path:
 # 업스트림은 지시문 없이 Claude 어시스턴트 프리필만 사용:
 # ClaudeMessageEmbeddingPromptGenerator.__call__ -> chat.add_assistant_message(txt[:-1])
 # 아래 문장이 프리필이 하던 역할을 대신한다. 프리필 방식이 이미 보장하던 사실만 적는다.
-HARNESS_VERSION = "prefill_emul_v1"
+HARNESS_VERSION = "prefill_emul_v2"
 
 HARNESS = (
     "\n"
     "# Continue the code above from the exact point where it stops.\n"
     "# The line above is unfinished: complete the column list first, "
     "then write the body of the function.\n"
-    "# Output the body only, inside a single ```python fenced block.\n"
     "# Start the body at the indentation of the line above (4 spaces).\n"
     "# Do not open a new function: continue the current one and do not restart with `def`.\n"
     "# End with a single `return` statement.\n"
@@ -257,14 +256,13 @@ def probe_capabilities(client, model: str = MODEL_DEFAULT) -> pd.DataFrame:
 
 
 # -------------------------------------------------------------- 코드 실행
-_FENCE = re.compile(r"^\s*```")
 
 
 def extract_body(text: str) -> str:
-    """응답 → 함수 본문 (펜스 줄 제거 + 첫 `return` 줄까지).
+    """응답 → 함수 본문 (첫 `return` 줄까지).
     들여쓰기 보정은 SamEval 후처리기가 담당한다.
     """
-    lines = [l for l in text.split("\n") if not _FENCE.match(l)]
+    lines = text.split("\n")
     out = []
     for l in lines:
         out.append(l)
@@ -281,7 +279,8 @@ def build_source(body: str, columns: list[str]) -> str:
     """
     # 1) 공통 들여쓰기 제거로 첫 줄을 0에 맞춘다
     # 2) 4칸으로 감싸 PP 가 기대하는 상태를 만든다
-    block = _pp()(textwrap.indent(textwrap.dedent(body), "    "))
+    # 들여쓰기 보정은 PP 몫(업스트림과 동일하게 1회). 
+    block = _pp()(body)
     return (f"def answer(df: pd.DataFrame):\n"
             f"    df.columns = {list(columns)!r}\n"
             f"{block}\n")

@@ -85,19 +85,17 @@ class WithoutSRZeroShot(prompt_generators.ZeroShotGenerator):
 # 즉 어시스턴트 턴이 "# The columns used to answer the question: " 직전까지 채워져 있고,
 # 모델은 그 지점에서 이어 쓰기만 한다. Chat Completions 에는 프리필이 없으므로
 # 아래 문장이 프리필이 하던 역할을 대신한다. 프리필이 이미 보장하던 사실만 적는다.
-HARNESS_VERSION = "prefill_emul_v1"
+HARNESS_VERSION = "prefill_emul_v2"
 
 HARNESS = (
     "\n"
     "# Continue the code above from the exact point where it stops.\n"
     "# The line above is unfinished: complete the column list first, then write the body of the function.\n"
-    "# Output the body only, inside a single ```python fenced block.\n"
+    "# Output the body only. Do not use markdown code fences.\n"
     "# Start the body at the indentation of the line above (4 spaces).\n"
     "# Do not open a new function: continue the current one and do not restart with `def`.\n"
     "# End with a single `return` statement.\n"
 )
-
-_FENCE = re.compile(r"^\s*```[a-zA-Z]*\s*$")
 
 # max_tokens 대신 max_completion_tokens 를 요구하고 temperature 를 고정값으로만
 # 받는 계열. 새 모델을 쓸 때는 여기에 추가하거나 reasoning=True 로 넘긴다.
@@ -153,7 +151,7 @@ class OpenAIAnswerer:
         나머지 줄은 공통 들여쓰기를 제거한 뒤 4칸으로 한 번에 민다.
         (기존 '    ' + l.lstrip() 방식은 중첩 블록을 평탄화해 로직을 깨뜨렸다.)
         """
-        lines = [l for l in text.split("\n") if not _FENCE.match(l)]
+        lines = text.split("\n")
         while lines and not lines[0].strip():
             lines.pop(0)
         while lines and not lines[-1].strip():
@@ -163,8 +161,9 @@ class OpenAIAnswerer:
         head, tail = lines[0].strip(), lines[1:]
         if not tail:
             return head
-        body = textwrap.indent(textwrap.dedent("\n".join(tail)), "    ")
-        return head + "\n" + body
+        # 들여쓰기 보정은 PP(TillReturnLinePostProcessorMultipleIndents)가 한다.
+        # 업스트림도 PP 한 번뿐이므로 여기서 다시 하지 않는다(이중 보정 제거).
+        return head + "\n" + "\n".join(tail)
 
     def __call__(self, prompt, custom_gen_parameters=None):
         kwargs = {
