@@ -976,8 +976,9 @@ def _(df):
 @q("029_NYTimes|train|572")
 def _(df):
     # How many articles were published on '2021-01-02'?  columns_used = ['date']
-    d = pd.to_datetime(df[_col(df, "date")], errors="coerce", utc=True)
-    return int((d.dt.normalize() == pd.Timestamp("2021-01-02", tz="UTC")).sum())
+    # 날짜 파싱 없이 문자열 포함(contain)으로 센다.
+    d = df[_col(df, "date")].astype("string")
+    return int(d.str.contains("2021-01-02", regex=False, na=False).sum())
 
 
 @q("045_Predict|train|894")
@@ -1002,9 +1003,10 @@ def _(df):
 @q("046_120|train|917")
 def _(df):
     # How many athletes participated in the year with the most participants?
-    # columns_used = ['Year']  → Year 최빈값으로 필터한 뒤 '행 수'.
+    # columns_used = ['Year'] 뿐 → Year 에서 가장 많이 등장한 값으로 필터하고 '전체 행 수'를 센다.
     y = df[_col(df, "Year")]
-    return int((y == y.value_counts().idxmax()).sum())
+    top = y.value_counts().idxmax()
+    return int((y == top).sum())
 
 
 @q("050_ING|dev|5")
@@ -1016,10 +1018,19 @@ def _(df):
 @q("054_Joe|dev|88")
 def _(df):
     # How many times has the most mentioned user been mentioned?
-    # columns_used = ['mention_names<gx:list[category]>'] → 펼쳐 사용자별 횟수의 최댓값
-    s = df[_col(df, "mention_names<gx:list[category]>")].explode()
-    s = s.dropna().astype(str).str.strip().replace("", np.nan).dropna()
-    return int(s.value_counts().max()) if len(s) else 0
+    # columns_used = ['mention_names<gx:list[category]>']
+    # ① 리스트를 펼쳐 가장 많이 등장한 인물을 찾고  ② 그 인물로 필터한 '전체 행 수'를 센다.
+    col = _col(df, "mention_names<gx:list[category]>")
+    flat = df[col].explode()
+    flat = flat.dropna().astype(str).str.strip().replace("", np.nan).dropna()
+    if flat.empty:
+        return 0
+    top = flat.value_counts().idxmax()
+    hit = df[col].apply(
+        lambda v: any(str(x).strip() == top for x in v)
+        if isinstance(v, (list, tuple, np.ndarray)) else False
+    )
+    return int(hit.sum())
 
 
 @q("060_Bakery|dev|208")

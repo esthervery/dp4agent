@@ -1,0 +1,541 @@
+﻿variant,n,rep,condition,exec_ok,err,answer,answer_ref,correct,null
+"현행 (PP, 펜스제거, return절단)",13,1,A_elow_T1,True,,33.0,33.0,True,False
+PP 없음,13,1,A_elow_T1,True,,33.0,33.0,True,False
+return 절단 없음,13,1,A_elow_T1,True,,33.0,33.0,True,False
+PP 없음 + 절단 없음,13,1,A_elow_T1,True,,33.0,33.0,True,False
+이중보정(dedent+PP),13,1,A_elow_T1,True,,33.0,33.0,True,False
+펜스제거 안 함,13,1,A_elow_T1,True,,33.0,33.0,True,False
+"현행 (PP, 펜스제거, return절단)",13,2,A_elow_T1,True,,33.0,33.0,True,False
+PP 없음,13,2,A_elow_T1,True,,33.0,33.0,True,False
+return 절단 없음,13,2,A_elow_T1,True,,33.0,33.0,True,False
+PP 없음 + 절단 없음,13,2,A_elow_T1,True,,33.0,33.0,True,False
+이중보정(dedent+PP),13,2,A_elow_T1,True,,33.0,33.0,True,False
+펜스제거 안 함,13,2,A_elow_T1,True,,33.0,33.0,True,False
+"현행 (PP, 펜스제거, return절단)",13,3,A_elow_T1,True,,33.0,33.0,True,False
+PP 없음,13,3,A_elow_T1,True,,33.0,33.0,True,False
+return 절단 없음,13,3,A_elow_T1,True,,33.0,33.0,True,False
+PP 없음 + 절단 없음,13,3,A_elow_T1,True,,33.0,33.0,True,False
+이중보정(dedent+PP),13,3,A_elow_T1,True,,33.0,33.0,True,False
+펜스제거 안 함,13,3,A_elow_T1,True,,33.0,33.0,True,False
+"현행 (PP, 펜스제거, return절단)",28,1,A_elow_T1,True,,5.0,5.0,True,False
+PP 없음,28,1,A_elow_T1,True,,5.0,5.0,True,False
+return 절단 없음,28,1,A_elow_T1,True,,5.0,5.0,True,False
+PP 없음 + 절단 없음,28,1,A_elow_T1,True,,5.0,5.0,True,False
+이중보정(dedent+PP),28,1,A_elow_T1,True,,5.0,5.0,True,False
+펜스제거 안 함,28,1,A_elow_T1,True,,5.0,5.0,True,False
+"현행 (PP, 펜스제거, return절단)",28,2,A_elow_T1,True,,5.0,5.0,True,False
+PP 없음,28,2,A_elow_T1,True,,5.0,5.0,True,False
+return 절단 없음,28,2,A_elow_T1,True,,5.0,5.0,True,False
+PP 없음 + 절단 없음,28,2,A_elow_T1,True,,5.0,5.0,True,False
+이중보정(dedent+PP),28,2,A_elow_T1,True,,5.0,5.0,True,False
+펜스제거 안 함,28,2,A_elow_T1,True,,5.0,5.0,True,False
+"현행 (PP, 펜스제거, return절단)",28,3,A_elow_T1,True,,5.0,5.0,True,False
+PP 없음,28,3,A_elow_T1,True,,5.0,5.0,True,False
+return 절단 없음,28,3,A_elow_T1,True,,5.0,5.0,True,False
+PP 없음 + 절단 없음,28,3,A_elow_T1,True,,5.0,5.0,True,False
+이중보정(dedent+PP),28,3,A_elow_T1,True,,5.0,5.0,True,False
+펜스제거 안 함,28,3,A_elow_T1,True,,5.0,5.0,True,False
+"현행 (PP, 펜스제거, return절단)",76,1,A_elow_T1,True,,7043.0,7043.0,True,False
+PP 없음,76,1,A_elow_T1,True,,7043.0,7043.0,True,False
+return 절단 없음,76,1,A_elow_T1,True,,7043.0,7043.0,True,False
+PP 없음 + 절단 없음,76,1,A_elow_T1,True,,7043.0,7043.0,True,False
+이중보정(dedent+PP),76,1,A_elow_T1,True,,7043.0,7043.0,True,False
+펜스제거 안 함,76,1,A_elow_T1,True,,7043.0,7043.0,True,False
+"현행 (PP, 펜스제거, return절단)",76,2,A_elow_T1,True,,7043.0,7043.0,True,False
+PP 없음,76,2,A_elow_T1,True,,7043.0,7043.0,True,False
+return 절단 없음,76,2,A_elow_T1,True,,7043.0,7043.0,True,False
+PP 없음 + 절단 없음,76,2,A_elow_T1,True,,7043.0,7043.0,True,False
+이중보정(dedent+PP),76,2,A_elow_T1,True,,7043.0,7043.0,True,False
+펜스제거 안 함,76,2,A_elow_T1,True,,7043.0,7043.0,True,False
+"현행 (PP, 펜스제거, return절단)",76,3,A_elow_T1,True,,7043.0,7043.0,True,False
+PP 없음,76,3,A_elow_T1,True,,7043.0,7043.0,True,False
+return 절단 없음,76,3,A_elow_T1,True,,7043.0,7043.0,True,False
+PP 없음 + 절단 없음,76,3,A_elow_T1,True,,7043.0,7043.0,True,False
+이중보정(dedent+PP),76,3,A_elow_T1,True,,7043.0,7043.0,True,False
+펜스제거 안 함,76,3,A_elow_T1,True,,7043.0,7043.0,True,False
+"현행 (PP, 펜스제거, return절단)",107,1,A_elow_T1,True,,16.0,16.0,True,False
+PP 없음,107,1,A_elow_T1,True,,16.0,16.0,True,False
+return 절단 없음,107,1,A_elow_T1,True,,16.0,16.0,True,False
+PP 없음 + 절단 없음,107,1,A_elow_T1,True,,16.0,16.0,True,False
+이중보정(dedent+PP),107,1,A_elow_T1,True,,16.0,16.0,True,False
+펜스제거 안 함,107,1,A_elow_T1,True,,16.0,16.0,True,False
+"현행 (PP, 펜스제거, return절단)",107,2,A_elow_T1,True,,16.0,16.0,True,False
+PP 없음,107,2,A_elow_T1,True,,16.0,16.0,True,False
+return 절단 없음,107,2,A_elow_T1,True,,16.0,16.0,True,False
+PP 없음 + 절단 없음,107,2,A_elow_T1,True,,16.0,16.0,True,False
+이중보정(dedent+PP),107,2,A_elow_T1,True,,16.0,16.0,True,False
+펜스제거 안 함,107,2,A_elow_T1,True,,16.0,16.0,True,False
+"현행 (PP, 펜스제거, return절단)",107,3,A_elow_T1,True,,16.0,16.0,True,False
+PP 없음,107,3,A_elow_T1,True,,16.0,16.0,True,False
+return 절단 없음,107,3,A_elow_T1,True,,16.0,16.0,True,False
+PP 없음 + 절단 없음,107,3,A_elow_T1,True,,16.0,16.0,True,False
+이중보정(dedent+PP),107,3,A_elow_T1,True,,16.0,16.0,True,False
+펜스제거 안 함,107,3,A_elow_T1,True,,16.0,16.0,True,False
+"현행 (PP, 펜스제거, return절단)",130,1,A_elow_T1,True,,1965.0,1965.0,True,False
+PP 없음,130,1,A_elow_T1,True,,1965.0,1965.0,True,False
+return 절단 없음,130,1,A_elow_T1,True,,1965.0,1965.0,True,False
+PP 없음 + 절단 없음,130,1,A_elow_T1,True,,1965.0,1965.0,True,False
+이중보정(dedent+PP),130,1,A_elow_T1,True,,1965.0,1965.0,True,False
+펜스제거 안 함,130,1,A_elow_T1,True,,1965.0,1965.0,True,False
+"현행 (PP, 펜스제거, return절단)",130,2,A_elow_T1,True,,1965.0,1965.0,True,False
+PP 없음,130,2,A_elow_T1,True,,1965.0,1965.0,True,False
+return 절단 없음,130,2,A_elow_T1,True,,1965.0,1965.0,True,False
+PP 없음 + 절단 없음,130,2,A_elow_T1,True,,1965.0,1965.0,True,False
+이중보정(dedent+PP),130,2,A_elow_T1,True,,1965.0,1965.0,True,False
+펜스제거 안 함,130,2,A_elow_T1,True,,1965.0,1965.0,True,False
+"현행 (PP, 펜스제거, return절단)",130,3,A_elow_T1,True,,1965.0,1965.0,True,False
+PP 없음,130,3,A_elow_T1,True,,1965.0,1965.0,True,False
+return 절단 없음,130,3,A_elow_T1,True,,1965.0,1965.0,True,False
+PP 없음 + 절단 없음,130,3,A_elow_T1,True,,1965.0,1965.0,True,False
+이중보정(dedent+PP),130,3,A_elow_T1,True,,1965.0,1965.0,True,False
+펜스제거 안 함,130,3,A_elow_T1,True,,1965.0,1965.0,True,False
+"현행 (PP, 펜스제거, return절단)",133,1,A_elow_T1,True,,3219.0,3219.0,True,False
+PP 없음,133,1,A_elow_T1,True,,3219.0,3219.0,True,False
+return 절단 없음,133,1,A_elow_T1,True,,3219.0,3219.0,True,False
+PP 없음 + 절단 없음,133,1,A_elow_T1,True,,3219.0,3219.0,True,False
+이중보정(dedent+PP),133,1,A_elow_T1,True,,3219.0,3219.0,True,False
+펜스제거 안 함,133,1,A_elow_T1,True,,3219.0,3219.0,True,False
+"현행 (PP, 펜스제거, return절단)",133,2,A_elow_T1,True,,3219.0,3219.0,True,False
+PP 없음,133,2,A_elow_T1,True,,3219.0,3219.0,True,False
+return 절단 없음,133,2,A_elow_T1,True,,3219.0,3219.0,True,False
+PP 없음 + 절단 없음,133,2,A_elow_T1,True,,3219.0,3219.0,True,False
+이중보정(dedent+PP),133,2,A_elow_T1,True,,3219.0,3219.0,True,False
+펜스제거 안 함,133,2,A_elow_T1,True,,3219.0,3219.0,True,False
+"현행 (PP, 펜스제거, return절단)",133,3,A_elow_T1,True,,3219.0,3219.0,True,False
+PP 없음,133,3,A_elow_T1,True,,3219.0,3219.0,True,False
+return 절단 없음,133,3,A_elow_T1,True,,3219.0,3219.0,True,False
+PP 없음 + 절단 없음,133,3,A_elow_T1,True,,3219.0,3219.0,True,False
+이중보정(dedent+PP),133,3,A_elow_T1,True,,3219.0,3219.0,True,False
+펜스제거 안 함,133,3,A_elow_T1,True,,3219.0,3219.0,True,False
+"현행 (PP, 펜스제거, return절단)",135,1,A_elow_T1,True,,40580.0,40580.0,True,False
+PP 없음,135,1,A_elow_T1,True,,40580.0,40580.0,True,False
+return 절단 없음,135,1,A_elow_T1,True,,40580.0,40580.0,True,False
+PP 없음 + 절단 없음,135,1,A_elow_T1,True,,40580.0,40580.0,True,False
+이중보정(dedent+PP),135,1,A_elow_T1,True,,40580.0,40580.0,True,False
+펜스제거 안 함,135,1,A_elow_T1,True,,40580.0,40580.0,True,False
+"현행 (PP, 펜스제거, return절단)",135,2,A_elow_T1,True,,40580.0,40580.0,True,False
+PP 없음,135,2,A_elow_T1,True,,40580.0,40580.0,True,False
+return 절단 없음,135,2,A_elow_T1,True,,40580.0,40580.0,True,False
+PP 없음 + 절단 없음,135,2,A_elow_T1,True,,40580.0,40580.0,True,False
+이중보정(dedent+PP),135,2,A_elow_T1,True,,40580.0,40580.0,True,False
+펜스제거 안 함,135,2,A_elow_T1,True,,40580.0,40580.0,True,False
+"현행 (PP, 펜스제거, return절단)",135,3,A_elow_T1,True,,40580.0,40580.0,True,False
+PP 없음,135,3,A_elow_T1,True,,40580.0,40580.0,True,False
+return 절단 없음,135,3,A_elow_T1,True,,40580.0,40580.0,True,False
+PP 없음 + 절단 없음,135,3,A_elow_T1,True,,40580.0,40580.0,True,False
+이중보정(dedent+PP),135,3,A_elow_T1,True,,40580.0,40580.0,True,False
+펜스제거 안 함,135,3,A_elow_T1,True,,40580.0,40580.0,True,False
+"현행 (PP, 펜스제거, return절단)",142,1,A_elow_T1,True,,47.09632446134347,47.09632446134347,True,False
+PP 없음,142,1,A_elow_T1,True,,47.09632446134347,47.09632446134347,True,False
+return 절단 없음,142,1,A_elow_T1,True,,47.09632446134347,47.09632446134347,True,False
+PP 없음 + 절단 없음,142,1,A_elow_T1,True,,47.09632446134347,47.09632446134347,True,False
+이중보정(dedent+PP),142,1,A_elow_T1,True,,47.09632446134347,47.09632446134347,True,False
+펜스제거 안 함,142,1,A_elow_T1,True,,47.09632446134347,47.09632446134347,True,False
+"현행 (PP, 펜스제거, return절단)",142,2,A_elow_T1,True,,47.09632446134347,47.09632446134347,True,False
+PP 없음,142,2,A_elow_T1,True,,47.09632446134347,47.09632446134347,True,False
+return 절단 없음,142,2,A_elow_T1,True,,47.09632446134347,47.09632446134347,True,False
+PP 없음 + 절단 없음,142,2,A_elow_T1,True,,47.09632446134347,47.09632446134347,True,False
+이중보정(dedent+PP),142,2,A_elow_T1,True,,47.09632446134347,47.09632446134347,True,False
+펜스제거 안 함,142,2,A_elow_T1,True,,47.09632446134347,47.09632446134347,True,False
+"현행 (PP, 펜스제거, return절단)",142,3,A_elow_T1,True,,47.09632446134347,47.09632446134347,True,False
+PP 없음,142,3,A_elow_T1,True,,47.09632446134347,47.09632446134347,True,False
+return 절단 없음,142,3,A_elow_T1,True,,47.09632446134347,47.09632446134347,True,False
+PP 없음 + 절단 없음,142,3,A_elow_T1,True,,47.09632446134347,47.09632446134347,True,False
+이중보정(dedent+PP),142,3,A_elow_T1,True,,47.09632446134347,47.09632446134347,True,False
+펜스제거 안 함,142,3,A_elow_T1,True,,47.09632446134347,47.09632446134347,True,False
+"현행 (PP, 펜스제거, return절단)",233,1,A_elow_T1,True,,2891.0,2891.0,True,False
+PP 없음,233,1,A_elow_T1,False,"SyntaxError: invalid syntax (<rescore>, line 3)",,2891.0,False,True
+return 절단 없음,233,1,A_elow_T1,True,,2891.0,2891.0,True,False
+PP 없음 + 절단 없음,233,1,A_elow_T1,False,"SyntaxError: invalid syntax (<rescore>, line 3)",,2891.0,False,True
+이중보정(dedent+PP),233,1,A_elow_T1,False,"IndentationError: unexpected indent (<rescore>, line 6)",,2891.0,False,True
+펜스제거 안 함,233,1,A_elow_T1,True,,2891.0,2891.0,True,False
+"현행 (PP, 펜스제거, return절단)",233,2,A_elow_T1,True,,2891.0,2891.0,True,False
+PP 없음,233,2,A_elow_T1,True,,2891.0,2891.0,True,False
+return 절단 없음,233,2,A_elow_T1,True,,2891.0,2891.0,True,False
+PP 없음 + 절단 없음,233,2,A_elow_T1,True,,2891.0,2891.0,True,False
+이중보정(dedent+PP),233,2,A_elow_T1,True,,2891.0,2891.0,True,False
+펜스제거 안 함,233,2,A_elow_T1,True,,2891.0,2891.0,True,False
+"현행 (PP, 펜스제거, return절단)",233,3,A_elow_T1,True,,2891.0,2891.0,True,False
+PP 없음,233,3,A_elow_T1,True,,2891.0,2891.0,True,False
+return 절단 없음,233,3,A_elow_T1,True,,2891.0,2891.0,True,False
+PP 없음 + 절단 없음,233,3,A_elow_T1,True,,2891.0,2891.0,True,False
+이중보정(dedent+PP),233,3,A_elow_T1,True,,2891.0,2891.0,True,False
+펜스제거 안 함,233,3,A_elow_T1,True,,2891.0,2891.0,True,False
+"현행 (PP, 펜스제거, return절단)",243,1,A_elow_T1,True,,4.611113626088514,4.611113626088514,True,False
+PP 없음,243,1,A_elow_T1,True,,4.611113626088514,4.611113626088514,True,False
+return 절단 없음,243,1,A_elow_T1,True,,4.611113626088514,4.611113626088514,True,False
+PP 없음 + 절단 없음,243,1,A_elow_T1,True,,4.611113626088514,4.611113626088514,True,False
+이중보정(dedent+PP),243,1,A_elow_T1,True,,4.611113626088514,4.611113626088514,True,False
+펜스제거 안 함,243,1,A_elow_T1,True,,4.611113626088514,4.611113626088514,True,False
+"현행 (PP, 펜스제거, return절단)",243,2,A_elow_T1,True,,4.611113626088514,4.611113626088514,True,False
+PP 없음,243,2,A_elow_T1,True,,4.611113626088514,4.611113626088514,True,False
+return 절단 없음,243,2,A_elow_T1,True,,4.611113626088514,4.611113626088514,True,False
+PP 없음 + 절단 없음,243,2,A_elow_T1,True,,4.611113626088514,4.611113626088514,True,False
+이중보정(dedent+PP),243,2,A_elow_T1,True,,4.611113626088514,4.611113626088514,True,False
+펜스제거 안 함,243,2,A_elow_T1,True,,4.611113626088514,4.611113626088514,True,False
+"현행 (PP, 펜스제거, return절단)",243,3,A_elow_T1,True,,4.611113626088514,4.611113626088514,True,False
+PP 없음,243,3,A_elow_T1,True,,4.611113626088514,4.611113626088514,True,False
+return 절단 없음,243,3,A_elow_T1,True,,4.611113626088514,4.611113626088514,True,False
+PP 없음 + 절단 없음,243,3,A_elow_T1,True,,4.611113626088514,4.611113626088514,True,False
+이중보정(dedent+PP),243,3,A_elow_T1,True,,4.611113626088514,4.611113626088514,True,False
+펜스제거 안 함,243,3,A_elow_T1,True,,4.611113626088514,4.611113626088514,True,False
+"현행 (PP, 펜스제거, return절단)",13,1,A_emedium_T1,True,,33.0,33.0,True,False
+PP 없음,13,1,A_emedium_T1,True,,33.0,33.0,True,False
+return 절단 없음,13,1,A_emedium_T1,True,,33.0,33.0,True,False
+PP 없음 + 절단 없음,13,1,A_emedium_T1,True,,33.0,33.0,True,False
+이중보정(dedent+PP),13,1,A_emedium_T1,True,,33.0,33.0,True,False
+펜스제거 안 함,13,1,A_emedium_T1,True,,33.0,33.0,True,False
+"현행 (PP, 펜스제거, return절단)",13,2,A_emedium_T1,True,,33.0,33.0,True,False
+PP 없음,13,2,A_emedium_T1,True,,33.0,33.0,True,False
+return 절단 없음,13,2,A_emedium_T1,True,,33.0,33.0,True,False
+PP 없음 + 절단 없음,13,2,A_emedium_T1,True,,33.0,33.0,True,False
+이중보정(dedent+PP),13,2,A_emedium_T1,True,,33.0,33.0,True,False
+펜스제거 안 함,13,2,A_emedium_T1,True,,33.0,33.0,True,False
+"현행 (PP, 펜스제거, return절단)",13,3,A_emedium_T1,True,,33.0,33.0,True,False
+PP 없음,13,3,A_emedium_T1,True,,33.0,33.0,True,False
+return 절단 없음,13,3,A_emedium_T1,True,,33.0,33.0,True,False
+PP 없음 + 절단 없음,13,3,A_emedium_T1,True,,33.0,33.0,True,False
+이중보정(dedent+PP),13,3,A_emedium_T1,True,,33.0,33.0,True,False
+펜스제거 안 함,13,3,A_emedium_T1,True,,33.0,33.0,True,False
+"현행 (PP, 펜스제거, return절단)",28,1,A_emedium_T1,True,,5.0,5.0,True,False
+PP 없음,28,1,A_emedium_T1,True,,5.0,5.0,True,False
+return 절단 없음,28,1,A_emedium_T1,True,,5.0,5.0,True,False
+PP 없음 + 절단 없음,28,1,A_emedium_T1,True,,5.0,5.0,True,False
+이중보정(dedent+PP),28,1,A_emedium_T1,True,,5.0,5.0,True,False
+펜스제거 안 함,28,1,A_emedium_T1,True,,5.0,5.0,True,False
+"현행 (PP, 펜스제거, return절단)",28,2,A_emedium_T1,True,,5.0,5.0,True,False
+PP 없음,28,2,A_emedium_T1,True,,5.0,5.0,True,False
+return 절단 없음,28,2,A_emedium_T1,True,,5.0,5.0,True,False
+PP 없음 + 절단 없음,28,2,A_emedium_T1,True,,5.0,5.0,True,False
+이중보정(dedent+PP),28,2,A_emedium_T1,True,,5.0,5.0,True,False
+펜스제거 안 함,28,2,A_emedium_T1,True,,5.0,5.0,True,False
+"현행 (PP, 펜스제거, return절단)",28,3,A_emedium_T1,True,,5.0,5.0,True,False
+PP 없음,28,3,A_emedium_T1,True,,5.0,5.0,True,False
+return 절단 없음,28,3,A_emedium_T1,True,,5.0,5.0,True,False
+PP 없음 + 절단 없음,28,3,A_emedium_T1,True,,5.0,5.0,True,False
+이중보정(dedent+PP),28,3,A_emedium_T1,True,,5.0,5.0,True,False
+펜스제거 안 함,28,3,A_emedium_T1,True,,5.0,5.0,True,False
+"현행 (PP, 펜스제거, return절단)",76,1,A_emedium_T1,True,,7043.0,7043.0,True,False
+PP 없음,76,1,A_emedium_T1,True,,7043.0,7043.0,True,False
+return 절단 없음,76,1,A_emedium_T1,True,,7043.0,7043.0,True,False
+PP 없음 + 절단 없음,76,1,A_emedium_T1,True,,7043.0,7043.0,True,False
+이중보정(dedent+PP),76,1,A_emedium_T1,True,,7043.0,7043.0,True,False
+펜스제거 안 함,76,1,A_emedium_T1,True,,7043.0,7043.0,True,False
+"현행 (PP, 펜스제거, return절단)",76,2,A_emedium_T1,True,,7043.0,7043.0,True,False
+PP 없음,76,2,A_emedium_T1,True,,7043.0,7043.0,True,False
+return 절단 없음,76,2,A_emedium_T1,True,,7043.0,7043.0,True,False
+PP 없음 + 절단 없음,76,2,A_emedium_T1,True,,7043.0,7043.0,True,False
+이중보정(dedent+PP),76,2,A_emedium_T1,True,,7043.0,7043.0,True,False
+펜스제거 안 함,76,2,A_emedium_T1,True,,7043.0,7043.0,True,False
+"현행 (PP, 펜스제거, return절단)",76,3,A_emedium_T1,True,,7043.0,7043.0,True,False
+PP 없음,76,3,A_emedium_T1,True,,7043.0,7043.0,True,False
+return 절단 없음,76,3,A_emedium_T1,True,,7043.0,7043.0,True,False
+PP 없음 + 절단 없음,76,3,A_emedium_T1,True,,7043.0,7043.0,True,False
+이중보정(dedent+PP),76,3,A_emedium_T1,True,,7043.0,7043.0,True,False
+펜스제거 안 함,76,3,A_emedium_T1,True,,7043.0,7043.0,True,False
+"현행 (PP, 펜스제거, return절단)",107,1,A_emedium_T1,True,,16.0,16.0,True,False
+PP 없음,107,1,A_emedium_T1,True,,16.0,16.0,True,False
+return 절단 없음,107,1,A_emedium_T1,True,,16.0,16.0,True,False
+PP 없음 + 절단 없음,107,1,A_emedium_T1,True,,16.0,16.0,True,False
+이중보정(dedent+PP),107,1,A_emedium_T1,True,,16.0,16.0,True,False
+펜스제거 안 함,107,1,A_emedium_T1,True,,16.0,16.0,True,False
+"현행 (PP, 펜스제거, return절단)",107,2,A_emedium_T1,True,,16.0,16.0,True,False
+PP 없음,107,2,A_emedium_T1,True,,16.0,16.0,True,False
+return 절단 없음,107,2,A_emedium_T1,True,,16.0,16.0,True,False
+PP 없음 + 절단 없음,107,2,A_emedium_T1,True,,16.0,16.0,True,False
+이중보정(dedent+PP),107,2,A_emedium_T1,True,,16.0,16.0,True,False
+펜스제거 안 함,107,2,A_emedium_T1,True,,16.0,16.0,True,False
+"현행 (PP, 펜스제거, return절단)",107,3,A_emedium_T1,True,,16.0,16.0,True,False
+PP 없음,107,3,A_emedium_T1,True,,16.0,16.0,True,False
+return 절단 없음,107,3,A_emedium_T1,True,,16.0,16.0,True,False
+PP 없음 + 절단 없음,107,3,A_emedium_T1,True,,16.0,16.0,True,False
+이중보정(dedent+PP),107,3,A_emedium_T1,True,,16.0,16.0,True,False
+펜스제거 안 함,107,3,A_emedium_T1,True,,16.0,16.0,True,False
+"현행 (PP, 펜스제거, return절단)",130,1,A_emedium_T1,True,,1965.0,1965.0,True,False
+PP 없음,130,1,A_emedium_T1,True,,1965.0,1965.0,True,False
+return 절단 없음,130,1,A_emedium_T1,True,,1965.0,1965.0,True,False
+PP 없음 + 절단 없음,130,1,A_emedium_T1,True,,1965.0,1965.0,True,False
+이중보정(dedent+PP),130,1,A_emedium_T1,True,,1965.0,1965.0,True,False
+펜스제거 안 함,130,1,A_emedium_T1,True,,1965.0,1965.0,True,False
+"현행 (PP, 펜스제거, return절단)",130,2,A_emedium_T1,True,,1965.0,1965.0,True,False
+PP 없음,130,2,A_emedium_T1,True,,1965.0,1965.0,True,False
+return 절단 없음,130,2,A_emedium_T1,True,,1965.0,1965.0,True,False
+PP 없음 + 절단 없음,130,2,A_emedium_T1,True,,1965.0,1965.0,True,False
+이중보정(dedent+PP),130,2,A_emedium_T1,True,,1965.0,1965.0,True,False
+펜스제거 안 함,130,2,A_emedium_T1,True,,1965.0,1965.0,True,False
+"현행 (PP, 펜스제거, return절단)",130,3,A_emedium_T1,True,,1965.0,1965.0,True,False
+PP 없음,130,3,A_emedium_T1,True,,1965.0,1965.0,True,False
+return 절단 없음,130,3,A_emedium_T1,True,,1965.0,1965.0,True,False
+PP 없음 + 절단 없음,130,3,A_emedium_T1,True,,1965.0,1965.0,True,False
+이중보정(dedent+PP),130,3,A_emedium_T1,True,,1965.0,1965.0,True,False
+펜스제거 안 함,130,3,A_emedium_T1,True,,1965.0,1965.0,True,False
+"현행 (PP, 펜스제거, return절단)",133,1,A_emedium_T1,True,,3219.0,3219.0,True,False
+PP 없음,133,1,A_emedium_T1,True,,3219.0,3219.0,True,False
+return 절단 없음,133,1,A_emedium_T1,True,,3219.0,3219.0,True,False
+PP 없음 + 절단 없음,133,1,A_emedium_T1,True,,3219.0,3219.0,True,False
+이중보정(dedent+PP),133,1,A_emedium_T1,True,,3219.0,3219.0,True,False
+펜스제거 안 함,133,1,A_emedium_T1,True,,3219.0,3219.0,True,False
+"현행 (PP, 펜스제거, return절단)",133,2,A_emedium_T1,True,,3219.0,3219.0,True,False
+PP 없음,133,2,A_emedium_T1,True,,3219.0,3219.0,True,False
+return 절단 없음,133,2,A_emedium_T1,True,,3219.0,3219.0,True,False
+PP 없음 + 절단 없음,133,2,A_emedium_T1,True,,3219.0,3219.0,True,False
+이중보정(dedent+PP),133,2,A_emedium_T1,True,,3219.0,3219.0,True,False
+펜스제거 안 함,133,2,A_emedium_T1,True,,3219.0,3219.0,True,False
+"현행 (PP, 펜스제거, return절단)",133,3,A_emedium_T1,True,,3219.0,3219.0,True,False
+PP 없음,133,3,A_emedium_T1,True,,3219.0,3219.0,True,False
+return 절단 없음,133,3,A_emedium_T1,True,,3219.0,3219.0,True,False
+PP 없음 + 절단 없음,133,3,A_emedium_T1,True,,3219.0,3219.0,True,False
+이중보정(dedent+PP),133,3,A_emedium_T1,True,,3219.0,3219.0,True,False
+펜스제거 안 함,133,3,A_emedium_T1,True,,3219.0,3219.0,True,False
+"현행 (PP, 펜스제거, return절단)",135,1,A_emedium_T1,True,,40580.0,40580.0,True,False
+PP 없음,135,1,A_emedium_T1,True,,40580.0,40580.0,True,False
+return 절단 없음,135,1,A_emedium_T1,True,,40580.0,40580.0,True,False
+PP 없음 + 절단 없음,135,1,A_emedium_T1,True,,40580.0,40580.0,True,False
+이중보정(dedent+PP),135,1,A_emedium_T1,True,,40580.0,40580.0,True,False
+펜스제거 안 함,135,1,A_emedium_T1,True,,40580.0,40580.0,True,False
+"현행 (PP, 펜스제거, return절단)",135,2,A_emedium_T1,True,,40580.0,40580.0,True,False
+PP 없음,135,2,A_emedium_T1,True,,40580.0,40580.0,True,False
+return 절단 없음,135,2,A_emedium_T1,True,,40580.0,40580.0,True,False
+PP 없음 + 절단 없음,135,2,A_emedium_T1,True,,40580.0,40580.0,True,False
+이중보정(dedent+PP),135,2,A_emedium_T1,True,,40580.0,40580.0,True,False
+펜스제거 안 함,135,2,A_emedium_T1,True,,40580.0,40580.0,True,False
+"현행 (PP, 펜스제거, return절단)",135,3,A_emedium_T1,True,,40580.0,40580.0,True,False
+PP 없음,135,3,A_emedium_T1,True,,40580.0,40580.0,True,False
+return 절단 없음,135,3,A_emedium_T1,True,,40580.0,40580.0,True,False
+PP 없음 + 절단 없음,135,3,A_emedium_T1,True,,40580.0,40580.0,True,False
+이중보정(dedent+PP),135,3,A_emedium_T1,True,,40580.0,40580.0,True,False
+펜스제거 안 함,135,3,A_emedium_T1,True,,40580.0,40580.0,True,False
+"현행 (PP, 펜스제거, return절단)",142,1,A_emedium_T1,True,,47.09632446134347,47.09632446134347,True,False
+PP 없음,142,1,A_emedium_T1,True,,47.09632446134347,47.09632446134347,True,False
+return 절단 없음,142,1,A_emedium_T1,True,,47.09632446134347,47.09632446134347,True,False
+PP 없음 + 절단 없음,142,1,A_emedium_T1,True,,47.09632446134347,47.09632446134347,True,False
+이중보정(dedent+PP),142,1,A_emedium_T1,True,,47.09632446134347,47.09632446134347,True,False
+펜스제거 안 함,142,1,A_emedium_T1,True,,47.09632446134347,47.09632446134347,True,False
+"현행 (PP, 펜스제거, return절단)",142,2,A_emedium_T1,True,,47.09632446134347,47.09632446134347,True,False
+PP 없음,142,2,A_emedium_T1,True,,47.09632446134347,47.09632446134347,True,False
+return 절단 없음,142,2,A_emedium_T1,True,,47.09632446134347,47.09632446134347,True,False
+PP 없음 + 절단 없음,142,2,A_emedium_T1,True,,47.09632446134347,47.09632446134347,True,False
+이중보정(dedent+PP),142,2,A_emedium_T1,True,,47.09632446134347,47.09632446134347,True,False
+펜스제거 안 함,142,2,A_emedium_T1,True,,47.09632446134347,47.09632446134347,True,False
+"현행 (PP, 펜스제거, return절단)",142,3,A_emedium_T1,True,,47.09632446134347,47.09632446134347,True,False
+PP 없음,142,3,A_emedium_T1,True,,47.09632446134347,47.09632446134347,True,False
+return 절단 없음,142,3,A_emedium_T1,True,,47.09632446134347,47.09632446134347,True,False
+PP 없음 + 절단 없음,142,3,A_emedium_T1,True,,47.09632446134347,47.09632446134347,True,False
+이중보정(dedent+PP),142,3,A_emedium_T1,True,,47.09632446134347,47.09632446134347,True,False
+펜스제거 안 함,142,3,A_emedium_T1,True,,47.09632446134347,47.09632446134347,True,False
+"현행 (PP, 펜스제거, return절단)",233,1,A_emedium_T1,True,,2891.0,2891.0,True,False
+PP 없음,233,1,A_emedium_T1,True,,2891.0,2891.0,True,False
+return 절단 없음,233,1,A_emedium_T1,True,,2891.0,2891.0,True,False
+PP 없음 + 절단 없음,233,1,A_emedium_T1,True,,2891.0,2891.0,True,False
+이중보정(dedent+PP),233,1,A_emedium_T1,True,,2891.0,2891.0,True,False
+펜스제거 안 함,233,1,A_emedium_T1,True,,2891.0,2891.0,True,False
+"현행 (PP, 펜스제거, return절단)",233,2,A_emedium_T1,True,,2891.0,2891.0,True,False
+PP 없음,233,2,A_emedium_T1,True,,2891.0,2891.0,True,False
+return 절단 없음,233,2,A_emedium_T1,True,,2891.0,2891.0,True,False
+PP 없음 + 절단 없음,233,2,A_emedium_T1,True,,2891.0,2891.0,True,False
+이중보정(dedent+PP),233,2,A_emedium_T1,True,,2891.0,2891.0,True,False
+펜스제거 안 함,233,2,A_emedium_T1,True,,2891.0,2891.0,True,False
+"현행 (PP, 펜스제거, return절단)",233,3,A_emedium_T1,True,,2891.0,2891.0,True,False
+PP 없음,233,3,A_emedium_T1,True,,2891.0,2891.0,True,False
+return 절단 없음,233,3,A_emedium_T1,True,,2891.0,2891.0,True,False
+PP 없음 + 절단 없음,233,3,A_emedium_T1,True,,2891.0,2891.0,True,False
+이중보정(dedent+PP),233,3,A_emedium_T1,True,,2891.0,2891.0,True,False
+펜스제거 안 함,233,3,A_emedium_T1,True,,2891.0,2891.0,True,False
+"현행 (PP, 펜스제거, return절단)",243,1,A_emedium_T1,True,,4.611113626088514,4.611113626088514,True,False
+PP 없음,243,1,A_emedium_T1,True,,4.611113626088514,4.611113626088514,True,False
+return 절단 없음,243,1,A_emedium_T1,True,,4.611113626088514,4.611113626088514,True,False
+PP 없음 + 절단 없음,243,1,A_emedium_T1,True,,4.611113626088514,4.611113626088514,True,False
+이중보정(dedent+PP),243,1,A_emedium_T1,True,,4.611113626088514,4.611113626088514,True,False
+펜스제거 안 함,243,1,A_emedium_T1,True,,4.611113626088514,4.611113626088514,True,False
+"현행 (PP, 펜스제거, return절단)",243,2,A_emedium_T1,True,,4.611113626088514,4.611113626088514,True,False
+PP 없음,243,2,A_emedium_T1,True,,4.611113626088514,4.611113626088514,True,False
+return 절단 없음,243,2,A_emedium_T1,True,,4.611113626088514,4.611113626088514,True,False
+PP 없음 + 절단 없음,243,2,A_emedium_T1,True,,4.611113626088514,4.611113626088514,True,False
+이중보정(dedent+PP),243,2,A_emedium_T1,True,,4.611113626088514,4.611113626088514,True,False
+펜스제거 안 함,243,2,A_emedium_T1,True,,4.611113626088514,4.611113626088514,True,False
+"현행 (PP, 펜스제거, return절단)",243,3,A_emedium_T1,True,,4.611113626088514,4.611113626088514,True,False
+PP 없음,243,3,A_emedium_T1,True,,4.611113626088514,4.611113626088514,True,False
+return 절단 없음,243,3,A_emedium_T1,True,,4.611113626088514,4.611113626088514,True,False
+PP 없음 + 절단 없음,243,3,A_emedium_T1,True,,4.611113626088514,4.611113626088514,True,False
+이중보정(dedent+PP),243,3,A_emedium_T1,True,,4.611113626088514,4.611113626088514,True,False
+펜스제거 안 함,243,3,A_emedium_T1,True,,4.611113626088514,4.611113626088514,True,False
+"현행 (PP, 펜스제거, return절단)",13,1,A_ehigh_T1,True,,33.0,33.0,True,False
+PP 없음,13,1,A_ehigh_T1,True,,33.0,33.0,True,False
+return 절단 없음,13,1,A_ehigh_T1,True,,33.0,33.0,True,False
+PP 없음 + 절단 없음,13,1,A_ehigh_T1,True,,33.0,33.0,True,False
+이중보정(dedent+PP),13,1,A_ehigh_T1,True,,33.0,33.0,True,False
+펜스제거 안 함,13,1,A_ehigh_T1,True,,33.0,33.0,True,False
+"현행 (PP, 펜스제거, return절단)",13,2,A_ehigh_T1,True,,33.0,33.0,True,False
+PP 없음,13,2,A_ehigh_T1,True,,33.0,33.0,True,False
+return 절단 없음,13,2,A_ehigh_T1,True,,33.0,33.0,True,False
+PP 없음 + 절단 없음,13,2,A_ehigh_T1,True,,33.0,33.0,True,False
+이중보정(dedent+PP),13,2,A_ehigh_T1,True,,33.0,33.0,True,False
+펜스제거 안 함,13,2,A_ehigh_T1,True,,33.0,33.0,True,False
+"현행 (PP, 펜스제거, return절단)",13,3,A_ehigh_T1,True,,33.0,33.0,True,False
+PP 없음,13,3,A_ehigh_T1,True,,33.0,33.0,True,False
+return 절단 없음,13,3,A_ehigh_T1,True,,33.0,33.0,True,False
+PP 없음 + 절단 없음,13,3,A_ehigh_T1,True,,33.0,33.0,True,False
+이중보정(dedent+PP),13,3,A_ehigh_T1,True,,33.0,33.0,True,False
+펜스제거 안 함,13,3,A_ehigh_T1,True,,33.0,33.0,True,False
+"현행 (PP, 펜스제거, return절단)",28,1,A_ehigh_T1,True,,5.0,5.0,True,False
+PP 없음,28,1,A_ehigh_T1,True,,5.0,5.0,True,False
+return 절단 없음,28,1,A_ehigh_T1,True,,5.0,5.0,True,False
+PP 없음 + 절단 없음,28,1,A_ehigh_T1,True,,5.0,5.0,True,False
+이중보정(dedent+PP),28,1,A_ehigh_T1,True,,5.0,5.0,True,False
+펜스제거 안 함,28,1,A_ehigh_T1,True,,5.0,5.0,True,False
+"현행 (PP, 펜스제거, return절단)",28,2,A_ehigh_T1,True,,5.0,5.0,True,False
+PP 없음,28,2,A_ehigh_T1,True,,5.0,5.0,True,False
+return 절단 없음,28,2,A_ehigh_T1,True,,5.0,5.0,True,False
+PP 없음 + 절단 없음,28,2,A_ehigh_T1,True,,5.0,5.0,True,False
+이중보정(dedent+PP),28,2,A_ehigh_T1,True,,5.0,5.0,True,False
+펜스제거 안 함,28,2,A_ehigh_T1,True,,5.0,5.0,True,False
+"현행 (PP, 펜스제거, return절단)",28,3,A_ehigh_T1,True,,5.0,5.0,True,False
+PP 없음,28,3,A_ehigh_T1,True,,5.0,5.0,True,False
+return 절단 없음,28,3,A_ehigh_T1,True,,5.0,5.0,True,False
+PP 없음 + 절단 없음,28,3,A_ehigh_T1,True,,5.0,5.0,True,False
+이중보정(dedent+PP),28,3,A_ehigh_T1,True,,5.0,5.0,True,False
+펜스제거 안 함,28,3,A_ehigh_T1,True,,5.0,5.0,True,False
+"현행 (PP, 펜스제거, return절단)",76,1,A_ehigh_T1,True,,7043.0,7043.0,True,False
+PP 없음,76,1,A_ehigh_T1,True,,7043.0,7043.0,True,False
+return 절단 없음,76,1,A_ehigh_T1,True,,7043.0,7043.0,True,False
+PP 없음 + 절단 없음,76,1,A_ehigh_T1,True,,7043.0,7043.0,True,False
+이중보정(dedent+PP),76,1,A_ehigh_T1,True,,7043.0,7043.0,True,False
+펜스제거 안 함,76,1,A_ehigh_T1,True,,7043.0,7043.0,True,False
+"현행 (PP, 펜스제거, return절단)",76,2,A_ehigh_T1,True,,7043.0,7043.0,True,False
+PP 없음,76,2,A_ehigh_T1,True,,7043.0,7043.0,True,False
+return 절단 없음,76,2,A_ehigh_T1,True,,7043.0,7043.0,True,False
+PP 없음 + 절단 없음,76,2,A_ehigh_T1,True,,7043.0,7043.0,True,False
+이중보정(dedent+PP),76,2,A_ehigh_T1,True,,7043.0,7043.0,True,False
+펜스제거 안 함,76,2,A_ehigh_T1,True,,7043.0,7043.0,True,False
+"현행 (PP, 펜스제거, return절단)",76,3,A_ehigh_T1,True,,7043.0,7043.0,True,False
+PP 없음,76,3,A_ehigh_T1,True,,7043.0,7043.0,True,False
+return 절단 없음,76,3,A_ehigh_T1,True,,7043.0,7043.0,True,False
+PP 없음 + 절단 없음,76,3,A_ehigh_T1,True,,7043.0,7043.0,True,False
+이중보정(dedent+PP),76,3,A_ehigh_T1,True,,7043.0,7043.0,True,False
+펜스제거 안 함,76,3,A_ehigh_T1,True,,7043.0,7043.0,True,False
+"현행 (PP, 펜스제거, return절단)",107,1,A_ehigh_T1,True,,16.0,16.0,True,False
+PP 없음,107,1,A_ehigh_T1,True,,16.0,16.0,True,False
+return 절단 없음,107,1,A_ehigh_T1,True,,16.0,16.0,True,False
+PP 없음 + 절단 없음,107,1,A_ehigh_T1,True,,16.0,16.0,True,False
+이중보정(dedent+PP),107,1,A_ehigh_T1,True,,16.0,16.0,True,False
+펜스제거 안 함,107,1,A_ehigh_T1,True,,16.0,16.0,True,False
+"현행 (PP, 펜스제거, return절단)",107,2,A_ehigh_T1,True,,16.0,16.0,True,False
+PP 없음,107,2,A_ehigh_T1,True,,16.0,16.0,True,False
+return 절단 없음,107,2,A_ehigh_T1,True,,16.0,16.0,True,False
+PP 없음 + 절단 없음,107,2,A_ehigh_T1,True,,16.0,16.0,True,False
+이중보정(dedent+PP),107,2,A_ehigh_T1,True,,16.0,16.0,True,False
+펜스제거 안 함,107,2,A_ehigh_T1,True,,16.0,16.0,True,False
+"현행 (PP, 펜스제거, return절단)",107,3,A_ehigh_T1,True,,16.0,16.0,True,False
+PP 없음,107,3,A_ehigh_T1,True,,16.0,16.0,True,False
+return 절단 없음,107,3,A_ehigh_T1,True,,16.0,16.0,True,False
+PP 없음 + 절단 없음,107,3,A_ehigh_T1,True,,16.0,16.0,True,False
+이중보정(dedent+PP),107,3,A_ehigh_T1,True,,16.0,16.0,True,False
+펜스제거 안 함,107,3,A_ehigh_T1,True,,16.0,16.0,True,False
+"현행 (PP, 펜스제거, return절단)",130,1,A_ehigh_T1,True,,1965.0,1965.0,True,False
+PP 없음,130,1,A_ehigh_T1,True,,1965.0,1965.0,True,False
+return 절단 없음,130,1,A_ehigh_T1,True,,1965.0,1965.0,True,False
+PP 없음 + 절단 없음,130,1,A_ehigh_T1,True,,1965.0,1965.0,True,False
+이중보정(dedent+PP),130,1,A_ehigh_T1,True,,1965.0,1965.0,True,False
+펜스제거 안 함,130,1,A_ehigh_T1,True,,1965.0,1965.0,True,False
+"현행 (PP, 펜스제거, return절단)",130,2,A_ehigh_T1,True,,1965.0,1965.0,True,False
+PP 없음,130,2,A_ehigh_T1,True,,1965.0,1965.0,True,False
+return 절단 없음,130,2,A_ehigh_T1,True,,1965.0,1965.0,True,False
+PP 없음 + 절단 없음,130,2,A_ehigh_T1,True,,1965.0,1965.0,True,False
+이중보정(dedent+PP),130,2,A_ehigh_T1,True,,1965.0,1965.0,True,False
+펜스제거 안 함,130,2,A_ehigh_T1,True,,1965.0,1965.0,True,False
+"현행 (PP, 펜스제거, return절단)",130,3,A_ehigh_T1,True,,1965.0,1965.0,True,False
+PP 없음,130,3,A_ehigh_T1,True,,1965.0,1965.0,True,False
+return 절단 없음,130,3,A_ehigh_T1,True,,1965.0,1965.0,True,False
+PP 없음 + 절단 없음,130,3,A_ehigh_T1,True,,1965.0,1965.0,True,False
+이중보정(dedent+PP),130,3,A_ehigh_T1,True,,1965.0,1965.0,True,False
+펜스제거 안 함,130,3,A_ehigh_T1,True,,1965.0,1965.0,True,False
+"현행 (PP, 펜스제거, return절단)",133,1,A_ehigh_T1,True,,3219.0,3219.0,True,False
+PP 없음,133,1,A_ehigh_T1,True,,3219.0,3219.0,True,False
+return 절단 없음,133,1,A_ehigh_T1,True,,3219.0,3219.0,True,False
+PP 없음 + 절단 없음,133,1,A_ehigh_T1,True,,3219.0,3219.0,True,False
+이중보정(dedent+PP),133,1,A_ehigh_T1,True,,3219.0,3219.0,True,False
+펜스제거 안 함,133,1,A_ehigh_T1,True,,3219.0,3219.0,True,False
+"현행 (PP, 펜스제거, return절단)",133,2,A_ehigh_T1,True,,3219.0,3219.0,True,False
+PP 없음,133,2,A_ehigh_T1,True,,3219.0,3219.0,True,False
+return 절단 없음,133,2,A_ehigh_T1,True,,3219.0,3219.0,True,False
+PP 없음 + 절단 없음,133,2,A_ehigh_T1,True,,3219.0,3219.0,True,False
+이중보정(dedent+PP),133,2,A_ehigh_T1,True,,3219.0,3219.0,True,False
+펜스제거 안 함,133,2,A_ehigh_T1,True,,3219.0,3219.0,True,False
+"현행 (PP, 펜스제거, return절단)",133,3,A_ehigh_T1,True,,3219.0,3219.0,True,False
+PP 없음,133,3,A_ehigh_T1,True,,3219.0,3219.0,True,False
+return 절단 없음,133,3,A_ehigh_T1,True,,3219.0,3219.0,True,False
+PP 없음 + 절단 없음,133,3,A_ehigh_T1,True,,3219.0,3219.0,True,False
+이중보정(dedent+PP),133,3,A_ehigh_T1,True,,3219.0,3219.0,True,False
+펜스제거 안 함,133,3,A_ehigh_T1,True,,3219.0,3219.0,True,False
+"현행 (PP, 펜스제거, return절단)",135,1,A_ehigh_T1,True,,40580.0,40580.0,True,False
+PP 없음,135,1,A_ehigh_T1,True,,40580.0,40580.0,True,False
+return 절단 없음,135,1,A_ehigh_T1,True,,40580.0,40580.0,True,False
+PP 없음 + 절단 없음,135,1,A_ehigh_T1,True,,40580.0,40580.0,True,False
+이중보정(dedent+PP),135,1,A_ehigh_T1,True,,40580.0,40580.0,True,False
+펜스제거 안 함,135,1,A_ehigh_T1,True,,40580.0,40580.0,True,False
+"현행 (PP, 펜스제거, return절단)",135,2,A_ehigh_T1,True,,40580.0,40580.0,True,False
+PP 없음,135,2,A_ehigh_T1,True,,40580.0,40580.0,True,False
+return 절단 없음,135,2,A_ehigh_T1,True,,40580.0,40580.0,True,False
+PP 없음 + 절단 없음,135,2,A_ehigh_T1,True,,40580.0,40580.0,True,False
+이중보정(dedent+PP),135,2,A_ehigh_T1,True,,40580.0,40580.0,True,False
+펜스제거 안 함,135,2,A_ehigh_T1,True,,40580.0,40580.0,True,False
+"현행 (PP, 펜스제거, return절단)",135,3,A_ehigh_T1,True,,40580.0,40580.0,True,False
+PP 없음,135,3,A_ehigh_T1,True,,40580.0,40580.0,True,False
+return 절단 없음,135,3,A_ehigh_T1,True,,40580.0,40580.0,True,False
+PP 없음 + 절단 없음,135,3,A_ehigh_T1,True,,40580.0,40580.0,True,False
+이중보정(dedent+PP),135,3,A_ehigh_T1,True,,40580.0,40580.0,True,False
+펜스제거 안 함,135,3,A_ehigh_T1,True,,40580.0,40580.0,True,False
+"현행 (PP, 펜스제거, return절단)",142,1,A_ehigh_T1,True,,47.09632446134347,47.09632446134347,True,False
+PP 없음,142,1,A_ehigh_T1,True,,47.09632446134347,47.09632446134347,True,False
+return 절단 없음,142,1,A_ehigh_T1,True,,47.09632446134347,47.09632446134347,True,False
+PP 없음 + 절단 없음,142,1,A_ehigh_T1,True,,47.09632446134347,47.09632446134347,True,False
+이중보정(dedent+PP),142,1,A_ehigh_T1,True,,47.09632446134347,47.09632446134347,True,False
+펜스제거 안 함,142,1,A_ehigh_T1,True,,47.09632446134347,47.09632446134347,True,False
+"현행 (PP, 펜스제거, return절단)",142,2,A_ehigh_T1,True,,47.09632446134347,47.09632446134347,True,False
+PP 없음,142,2,A_ehigh_T1,True,,47.09632446134347,47.09632446134347,True,False
+return 절단 없음,142,2,A_ehigh_T1,True,,47.09632446134347,47.09632446134347,True,False
+PP 없음 + 절단 없음,142,2,A_ehigh_T1,True,,47.09632446134347,47.09632446134347,True,False
+이중보정(dedent+PP),142,2,A_ehigh_T1,True,,47.09632446134347,47.09632446134347,True,False
+펜스제거 안 함,142,2,A_ehigh_T1,True,,47.09632446134347,47.09632446134347,True,False
+"현행 (PP, 펜스제거, return절단)",142,3,A_ehigh_T1,True,,47.09632446134347,47.09632446134347,True,False
+PP 없음,142,3,A_ehigh_T1,False,"IndentationError: unexpected indent (<rescore>, line 7)",,47.09632446134347,False,True
+return 절단 없음,142,3,A_ehigh_T1,True,,47.09632446134347,47.09632446134347,True,False
+PP 없음 + 절단 없음,142,3,A_ehigh_T1,False,"IndentationError: unexpected indent (<rescore>, line 7)",,47.09632446134347,False,True
+이중보정(dedent+PP),142,3,A_ehigh_T1,False,"IndentationError: unexpected indent (<rescore>, line 7)",,47.09632446134347,False,True
+펜스제거 안 함,142,3,A_ehigh_T1,True,,47.09632446134347,47.09632446134347,True,False
+"현행 (PP, 펜스제거, return절단)",233,1,A_ehigh_T1,True,,2891.0,2891.0,True,False
+PP 없음,233,1,A_ehigh_T1,True,,2891.0,2891.0,True,False
+return 절단 없음,233,1,A_ehigh_T1,True,,2891.0,2891.0,True,False
+PP 없음 + 절단 없음,233,1,A_ehigh_T1,True,,2891.0,2891.0,True,False
+이중보정(dedent+PP),233,1,A_ehigh_T1,True,,2891.0,2891.0,True,False
+펜스제거 안 함,233,1,A_ehigh_T1,True,,2891.0,2891.0,True,False
+"현행 (PP, 펜스제거, return절단)",233,2,A_ehigh_T1,True,,2891.0,2891.0,True,False
+PP 없음,233,2,A_ehigh_T1,True,,2891.0,2891.0,True,False
+return 절단 없음,233,2,A_ehigh_T1,True,,2891.0,2891.0,True,False
+PP 없음 + 절단 없음,233,2,A_ehigh_T1,True,,2891.0,2891.0,True,False
+이중보정(dedent+PP),233,2,A_ehigh_T1,True,,2891.0,2891.0,True,False
+펜스제거 안 함,233,2,A_ehigh_T1,True,,2891.0,2891.0,True,False
+"현행 (PP, 펜스제거, return절단)",233,3,A_ehigh_T1,True,,2891.0,2891.0,True,False
+PP 없음,233,3,A_ehigh_T1,True,,2891.0,2891.0,True,False
+return 절단 없음,233,3,A_ehigh_T1,True,,2891.0,2891.0,True,False
+PP 없음 + 절단 없음,233,3,A_ehigh_T1,True,,2891.0,2891.0,True,False
+이중보정(dedent+PP),233,3,A_ehigh_T1,True,,2891.0,2891.0,True,False
+펜스제거 안 함,233,3,A_ehigh_T1,True,,2891.0,2891.0,True,False
+"현행 (PP, 펜스제거, return절단)",243,1,A_ehigh_T1,True,,4.611113626088514,4.611113626088514,True,False
+PP 없음,243,1,A_ehigh_T1,True,,4.611113626088514,4.611113626088514,True,False
+return 절단 없음,243,1,A_ehigh_T1,True,,4.611113626088514,4.611113626088514,True,False
+PP 없음 + 절단 없음,243,1,A_ehigh_T1,True,,4.611113626088514,4.611113626088514,True,False
+이중보정(dedent+PP),243,1,A_ehigh_T1,True,,4.611113626088514,4.611113626088514,True,False
+펜스제거 안 함,243,1,A_ehigh_T1,True,,4.611113626088514,4.611113626088514,True,False
+"현행 (PP, 펜스제거, return절단)",243,2,A_ehigh_T1,True,,4.611113626088514,4.611113626088514,True,False
+PP 없음,243,2,A_ehigh_T1,True,,4.611113626088514,4.611113626088514,True,False
+return 절단 없음,243,2,A_ehigh_T1,True,,4.611113626088514,4.611113626088514,True,False
+PP 없음 + 절단 없음,243,2,A_ehigh_T1,True,,4.611113626088514,4.611113626088514,True,False
+이중보정(dedent+PP),243,2,A_ehigh_T1,True,,4.611113626088514,4.611113626088514,True,False
+펜스제거 안 함,243,2,A_ehigh_T1,True,,4.611113626088514,4.611113626088514,True,False
+"현행 (PP, 펜스제거, return절단)",243,3,A_ehigh_T1,True,,4.611113626088514,4.611113626088514,True,False
+PP 없음,243,3,A_ehigh_T1,True,,4.611113626088514,4.611113626088514,True,False
+return 절단 없음,243,3,A_ehigh_T1,True,,4.611113626088514,4.611113626088514,True,False
+PP 없음 + 절단 없음,243,3,A_ehigh_T1,True,,4.611113626088514,4.611113626088514,True,False
+이중보정(dedent+PP),243,3,A_ehigh_T1,True,,4.611113626088514,4.611113626088514,True,False
+펜스제거 안 함,243,3,A_ehigh_T1,True,,4.611113626088514,4.611113626088514,True,False
