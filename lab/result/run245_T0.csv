@@ -1,0 +1,2391 @@
+﻿condition,n,rep,dataset,A,B,harness,model,effort,temperature,max_tokens,answer_ref,answer_agent,correct,exec_ok,exec_err,sig_ok,sig_key,def_written,null_answer,finish_reason,text_len,body_len,prompt_tokens,completion_tokens,reasoning_tokens,cached_tokens,system_fingerprint,latency_s,call_error,body,raw
+R245_eNone_T0,1,1,001_Forbes,,,prefill_emul_v2,gpt-6-luna,none,0.0,300,19.0,19.0,True,True,,True,"[[""age""], [], [""min""]]",False,False,stop,198,198,19881,53,0,19878,,1.42,,"    # The columns used to answer the question: ['age']
+    # The types of the columns used to answer the question: ['number[double]']
+    # The type of the answer: number
+
+    return df['age'].min()","    # The columns used to answer the question: ['age']
+    # The types of the columns used to answer the question: ['number[double]']
+    # The type of the answer: number
+
+    return df['age'].min()"
+R245_eNone_T0,2,1,001_Forbes,,,prefill_emul_v2,gpt-6-luna,none,0.0,300,343.0,343.0,True,True,,True,"[[""category""], [""category==Technology""], [""sum""]]",False,False,stop,220,220,19885,55,0,19882,,1.6,,"    # The columns used to answer the question: ['category']
+    # The types of the columns used to answer the question: ['category']
+    # The type of the answer: number
+
+    return (df['category'] == 'Technology').sum()","    # The columns used to answer the question: ['category']
+    # The types of the columns used to answer the question: ['category']
+    # The type of the answer: number
+
+    return (df['category'] == 'Technology').sum()"
+R245_eNone_T0,3,1,001_Forbes,,,prefill_emul_v2,gpt-6-luna,none,0.0,300,583600.0,583600.0,True,True,,True,"[[""category"", ""loc""], [""category==Automotive""], [""sum""]]",False,False,stop,302,302,19887,80,0,19884,,1.29,,"    # The columns used to answer the question: ['category', 'finalWorth']
+    # The types of the columns used to answer the question: ['category', 'number[uint32]']
+    # The type of the answer: number
+
+    total_worth = df.loc[df['category'] == 'Automotive', 'finalWorth'].sum()
+    return total_worth","    # The columns used to answer the question: ['category', 'finalWorth']
+    # The types of the columns used to answer the question: ['category', 'number[uint32]']
+    # The type of the answer: number
+
+    total_worth = df.loc[df['category'] == 'Automotive', 'finalWorth'].sum()
+    return total_worth"
+R245_eNone_T0,4,1,001_Forbes,,,prefill_emul_v2,gpt-6-luna,none,0.0,300,25.0,25.0,True,True,,True,"[[""philanthropyScore""], [""philanthropyScore>3""], [""sum""]]",False,False,stop,238,238,19885,66,0,0,,1.29,,"    # The columns used to answer the question: ['philanthropyScore']
+    # The types of the columns used to answer the question: ['number[float64]']
+    # The type of the answer: number
+
+    return int((df['philanthropyScore'] > 3).sum())","    # The columns used to answer the question: ['philanthropyScore']
+    # The types of the columns used to answer the question: ['number[float64]']
+    # The type of the answer: number
+
+    return int((df['philanthropyScore'] > 3).sum())"
+R245_eNone_T0,5,1,001_Forbes,,,prefill_emul_v2,gpt-6-luna,none,0.0,300,3.0,3.0,True,True,,True,"[[""finalWorth"", ""rank"", ""selfMade""], [""selfMade==False""], [""idxmax""]]",False,False,stop,469,469,19884,126,0,0,,1.66,,"    # The columns used to answer the question: ['selfMade', 'finalWorth', 'rank']
+    # The types of the columns used to answer the question: ['bool', 'number[uint32]', 'number[uint16]']
+    # The type of the answer: number
+
+    # Filter to non-self-made billionaires, then select the wealthiest and return their rank.
+    non_self_made = df[df['selfMade'] == False]
+    wealthiest = non_self_made.loc[non_self_made['finalWorth'].idxmax()]
+    return wealthiest['rank']","    # The columns used to answer the question: ['selfMade', 'finalWorth', 'rank']
+    # The types of the columns used to answer the question: ['bool', 'number[uint32]', 'number[uint16]']
+    # The type of the answer: number
+
+    # Filter to non-self-made billionaires, then select the wealthiest and return their rank.
+    non_self_made = df[df['selfMade'] == False]
+    wealthiest = non_self_made.loc[non_self_made['finalWorth'].idxmax()]
+    return wealthiest['rank']"
+R245_eNone_T0,6,1,002_Titanic,,,prefill_emul_v2,gpt-6-luna,none,0.0,300,3.0,3.0,True,True,,True,"[[""Pclass""], [], [""nunique""]]",False,False,stop,207,207,19173,57,0,0,,1.65,,"    # The columns used to answer the question: ['Pclass']
+    # The types of the columns used to answer the question: ['number[uint8]']
+    # The type of the answer: number
+
+    return df['Pclass'].nunique()","    # The columns used to answer the question: ['Pclass']
+    # The types of the columns used to answer the question: ['number[uint8]']
+    # The type of the answer: number
+
+    return df['Pclass'].nunique()"
+R245_eNone_T0,7,1,002_Titanic,,,prefill_emul_v2,gpt-6-luna,none,0.0,300,80.0,80.0,True,True,,True,"[[""Age""], [], [""max""]]",False,False,stop,119,119,19170,34,0,0,,1.52,,"    # The columns used to answer the question: ['Age']
+    # The type of the answer: number
+
+    return df['Age'].max()","    # The columns used to answer the question: ['Age']
+    # The type of the answer: number
+
+    return df['Age'].max()"
+R245_eNone_T0,8,1,002_Titanic,,,prefill_emul_v2,gpt-6-luna,none,0.0,300,604.0,604.0,True,True,,True,"[[""Siblings_Spouses Aboard""], [""Siblings_Spouses Aboard==0""], [""sum""]]",False,False,stop,166,166,19172,51,0,0,,1.83,,"    # The columns used to answer the question: ['Siblings_Spouses Aboard']
+    # The type of the answer: number
+
+    return (df['Siblings_Spouses Aboard'] == 0).sum()","    # The columns used to answer the question: ['Siblings_Spouses Aboard']
+    # The type of the answer: number
+
+    return (df['Siblings_Spouses Aboard'] == 0).sum()"
+R245_eNone_T0,9,1,002_Titanic,,,prefill_emul_v2,gpt-6-luna,none,0.0,300,32.30542018038331,32.30542018038331,True,True,,True,"[[""Fare""], [], [""mean""]]",False,False,stop,159,159,19173,45,0,0,,1.69,,"    ['Fare']
+    # The types of the columns used to answer the question: ['number[float64]']
+    # The type of the answer: number
+
+    return df['Fare'].mean()","    ['Fare']
+    # The types of the columns used to answer the question: ['number[float64]']
+    # The type of the answer: number
+
+    return df['Fare'].mean()"
+R245_eNone_T0,10,1,003_Love,,,prefill_emul_v2,gpt-6-luna,none,0.0,300,13.0,13.0,True,True,,True,"[[""What's your nationality?""], [], [""nunique""]]",False,False,stop,238,238,21263,57,0,0,,1.63,,"    # The columns used to answer the question: [""What's your nationality?""]
+    # The types of the columns used to answer the question: ['category']
+    # The type of the answer: number
+
+    return df[""What's your nationality?""].nunique()","    # The columns used to answer the question: [""What's your nationality?""]
+    # The types of the columns used to answer the question: ['category']
+    # The type of the answer: number
+
+    return df[""What's your nationality?""].nunique()"
+R245_eNone_T0,11,1,003_Love,,,prefill_emul_v2,gpt-6-luna,none,0.0,300,56332.81720430108,56332.81720430108,True,True,,True,"[[""Gross annual salary (in euros) 💸""], [], [""mean""]]",False,False,stop,214,214,21260,60,0,0,,1.3,,"    ['Gross annual salary (in euros) 💸']
+    # The types of the columns used to answer the question: ['number[double]']
+    # The type of the answer: number
+
+    return df['Gross annual salary (in euros) 💸'].mean()","    ['Gross annual salary (in euros) 💸']
+    # The types of the columns used to answer the question: ['number[double]']
+    # The type of the answer: number
+
+    return df['Gross annual salary (in euros) 💸'].mean()"
+R245_eNone_T0,12,1,003_Love,,,prefill_emul_v2,gpt-6-luna,none,0.0,300,98.0,98.0,True,True,,True,"[[""How often do you wear glasses? 👓""], [], [""sum""]]",False,False,stop,355,355,21261,89,0,0,,1.4,,"    ['How often do you wear glasses? 👓']
+    
+    # The types of the columns used to answer the question: ['category']
+    # The type of the answer: number
+
+    # Count respondents who wear glasses constantly.
+    glasses_count = (
+        df['How often do you wear glasses? 👓']
+        .eq('Constantly')
+        .sum()
+    )
+    return int(glasses_count)","    ['How often do you wear glasses? 👓']
+    
+    # The types of the columns used to answer the question: ['category']
+    # The type of the answer: number
+
+    # Count respondents who wear glasses constantly.
+    glasses_count = (
+        df['How often do you wear glasses? 👓']
+        .eq('Constantly')
+        .sum()
+    )
+    return int(glasses_count)"
+R245_eNone_T0,13,1,003_Love,,,prefill_emul_v2,gpt-6-luna,none,0.0,300,33.0,33.0,True,True,,True,"[[""What is your age? 👶🏻👵🏻""], [], [""median""]]",False,False,stop,117,117,21260,45,0,0,,1.63,,"    ['What is your age? 👶🏻👵🏻']
+    # The type of the answer: number
+
+    return df['What is your age? 👶🏻👵🏻'].median()","    ['What is your age? 👶🏻👵🏻']
+    # The type of the answer: number
+
+    return df['What is your age? 👶🏻👵🏻'].median()"
+R245_eNone_T0,14,1,004_Taxi,,,prefill_emul_v2,gpt-6-luna,none,0.0,300,75.25,75.25,True,True,,True,"[[""fare_amount""], [], [""max""]]",False,False,stop,171,171,19883,46,0,0,,1.73,,"    ['fare_amount']
+    # The types of the columns used to answer the question: ['number[double]']
+    # The type of the answer: number
+
+    return df['fare_amount'].max()","    ['fare_amount']
+    # The types of the columns used to answer the question: ['number[double]']
+    # The type of the answer: number
+
+    return df['fare_amount'].max()"
+R245_eNone_T0,15,1,004_Taxi,,,prefill_emul_v2,gpt-6-luna,none,0.0,300,96.0,96.0,True,True,,True,"[[""PULocationID""], [], [""nunique""]]",False,False,stop,220,220,19882,61,0,0,,1.24,,"    # The columns used to answer the question: ['PULocationID']
+    # The types of the columns used to answer the question: ['number[uint16]']
+    # The type of the answer: number
+
+    return df['PULocationID'].nunique()","    # The columns used to answer the question: ['PULocationID']
+    # The types of the columns used to answer the question: ['number[uint16]']
+    # The type of the answer: number
+
+    return df['PULocationID'].nunique()"
+R245_eNone_T0,16,1,004_Taxi,,,prefill_emul_v2,gpt-6-luna,none,0.0,300,2.7366808,2.7366808000000002,True,True,,True,"[[""tip_amount""], [], [""mean""]]",False,False,stop,91,91,19882,27,0,0,,1.15,,"    ['tip_amount']
+    # The type of the answer: number
+
+    return df['tip_amount'].mean()","    ['tip_amount']
+    # The type of the answer: number
+
+    return df['tip_amount'].mean()"
+R245_eNone_T0,17,1,004_Taxi,,,prefill_emul_v2,gpt-6-luna,none,0.0,300,99807.0,0.0,False,True,,True,"[[""PULocationID""], [""PULocationID==1""], [""sum""]]",False,False,stop,130,130,19882,41,0,0,,1.58,,"    # ['PULocationID']
+    # The airport area corresponds to pickup location ID 1.
+    return int((df['PULocationID'] == 1).sum())","    # ['PULocationID']
+    # The airport area corresponds to pickup location ID 1.
+    return int((df['PULocationID'] == 1).sum())"
+R245_eNone_T0,18,1,005_NYC,,,prefill_emul_v2,gpt-6-luna,none,0.0,300,23110.0,23110.0,True,True,,True,"[[""borough""], [""borough==QUEENS""], [""sum""]]",False,False,stop,266,266,22631,66,0,0,,1.69,,"    # The columns used to answer the question: ['borough']
+    # The types of the columns used to answer the question: ['category']
+    # The type of the answer: number
+
+    # Count complaints where the borough is Queens.
+    return (df['borough'] == 'QUEENS').sum()","    # The columns used to answer the question: ['borough']
+    # The types of the columns used to answer the question: ['category']
+    # The type of the answer: number
+
+    # Count complaints where the borough is Queens.
+    return (df['borough'] == 'QUEENS').sum()"
+R245_eNone_T0,19,1,005_NYC,,,prefill_emul_v2,gpt-6-luna,none,0.0,300,14811.0,14811.0,True,True,,True,"[[""hour""], [""hour==0""], [""sum""]]",False,False,stop,206,206,22630,60,0,0,,1.61,,"    ['hour']
+    # The types of the columns used to answer the question: ['number[uint8]']
+    # The type of the answer: number
+
+    # Midnight corresponds to hour 0.
+    return int((df['hour'] == 0).sum())","    ['hour']
+    # The types of the columns used to answer the question: ['number[uint8]']
+    # The type of the answer: number
+
+    # Midnight corresponds to hour 0.
+    return int((df['hour'] == 0).sum())"
+R245_eNone_T0,20,1,005_NYC,,,prefill_emul_v2,gpt-6-luna,none,0.0,300,1131.0,1131.0,True,True,,True,"[[""descriptor""], [], [""nunique""]]",False,False,stop,96,96,22632,27,0,0,,1.31,,"    # ['descriptor']
+    # The type of the answer: number
+
+    return df['descriptor'].nunique()","    # ['descriptor']
+    # The type of the answer: number
+
+    return df['descriptor'].nunique()"
+R245_eNone_T0,21,1,006_London,,,prefill_emul_v2,gpt-6-luna,none,0.0,300,563.0,33.0,False,True,,True,"[[""neighbourhood_cleansed""], [], [""nunique""]]",False,False,stop,234,234,24076,61,0,0,,1.51,,"    # The columns used to answer the question: ['neighbourhood_cleansed']
+    # The types of the columns used to answer the question: ['category']
+    # The type of the answer: number
+
+    return df['neighbourhood_cleansed'].nunique()","    # The columns used to answer the question: ['neighbourhood_cleansed']
+    # The types of the columns used to answer the question: ['category']
+    # The type of the answer: number
+
+    return df['neighbourhood_cleansed'].nunique()"
+R245_eNone_T0,22,1,006_London,,,prefill_emul_v2,gpt-6-luna,none,0.0,300,6.0,6.0,True,True,,True,"[[""review_scores_communication""], [""review_scores_communication==0""], [""sum""]]",False,False,stop,331,331,24083,78,0,0,,1.34,,"    # The columns used to answer the question: ['review_scores_communication']
+    # The types of the columns used to answer the question: ['number[double]']
+    # The type of the answer: number
+
+    # Count properties with the lowest possible communication score (0).
+    return int((df['review_scores_communication'] == 0).sum())","    # The columns used to answer the question: ['review_scores_communication']
+    # The types of the columns used to answer the question: ['number[double]']
+    # The type of the answer: number
+
+    # Count properties with the lowest possible communication score (0).
+    return int((df['review_scores_communication'] == 0).sum())"
+R245_eNone_T0,23,1,006_London,,,prefill_emul_v2,gpt-6-luna,none,0.0,300,22.0,22.0,True,True,,True,"[[""bedrooms""], [], [""max""]]",False,False,stop,208,208,24079,55,0,0,,1.23,,"    # The columns used to answer the question: ['bedrooms']
+    # The types of the columns used to answer the question: ['number[double]']
+    # The type of the answer: number
+
+    return df['bedrooms'].max()","    # The columns used to answer the question: ['bedrooms']
+    # The types of the columns used to answer the question: ['number[double]']
+    # The type of the answer: number
+
+    return df['bedrooms'].max()"
+R245_eNone_T0,24,1,007_Fifa,,,prefill_emul_v2,gpt-6-luna,none,0.0,300,67.86143187066975,67.86143187066975,True,True,,True,"[[""Nationality<gx:category>"", ""Overall<gx:number>""], [""Nationality<gx:category>==France""], [""mean""]]",False,False,stop,343,343,22253,90,0,0,,1.98,,"    ['Nationality<gx:category>', 'Overall<gx:number>']
+    # The types of the columns used to answer the question: ['category', 'number[uint8]']
+    # The type of the answer: number
+
+    france_players = df[df['Nationality<gx:category>'] == 'France']
+    average_overall = france_players['Overall<gx:number>'].mean()
+    return average_overall","    ['Nationality<gx:category>', 'Overall<gx:number>']
+    # The types of the columns used to answer the question: ['category', 'number[uint8]']
+    # The type of the answer: number
+
+    france_players = df[df['Nationality<gx:category>'] == 'France']
+    average_overall = france_players['Overall<gx:number>'].mean()
+    return average_overall"
+R245_eNone_T0,25,1,007_Fifa,,,prefill_emul_v2,gpt-6-luna,none,0.0,300,683.0,683.0,True,True,,True,"[[""Club<gx:category>""], [], [""nunique""]]",False,False,stop,181,181,22252,52,0,0,,1.69,,"    ['Club<gx:category>']
+    # The types of the columns used to answer the question: ['category']
+    # The type of the answer: number
+
+    return df['Club<gx:category>'].nunique()","    ['Club<gx:category>']
+    # The types of the columns used to answer the question: ['category']
+    # The type of the answer: number
+
+    return df['Club<gx:category>'].nunique()"
+R245_eNone_T0,26,1,007_Fifa,,,prefill_emul_v2,gpt-6-luna,none,0.0,300,105500000.0,105500000.0,True,True,,True,"[[""Value_€<gx:currency>""], [], [""max""]]",False,False,stop,185,185,22258,58,0,0,,1.92,,"['Value_€<gx:currency>']
+    # The types of the columns used to answer the question: ['number[uint32]']
+    # The type of the answer: number
+
+    return df['Value_€<gx:currency>'].max()","['Value_€<gx:currency>']
+    # The types of the columns used to answer the question: ['number[uint32]']
+    # The type of the answer: number
+
+    return df['Value_€<gx:currency>'].max()"
+R245_eNone_T0,27,1,008_Tornados,,,prefill_emul_v2,gpt-6-luna,none,0.0,300,53.0,53.0,True,True,,True,"[[""st""], [], [""nunique""]]",False,False,stop,78,78,19456,26,0,0,,1.28,,"    ['st']
+    # The type of the answer: number
+
+    return df['st'].nunique()","    ['st']
+    # The type of the answer: number
+
+    return df['st'].nunique()"
+R245_eNone_T0,28,1,008_Tornados,,,prefill_emul_v2,gpt-6-luna,none,0.0,300,5.0,5.0,True,True,,True,"[[""mag""], [], [""max""]]",False,False,stop,238,238,19458,61,0,0,,1.65,,"    # The columns used to answer the question: ['mag']
+    # The types of the columns used to answer the question: ['number[int8]']
+    # The type of the answer: number
+
+    highest_magnitude = df['mag'].max()
+    return highest_magnitude","    # The columns used to answer the question: ['mag']
+    # The types of the columns used to answer the question: ['number[int8]']
+    # The type of the answer: number
+
+    highest_magnitude = df['mag'].max()
+    return highest_magnitude"
+R245_eNone_T0,29,1,008_Tornados,,,prefill_emul_v2,gpt-6-luna,none,0.0,300,234.7,234.7,True,True,,True,"[[""len""], [], [""max""]]",False,False,stop,201,197,19459,55,0,0,,2.03,,"```python
+    ['len']
+    # The types of the columns used to answer the question: ['number[double]']
+    # The type of the answer: number
+
+    longest_path = df['len'].max()
+    return longest_path","```python
+    ['len']
+    # The types of the columns used to answer the question: ['number[double]']
+    # The type of the answer: number
+
+    longest_path = df['len'].max()
+    return longest_path
+```"
+R245_eNone_T0,30,1,008_Tornados,,,prefill_emul_v2,gpt-6-luna,none,0.0,300,1740.0,1740.0,True,True,,True,"[[""inj""], [], [""max""]]",False,False,stop,198,198,19459,54,0,0,,1.42,,"    # The columns used to answer the question: ['inj']
+    # The types of the columns used to answer the question: ['number[uint16]']
+    # The type of the answer: number
+
+    return df['inj'].max()","    # The columns used to answer the question: ['inj']
+    # The types of the columns used to answer the question: ['number[uint16]']
+    # The type of the answer: number
+
+    return df['inj'].max()"
+R245_eNone_T0,31,1,009_Central,,,prefill_emul_v2,gpt-6-luna,none,0.0,300,8.28,8.28,True,True,,True,"[[""PRCP""], [], [""max""]]",False,False,stop,200,200,19141,55,0,0,,1.17,,"    # The columns used to answer the question: ['PRCP']
+    # The types of the columns used to answer the question: ['number[double]']
+    # The type of the answer: number
+
+    return df['PRCP'].max()","    # The columns used to answer the question: ['PRCP']
+    # The types of the columns used to answer the question: ['number[double]']
+    # The type of the answer: number
+
+    return df['PRCP'].max()"
+R245_eNone_T0,32,1,009_Central,,,prefill_emul_v2,gpt-6-luna,none,0.0,300,106.0,106.0,True,True,,True,"[[""TMAX""], [], [""max""]]",False,False,stop,156,156,19140,47,0,0,,1.47,,"    ['TMAX']
+    # The types of the columns used to answer the question: ['number[UInt8]']
+    # The type of the answer: number
+
+    return df['TMAX'].max()","    ['TMAX']
+    # The types of the columns used to answer the question: ['number[UInt8]']
+    # The type of the answer: number
+
+    return df['TMAX'].max()"
+R245_eNone_T0,33,1,009_Central,,,prefill_emul_v2,gpt-6-luna,none,0.0,300,26.0,26.0,True,True,,True,"[[""SNWD""], [], [""max""]]",False,False,stop,201,201,19142,56,0,0,,1.43,,"    # The columns used to answer the question: ['SNWD']
+    # The types of the columns used to answer the question: ['number[float64]']
+    # The type of the answer: number
+
+    return df['SNWD'].max()","    # The columns used to answer the question: ['SNWD']
+    # The types of the columns used to answer the question: ['number[float64]']
+    # The type of the answer: number
+
+    return df['SNWD'].max()"
+R245_eNone_T0,34,1,010_ECommerce,,,prefill_emul_v2,gpt-6-luna,none,0.0,300,43.1985438133356,43.198543813335604,True,True,,True,"[[""Age""], [], [""mean""]]",False,False,stop,198,198,19360,54,0,0,,1.21,,"    # The columns used to answer the question: ['Age']
+    # The types of the columns used to answer the question: ['number[uint8]']
+    # The type of the answer: number
+
+    return df['Age'].mean()","    # The columns used to answer the question: ['Age']
+    # The types of the columns used to answer the question: ['number[uint8]']
+    # The type of the answer: number
+
+    return df['Age'].mean()"
+R245_eNone_T0,35,1,010_ECommerce,,,prefill_emul_v2,gpt-6-luna,none,0.0,300,122.0,122.0,True,True,,True,"[[""Positive Feedback Count""], [], [""max""]]",False,False,stop,159,159,19363,38,0,0,,1.23,,"    # The columns used to answer the question: ['Positive Feedback Count']
+    # The type of the answer: number
+
+    return df['Positive Feedback Count'].max()","    # The columns used to answer the question: ['Positive Feedback Count']
+    # The type of the answer: number
+
+    return df['Positive Feedback Count'].max()"
+R245_eNone_T0,36,1,010_ECommerce,,,prefill_emul_v2,gpt-6-luna,none,0.0,300,5.0,5.0,True,True,,True,"[[""Rating""], [], [""mode""]]",False,False,stop,257,257,19361,67,0,0,,1.67,,"    # The columns used to answer the question: ['Rating']
+    # The types of the columns used to answer the question: ['number[uint8]']
+    # The type of the answer: number
+
+    # Find the most frequently given rating.
+    return df['Rating'].mode().iloc[0]","    # The columns used to answer the question: ['Rating']
+    # The types of the columns used to answer the question: ['number[uint8]']
+    # The type of the answer: number
+
+    # Find the most frequently given rating.
+    return df['Rating'].mode().iloc[0]"
+R245_eNone_T0,37,1,010_ECommerce,,,prefill_emul_v2,gpt-6-luna,none,0.0,300,1206.0,1206.0,True,True,,True,"[[""Clothing ID""], [], [""nunique""]]",False,False,stop,98,98,19362,31,0,0,,1.46,,"    # ['Clothing ID']
+    # The type of the answer: number
+
+    return df['Clothing ID'].nunique()","    # ['Clothing ID']
+    # The type of the answer: number
+
+    return df['Clothing ID'].nunique()"
+R245_eNone_T0,38,1,011_SF,,,prefill_emul_v2,gpt-6-luna,none,0.0,300,49.0,49.0,True,True,,True,"[[""Incident Category""], [], [""nunique""]]",False,False,stop,224,224,21043,53,0,0,,1.39,,"    # The columns used to answer the question: ['Incident Category']
+    # The types of the columns used to answer the question: ['category']
+    # The type of the answer: number
+
+    return df['Incident Category'].nunique()","    # The columns used to answer the question: ['Incident Category']
+    # The types of the columns used to answer the question: ['category']
+    # The type of the answer: number
+
+    return df['Incident Category'].nunique()"
+R245_eNone_T0,39,1,011_SF,,,prefill_emul_v2,gpt-6-luna,none,0.0,300,144099.0,144099.0,True,True,,True,"[[""Filed Online""], [], [""sum""]]",False,False,stop,260,260,21039,62,0,0,,1.51,,"    # The columns used to answer the question: ['Filed Online']
+    # The types of the columns used to answer the question: ['boolean']
+    # The type of the answer: number
+
+    # Count incidents marked as filed online.
+    return int(df['Filed Online'].sum())","    # The columns used to answer the question: ['Filed Online']
+    # The types of the columns used to answer the question: ['boolean']
+    # The type of the answer: number
+
+    # Count incidents marked as filed online.
+    return int(df['Filed Online'].sum())"
+R245_eNone_T0,40,1,011_SF,,,prefill_emul_v2,gpt-6-luna,none,0.0,300,11.0,11.0,True,True,,True,"[[""Police District""], [], [""nunique""]]",False,False,stop,220,220,21041,53,0,0,,1.53,,"    # The columns used to answer the question: ['Police District']
+    # The types of the columns used to answer the question: ['category']
+    # The type of the answer: number
+
+    return df['Police District'].nunique()","    # The columns used to answer the question: ['Police District']
+    # The types of the columns used to answer the question: ['category']
+    # The type of the answer: number
+
+    return df['Police District'].nunique()"
+R245_eNone_T0,41,1,011_SF,,,prefill_emul_v2,gpt-6-luna,none,0.0,300,118851.16666666669,118851.16666666667,True,True,,True,"[[""Incident Year""], [], [""mean"", ""value_counts""]]",False,False,stop,248,248,21039,57,0,0,,1.64,,"    # ['Incident Year']
+    # The type of the answer: number
+
+    # Count incidents per year, then calculate the average annual count.
+    average_incidents_per_year = df['Incident Year'].value_counts().mean()
+
+    return average_incidents_per_year","    # ['Incident Year']
+    # The type of the answer: number
+
+    # Count incidents per year, then calculate the average annual count.
+    average_incidents_per_year = df['Incident Year'].value_counts().mean()
+
+    return average_incidents_per_year"
+R245_eNone_T0,42,1,012_Heart,,,prefill_emul_v2,gpt-6-luna,none,0.0,300,77.0,77.0,True,True,,True,"[[""Age""], [], [""max""]]",False,False,stop,197,197,19317,54,0,0,,1.4,,"    # The columns used to answer the question: ['Age']
+    # The types of the columns used to answer the question: ['number[uint8]']
+    # The type of the answer: number
+
+    return df['Age'].max()","    # The columns used to answer the question: ['Age']
+    # The types of the columns used to answer the question: ['number[uint8]']
+    # The type of the answer: number
+
+    return df['Age'].max()"
+R245_eNone_T0,43,1,012_Heart,,,prefill_emul_v2,gpt-6-luna,none,0.0,300,0.0,0.0,True,True,,True,"[[""RestingBP""], [], [""min""]]",False,False,stop,209,209,19317,58,0,0,,1.42,,"    # The columns used to answer the question: ['RestingBP']
+    # The types of the columns used to answer the question: ['number[uint8]']
+    # The type of the answer: number
+
+    return df['RestingBP'].min()","    # The columns used to answer the question: ['RestingBP']
+    # The types of the columns used to answer the question: ['number[uint8]']
+    # The type of the answer: number
+
+    return df['RestingBP'].min()"
+R245_eNone_T0,44,1,012_Heart,,,prefill_emul_v2,gpt-6-luna,none,0.0,300,198.7995642701525,198.7995642701525,True,True,,True,"[[""Cholesterol""], [], [""mean""]]",False,False,stop,261,261,19316,68,0,0,,1.52,,"    # The columns used to answer the question: ['Cholesterol']
+    # The types of the columns used to answer the question: ['number[uint16]']
+    # The type of the answer: number
+
+    average_cholesterol = df['Cholesterol'].mean()
+    return average_cholesterol","    # The columns used to answer the question: ['Cholesterol']
+    # The types of the columns used to answer the question: ['number[uint16]']
+    # The type of the answer: number
+
+    average_cholesterol = df['Cholesterol'].mean()
+    return average_cholesterol"
+R245_eNone_T0,45,1,012_Heart,,,prefill_emul_v2,gpt-6-luna,none,0.0,300,25.4603341382503,25.4603341382503,True,True,,True,"[[""MaxHR""], [], [""std""]]",False,False,stop,201,201,19319,56,0,0,,1.51,,"    # The columns used to answer the question: ['MaxHR']
+    # The types of the columns used to answer the question: ['number[uint8]']
+    # The type of the answer: number
+
+    return df['MaxHR'].std()","    # The columns used to answer the question: ['MaxHR']
+    # The types of the columns used to answer the question: ['number[uint8]']
+    # The type of the answer: number
+
+    return df['MaxHR'].std()"
+R245_eNone_T0,46,1,013_Roller,,,prefill_emul_v2,gpt-6-luna,none,0.0,300,149.1,149.1,True,True,,True,"[[""speed_mph""], [], [""max""]]",False,False,stop,167,167,22686,48,0,0,,1.12,,"    ['speed_mph']
+    # The types of the columns used to answer the question: ['number[double]']
+    # The type of the answer: number
+
+    return df['speed_mph'].max()","    ['speed_mph']
+    # The types of the columns used to answer the question: ['number[double]']
+    # The type of the answer: number
+
+    return df['speed_mph'].max()"
+R245_eNone_T0,47,1,013_Roller,,,prefill_emul_v2,gpt-6-luna,none,0.0,300,47.0,47.0,True,True,,True,"[[""year_introduced""], [""year_introduced==2000""], [""sum""]]",False,False,stop,186,186,22683,55,0,0,,1.76,,"    ['year_introduced']
+    
+    # The column used to answer the question: ['year_introduced']
+    # The type of the answer: number
+
+    return int((df['year_introduced'] == 2000).sum())","    ['year_introduced']
+    
+    # The column used to answer the question: ['year_introduced']
+    # The type of the answer: number
+
+    return int((df['year_introduced'] == 2000).sum())"
+R245_eNone_T0,48,1,013_Roller,,,prefill_emul_v2,gpt-6-luna,none,0.0,300,3.8240055248618794,3.8240055248618785,True,True,,True,"[[""Gforce_clean""], [], [""mean""]]",False,False,stop,97,97,22684,30,0,0,,1.39,,"    # ['Gforce_clean']
+    # The type of the answer: number
+
+    return df['Gforce_clean'].mean()","    # ['Gforce_clean']
+    # The type of the answer: number
+
+    return df['Gforce_clean'].mean()"
+R245_eNone_T0,49,1,013_Roller,,,prefill_emul_v2,gpt-6-luna,none,0.0,300,0.0,0.0,True,True,,True,"[[""Designer""], [], [""sum""]]",False,False,stop,264,264,22691,70,0,0,,1.84,,"    ['Designer']
+    # The types of the columns used to answer the question: ['category']
+    # The type of the answer: number
+
+    # Count rows where the designer is 'Edwin Madeupname'
+    count = df['Designer'].eq('Edwin Madeupname').sum()
+
+    return int(count)","    ['Designer']
+    # The types of the columns used to answer the question: ['category']
+    # The type of the answer: number
+
+    # Count rows where the designer is 'Edwin Madeupname'
+    count = df['Designer'].eq('Edwin Madeupname').sum()
+
+    return int(count)"
+R245_eNone_T0,50,1,014_Airbnb,,,prefill_emul_v2,gpt-6-luna,none,0.0,300,20776.0,20776.0,True,True,,True,"[[], [], []]",False,False,stop,254,254,24448,64,0,0,,1.41,,"    # The columns used to answer the question: ['id']
+    # The types of the columns used to answer the question: ['number[int64]']
+    # The type of the answer: number
+
+    # Each row represents one rental property, so count the rows.
+    return len(df)","    # The columns used to answer the question: ['id']
+    # The types of the columns used to answer the question: ['number[int64]']
+    # The type of the answer: number
+
+    # Each row represents one rental property, so count the rows.
+    return len(df)"
+R245_eNone_T0,51,1,014_Airbnb,,,prefill_emul_v2,gpt-6-luna,none,0.0,300,18.0,18.0,True,True,,True,"[[""bedrooms""], [], [""max""]]",False,False,stop,208,208,24449,55,0,0,,1.4,,"    # The columns used to answer the question: ['bedrooms']
+    # The types of the columns used to answer the question: ['number[double]']
+    # The type of the answer: number
+
+    return df['bedrooms'].max()","    # The columns used to answer the question: ['bedrooms']
+    # The types of the columns used to answer the question: ['number[double]']
+    # The type of the answer: number
+
+    return df['bedrooms'].max()"
+R245_eNone_T0,52,1,014_Airbnb,,,prefill_emul_v2,gpt-6-luna,none,0.0,300,95150.0,95150.0,True,True,,True,"[[""price""], [], [""max""]]",False,False,stop,426,422,24450,103,0,0,,1.93,,"```python
+    # The columns used to answer the question: ['price']
+    # The types of the columns used to answer the question: ['category']
+    # The type of the answer: number
+
+    # Remove currency symbols and commas, convert prices to numbers, and return the maximum.
+    prices = pd.to_numeric(
+        df['price'].astype(str).str.replace(r'[$,]', '', regex=True),
+        errors='coerce'
+    )
+    return prices.max()","```python
+    # The columns used to answer the question: ['price']
+    # The types of the columns used to answer the question: ['category']
+    # The type of the answer: number
+
+    # Remove currency symbols and commas, convert prices to numbers, and return the maximum.
+    prices = pd.to_numeric(
+        df['price'].astype(str).str.replace(r'[$,]', '', regex=True),
+        errors='coerce'
+    )
+    return prices.max()
+```"
+R245_eNone_T0,53,1,014_Airbnb,,,prefill_emul_v2,gpt-6-luna,none,0.0,300,870.0,870.0,True,True,,True,"[[""number_of_reviews""], [], [""max""]]",False,False,stop,183,183,24450,49,0,0,,1.43,,"    ['number_of_reviews']
+    # The types of the columns used to answer the question: ['number[UInt16]']
+    # The type of the answer: number
+
+    return df['number_of_reviews'].max()","    ['number_of_reviews']
+    # The types of the columns used to answer the question: ['number[UInt16]']
+    # The type of the answer: number
+
+    return df['number_of_reviews'].max()"
+R245_eNone_T0,54,1,015_Food,,,prefill_emul_v2,gpt-6-luna,none,0.0,300,906.0,906.0,True,True,,True,"[[""FOOD NAME""], [], [""count""]]",False,False,stop,206,206,19124,54,0,0,,1.72,,"    # The columns used to answer the question: ['FOOD NAME']
+    # The types of the columns used to answer the question: ['category']
+    # The type of the answer: number
+
+    return df['FOOD NAME'].count()","    # The columns used to answer the question: ['FOOD NAME']
+    # The types of the columns used to answer the question: ['category']
+    # The type of the answer: number
+
+    return df['FOOD NAME'].count()"
+R245_eNone_T0,55,1,015_Food,,,prefill_emul_v2,gpt-6-luna,none,0.0,300,24.0,24.0,True,True,,True,"[[""GROUP""], [], [""nunique""]]",False,False,stop,200,200,19125,51,0,0,,1.21,,"    # The columns used to answer the question: ['GROUP']
+    # The types of the columns used to answer the question: ['category']
+    # The type of the answer: number
+
+    return df['GROUP'].nunique()","    # The columns used to answer the question: ['GROUP']
+    # The types of the columns used to answer the question: ['category']
+    # The type of the answer: number
+
+    return df['GROUP'].nunique()"
+R245_eNone_T0,56,1,015_Food,,,prefill_emul_v2,gpt-6-luna,none,0.0,300,123.0,123.0,True,True,,True,"[[""SUB GROUP""], [], [""nunique""]]",False,False,stop,165,165,19125,44,0,0,,1.23,,"    ['SUB GROUP']
+    # The types of the columns used to answer the question: ['category']
+    # The type of the answer: number
+
+    return df['SUB GROUP'].nunique()","    ['SUB GROUP']
+    # The types of the columns used to answer the question: ['category']
+    # The type of the answer: number
+
+    return df['SUB GROUP'].nunique()"
+R245_eNone_T0,57,1,015_Food,,,prefill_emul_v2,gpt-6-luna,none,0.0,300,906.0,906.0,True,True,,True,"[[""FOOD NAME""], [], [""nunique""]]",False,False,stop,165,165,19125,46,0,0,,1.51,,"    ['FOOD NAME']
+    # The types of the columns used to answer the question: ['category']
+    # The type of the answer: number
+
+    return df['FOOD NAME'].nunique()","    ['FOOD NAME']
+    # The types of the columns used to answer the question: ['category']
+    # The type of the answer: number
+
+    return df['FOOD NAME'].nunique()"
+R245_eNone_T0,58,1,016_Holiday,,,prefill_emul_v2,gpt-6-luna,none,0.0,300,4.0,4.0,True,True,,True,"[[""Occupation""], [], [""nunique""]]",False,False,stop,137,137,19806,35,0,0,,1.56,,"    # The columns used to answer the question: ['Occupation']
+    # The type of the answer: number
+
+    return df['Occupation'].nunique()","    # The columns used to answer the question: ['Occupation']
+    # The type of the answer: number
+
+    return df['Occupation'].nunique()"
+R245_eNone_T0,59,1,016_Holiday,,,prefill_emul_v2,gpt-6-luna,none,0.0,300,5.0,5.0,True,True,,True,"[[""Designation""], [], [""nunique""]]",False,False,stop,212,212,19807,51,0,0,,1.4,,"    # The columns used to answer the question: ['Designation']
+    # The types of the columns used to answer the question: ['category']
+    # The type of the answer: number
+
+    return df['Designation'].nunique()","    # The columns used to answer the question: ['Designation']
+    # The types of the columns used to answer the question: ['category']
+    # The type of the answer: number
+
+    return df['Designation'].nunique()"
+R245_eNone_T0,60,1,016_Holiday,,,prefill_emul_v2,gpt-6-luna,none,0.0,300,4.0,4.0,True,True,,True,"[[""MaritalStatus""], [], [""nunique""]]",False,False,stop,216,216,19807,55,0,0,,1.15,,"    # The columns used to answer the question: ['MaritalStatus']
+    # The types of the columns used to answer the question: ['category']
+    # The type of the answer: number
+
+    return df['MaritalStatus'].nunique()","    # The columns used to answer the question: ['MaritalStatus']
+    # The types of the columns used to answer the question: ['category']
+    # The type of the answer: number
+
+    return df['MaritalStatus'].nunique()"
+R245_eNone_T0,61,1,017_Hacker,,,prefill_emul_v2,gpt-6-luna,none,0.0,300,1516.0,1516.0,True,True,,True,"[[""partofday""], [""partofday==morning""], [""sum""]]",False,False,stop,158,158,20226,46,0,0,,1.52,,"    # ['partofday']
+    # Count entries whose part of day is 'morning'.
+    morning_count = (df['partofday'] == 'morning').sum()
+    return int(morning_count)","    # ['partofday']
+    # Count entries whose part of day is 'morning'.
+    morning_count = (df['partofday'] == 'morning').sum()
+    return int(morning_count)"
+R245_eNone_T0,62,1,017_Hacker,,,prefill_emul_v2,gpt-6-luna,none,0.0,300,6015.0,6015.0,True,True,,True,"[[""score""], [], [""max""]]",False,False,stop,79,79,20226,25,0,0,,1.81,,"    ['score']
+    # The type of the answer: number
+    return df['score'].max()","    ['score']
+    # The type of the answer: number
+    return df['score'].max()"
+R245_eNone_T0,63,1,017_Hacker,,,prefill_emul_v2,gpt-6-luna,none,0.0,300,339.2486205432937,339.2486205432937,True,True,,True,"[[""descendants""], [], [""mean""]]",False,False,stop,215,215,20228,55,0,0,,2.04,,"    # The columns used to answer the question: ['descendants']
+    # The types of the columns used to answer the question: ['number[double]']
+    # The type of the answer: number
+
+    return df['descendants'].mean()","    # The columns used to answer the question: ['descendants']
+    # The types of the columns used to answer the question: ['number[double]']
+    # The type of the answer: number
+
+    return df['descendants'].mean()"
+R245_eNone_T0,64,1,017_Hacker,,,prefill_emul_v2,gpt-6-luna,none,0.0,300,2301.0,2301.0,True,True,,True,"[[""season""], [""season==Autumn""], [""sum""]]",False,False,stop,98,98,20226,32,0,0,,1.36,,"    # ['season']
+    # The type of the answer: number
+
+    return (df['season'] == 'Autumn').sum()","    # ['season']
+    # The type of the answer: number
+
+    return (df['season'] == 'Autumn').sum()"
+R245_eNone_T0,65,1,018_Staff,,,prefill_emul_v2,gpt-6-luna,none,0.0,300,10.0,10.0,True,True,,True,"[[""Department""], [], [""nunique""]]",False,False,stop,210,210,19386,51,0,0,,3.01,,"    # The columns used to answer the question: ['Department']
+    # The types of the columns used to answer the question: ['category']
+    # The type of the answer: number
+
+    return df['Department'].nunique()","    # The columns used to answer the question: ['Department']
+    # The types of the columns used to answer the question: ['category']
+    # The type of the answer: number
+
+    return df['Department'].nunique()"
+R245_eNone_T0,66,1,018_Staff,,,prefill_emul_v2,gpt-6-luna,none,0.0,300,10.0,10.0,True,True,,True,"[[""Years in the Company""], [], [""max""]]",False,False,stop,153,153,19393,40,0,0,,1.61,,"    # The columns used to answer the question: ['Years in the Company']
+    # The type of the answer: number
+
+    return df['Years in the Company'].max()","    # The columns used to answer the question: ['Years in the Company']
+    # The type of the answer: number
+
+    return df['Years in the Company'].max()"
+R245_eNone_T0,67,1,018_Staff,,,prefill_emul_v2,gpt-6-luna,none,0.0,300,319.0,319.0,True,True,,True,"[[""Promoted in the last 5 years?""], [""Promoted in the last 5 years?==Yes""], [""sum""]]",False,False,stop,184,184,19392,53,0,0,,1.5,,"    ['Promoted in the last 5 years?']
+    # Count employees marked as promoted.
+    promoted_count = (df['Promoted in the last 5 years?'] == 'Yes').sum()
+    return int(promoted_count)","    ['Promoted in the last 5 years?']
+    # Count employees marked as promoted.
+    promoted_count = (df['Promoted in the last 5 years?'] == 'Yes').sum()
+    return int(promoted_count)"
+R245_eNone_T0,68,1,018_Staff,,,prefill_emul_v2,gpt-6-luna,none,0.0,300,201.0503366891126,201.0503366891126,True,True,,True,"[[""Average Monthly Hours""], [], [""mean""]]",False,False,stop,113,113,19390,29,0,0,,1.61,,"    ['Average Monthly Hours']
+    # The type of the answer: number
+
+    return df['Average Monthly Hours'].mean()","    ['Average Monthly Hours']
+    # The type of the answer: number
+
+    return df['Average Monthly Hours'].mean()"
+R245_eNone_T0,69,1,019_Aircraft,,,prefill_emul_v2,gpt-6-luna,none,0.0,300,3523.0,3523.0,True,True,,True,"[[""Aircaft_Model""], [], [""nunique""]]",False,False,stop,237,237,21582,59,0,0,,1.58,,"    ['Aircaft_Model']
+    # The types of the columns used to answer the question: ['category']
+    # The type of the answer: number
+
+    # Count distinct aircraft models, excluding missing values.
+    return df['Aircaft_Model'].nunique()","    ['Aircaft_Model']
+    # The types of the columns used to answer the question: ['category']
+    # The type of the answer: number
+
+    # Count distinct aircraft models, excluding missing values.
+    return df['Aircaft_Model'].nunique()"
+R245_eNone_T0,70,1,019_Aircraft,,,prefill_emul_v2,gpt-6-luna,none,0.0,300,524.0,524.0,True,True,,True,"[[""Onboard_Total""], [], [""max""]]",False,False,stop,344,344,21583,85,0,0,,2.8,,"    ['Onboard_Total']
+    # The relevant column is 'Onboard_Total'. Extract the occupant counts,
+    # convert them to numbers, and return the highest recorded count.
+    occupants = pd.to_numeric(
+        df['Onboard_Total'].astype(str).str.extract(r'Occupants:\s*(\d+)', expand=False),
+        errors='coerce'
+    )
+    return occupants.max()","    ['Onboard_Total']
+    # The relevant column is 'Onboard_Total'. Extract the occupant counts,
+    # convert them to numbers, and return the highest recorded count.
+    occupants = pd.to_numeric(
+        df['Onboard_Total'].astype(str).str.extract(r'Occupants:\s*(\d+)', expand=False),
+        errors='coerce'
+    )
+    return occupants.max()"
+R245_eNone_T0,71,1,019_Aircraft,,,prefill_emul_v2,gpt-6-luna,none,0.0,300,7.0,7.0,True,True,,True,"[[""Date""], [""month==1"", ""year==2022""], [""sum""]]",False,False,stop,387,387,21582,111,0,0,,2.08,,"    ['Incident_Date']
+    # The columns used to answer the question: ['Date']
+    # The types of the columns used to answer the question: ['date[ns, UTC]']
+    # The type of the answer: number
+
+    # Count incidents dated in January 2022.
+    january_2022_count = (
+        (df['Date'].dt.year == 2022) &
+        (df['Date'].dt.month == 1)
+    ).sum()
+
+    return int(january_2022_count)","    ['Incident_Date']
+    # The columns used to answer the question: ['Date']
+    # The types of the columns used to answer the question: ['date[ns, UTC]']
+    # The type of the answer: number
+
+    # Count incidents dated in January 2022.
+    january_2022_count = (
+        (df['Date'].dt.year == 2022) &
+        (df['Date'].dt.month == 1)
+    ).sum()
+
+    return int(january_2022_count)"
+R245_eNone_T0,72,1,020_Real,,,prefill_emul_v2,gpt-6-luna,none,0.0,300,17000000.0,17000000.0,True,True,,True,"[[""Precio""], [], [""max""]]",False,False,stop,238,238,21913,60,0,0,,1.29,,"    # The columns used to answer the question: ['Precio']
+    # The types of the columns used to answer the question: ['number[uint32]']
+    # The type of the answer: number
+
+    highest_price = df['Precio'].max()
+    return highest_price","    # The columns used to answer the question: ['Precio']
+    # The types of the columns used to answer the question: ['number[uint32]']
+    # The type of the answer: number
+
+    highest_price = df['Precio'].max()
+    return highest_price"
+R245_eNone_T0,73,1,020_Real,,,prefill_emul_v2,gpt-6-luna,none,0.0,300,26026.0,26026.0,True,True,,True,"[[], [], []]",False,False,stop,242,242,21913,57,0,0,,1.35,,"    # The columns used to answer the question: []
+    # The types of the columns used to answer the question: []
+    # The type of the answer: number
+
+    # Count the listed properties by counting the rows in the dataframe.
+    return len(df)","    # The columns used to answer the question: []
+    # The types of the columns used to answer the question: []
+    # The type of the answer: number
+
+    # Count the listed properties by counting the rows in the dataframe.
+    return len(df)"
+R245_eNone_T0,74,1,020_Real,,,prefill_emul_v2,gpt-6-luna,none,0.0,300,2535.0,2535.0,True,True,,True,"[[""Duración""], [], [""max""]]",False,False,stop,251,251,21915,64,0,0,,1.48,,"    # The columns used to answer the question: ['Duración']
+    # The types of the columns used to answer the question: ['number[uint16]']
+    # The type of the answer: number
+
+    # Return the longest listing duration.
+    return df['Duración'].max()","    # The columns used to answer the question: ['Duración']
+    # The types of the columns used to answer the question: ['number[uint16]']
+    # The type of the answer: number
+
+    # Return the longest listing duration.
+    return df['Duración'].max()"
+R245_eNone_T0,75,1,020_Real,,,prefill_emul_v2,gpt-6-luna,none,0.0,300,5504.0,5504.0,True,True,,True,"[[""Superficie""], [], [""max""]]",False,False,stop,258,258,21911,65,0,0,,1.29,,"    # The columns used to answer the question: ['Superficie']
+    # The types of the columns used to answer the question: ['number[uint16]']
+    # The type of the answer: number
+
+    # Return the largest listed surface area.
+    return df['Superficie'].max()","    # The columns used to answer the question: ['Superficie']
+    # The types of the columns used to answer the question: ['number[uint16]']
+    # The type of the answer: number
+
+    # Return the largest listed surface area.
+    return df['Superficie'].max()"
+R245_eNone_T0,76,1,021_Telco,,,prefill_emul_v2,gpt-6-luna,none,0.0,300,7043.0,7043.0,True,True,,True,"[[""customerID""], [], [""nunique""]]",False,False,stop,210,210,19844,53,0,0,,2.41,,"    # The columns used to answer the question: ['customerID']
+    # The types of the columns used to answer the question: ['category']
+    # The type of the answer: number
+
+    return df['customerID'].nunique()","    # The columns used to answer the question: ['customerID']
+    # The types of the columns used to answer the question: ['category']
+    # The type of the answer: number
+
+    return df['customerID'].nunique()"
+R245_eNone_T0,77,1,021_Telco,,,prefill_emul_v2,gpt-6-luna,none,0.0,300,118.75,118.75,True,True,,True,"[[""MonthlyCharges""], [], [""max""]]",False,False,stop,177,177,19840,46,0,0,,5.18,,"    ['MonthlyCharges']
+    # The types of the columns used to answer the question: ['number[double]']
+    # The type of the answer: number
+
+    return df['MonthlyCharges'].max()","    ['MonthlyCharges']
+    # The types of the columns used to answer the question: ['number[double]']
+    # The type of the answer: number
+
+    return df['MonthlyCharges'].max()"
+R245_eNone_T0,78,1,021_Telco,,,prefill_emul_v2,gpt-6-luna,none,0.0,300,7043.0,7043.0,True,True,,True,"[[""customerID""], [], [""nunique""]]",False,False,stop,148,148,19841,39,0,0,,1.5,,"    # The types of the columns used to answer the question: ['category']
+    # The type of the answer: number
+
+    return df['customerID'].nunique()","    # The types of the columns used to answer the question: ['category']
+    # The type of the answer: number
+
+    return df['customerID'].nunique()"
+R245_eNone_T0,79,1,021_Telco,,,prefill_emul_v2,gpt-6-luna,none,0.0,300,72.0,72.0,True,True,,True,"[[""tenure""], [], [""max""]]",False,False,stop,239,239,19839,66,0,0,,1.29,,"    # The columns used to answer the question: ['tenure']
+    # The types of the columns used to answer the question: ['number[uint8]']
+    # The type of the answer: number
+
+    longest_tenure = df['tenure'].max()
+    return longest_tenure","    # The columns used to answer the question: ['tenure']
+    # The types of the columns used to answer the question: ['number[uint8]']
+    # The type of the answer: number
+
+    longest_tenure = df['tenure'].max()
+    return longest_tenure"
+R245_eNone_T0,80,1,022_Airbnbs,,,prefill_emul_v2,gpt-6-luna,none,0.0,300,26765.0,26765.0,True,True,,True,"[[""host_id""], [], [""nunique""]]",False,False,stop,210,210,20714,57,0,0,,1.77,,"    # The columns used to answer the question: ['host_id']
+    # The types of the columns used to answer the question: ['number[uint32]']
+    # The type of the answer: number
+
+    return df['host_id'].nunique()","    # The columns used to answer the question: ['host_id']
+    # The types of the columns used to answer the question: ['number[uint32]']
+    # The type of the answer: number
+
+    return df['host_id'].nunique()"
+R245_eNone_T0,81,1,022_Airbnbs,,,prefill_emul_v2,gpt-6-luna,none,0.0,300,2739.0,2739.0,True,True,,True,"[[""host_total_listings_count""], [], [""max""]]",False,False,stop,172,172,20716,42,0,0,,1.29,,"    # ['host_total_listings_count']
+    # The type of the answer: number
+
+    highest_listing_count = df['host_total_listings_count'].max()
+    return highest_listing_count","    # ['host_total_listings_count']
+    # The type of the answer: number
+
+    highest_listing_count = df['host_total_listings_count'].max()
+    return highest_listing_count"
+R245_eNone_T0,82,1,022_Airbnbs,,,prefill_emul_v2,gpt-6-luna,none,0.0,300,1316.0,1316.0,True,True,,True,"[[""host_location""], [], [""nunique""]]",False,False,stop,216,216,20714,53,0,0,,2.52,,"    # The columns used to answer the question: ['host_location']
+    # The types of the columns used to answer the question: ['category']
+    # The type of the answer: number
+
+    return df['host_location'].nunique()","    # The columns used to answer the question: ['host_location']
+    # The types of the columns used to answer the question: ['category']
+    # The type of the answer: number
+
+    return df['host_location'].nunique()"
+R245_eNone_T0,83,1,022_Airbnbs,,,prefill_emul_v2,gpt-6-luna,none,0.0,300,93.76718825858012,93.76718825858012,True,True,,True,"[[""review_scores_rating""], [], [""mean""]]",False,False,stop,233,233,20715,57,0,0,,2.21,,"    # The columns used to answer the question: ['review_scores_rating']
+    # The types of the columns used to answer the question: ['number[double]']
+    # The type of the answer: number
+
+    return df['review_scores_rating'].mean()","    # The columns used to answer the question: ['review_scores_rating']
+    # The types of the columns used to answer the question: ['number[double]']
+    # The type of the answer: number
+
+    return df['review_scores_rating'].mean()"
+R245_eNone_T0,84,1,023_Climate,,,prefill_emul_v2,gpt-6-luna,none,0.0,300,5500.0,5500.0,True,True,,True,"[[""tmax""], [""tmax>30""], [""sum""]]",False,False,stop,212,212,20255,61,0,0,,1.38,,"    # The columns used to answer the question: ['tmax']
+    # The types of the columns used to answer the question: ['number[double]']
+    # The type of the answer: number
+
+    return int((df['tmax'] > 30).sum())","    # The columns used to answer the question: ['tmax']
+    # The types of the columns used to answer the question: ['number[double]']
+    # The type of the answer: number
+
+    return int((df['tmax'] > 30).sum())"
+R245_eNone_T0,85,1,023_Climate,,,prefill_emul_v2,gpt-6-luna,none,0.0,300,2.7196082770831027,2.7196082770831027,True,True,,True,"[[""loc"", ""season""], [""season==Winter""], [""mean""]]",False,False,stop,299,299,20253,80,0,0,,1.3,,"    # The columns used to answer the question: ['season', 'tmin']
+    # The types of the columns used to answer the question: ['category', 'number[double]']
+    # The type of the answer: number
+
+    winter_avg_min_temp = df.loc[df['season'] == 'Winter', 'tmin'].mean()
+    return winter_avg_min_temp","    # The columns used to answer the question: ['season', 'tmin']
+    # The types of the columns used to answer the question: ['category', 'number[double]']
+    # The type of the answer: number
+
+    winter_avg_min_temp = df.loc[df['season'] == 'Winter', 'tmin'].mean()
+    return winter_avg_min_temp"
+R245_eNone_T0,86,1,023_Climate,,,prefill_emul_v2,gpt-6-luna,none,0.0,300,28615.0,28615.0,True,True,,True,"[[""loc"", ""sol""], [], [""nunique""]]",False,False,stop,172,172,20252,46,0,0,,1.47,,"    ['sol']
+    # The type of the answer: number
+
+    # Count distinct dates for which solar radiation was measured.
+    return df.loc[df['sol'].notna(), 'fecha'].nunique()","    ['sol']
+    # The type of the answer: number
+
+    # Count distinct dates for which solar radiation was measured.
+    return df.loc[df['sol'].notna(), 'fecha'].nunique()"
+R245_eNone_T0,87,1,023_Climate,,,prefill_emul_v2,gpt-6-luna,none,0.0,300,32.2,32.2,True,True,,True,"[[""racha""], [], [""max""]]",False,False,stop,278,278,20251,67,0,0,,1.68,,"    # The columns used to answer the question: ['racha']
+    # The types of the columns used to answer the question: ['number[double]']
+    # The type of the answer: number
+
+    # Return the maximum recorded wind gust speed, ignoring missing values.
+    return df['racha'].max()","    # The columns used to answer the question: ['racha']
+    # The types of the columns used to answer the question: ['number[double]']
+    # The type of the answer: number
+
+    # Return the maximum recorded wind gust speed, ignoring missing values.
+    return df['racha'].max()"
+R245_eNone_T0,88,1,024_Salary,,,prefill_emul_v2,gpt-6-luna,none,0.0,300,58852.0,58852.0,True,True,,True,"[[""NUTS1"", ""loc""], [""NUTS1==ESTE""], []]",False,False,stop,268,268,21413,75,0,0,,2.44,,"    # The columns used to answer the question: ['NUTS1']
+    # The types of the columns used to answer the question: ['category']
+    # The type of the answer: number
+
+    # Count unique respondents in the ESTE region.
+    return df.loc[df['NUTS1'] == 'ESTE'].shape[0]","    # The columns used to answer the question: ['NUTS1']
+    # The types of the columns used to answer the question: ['category']
+    # The type of the answer: number
+
+    # Count unique respondents in the ESTE region.
+    return df.loc[df['NUTS1'] == 'ESTE'].shape[0]"
+R245_eNone_T0,89,1,024_Salary,,,prefill_emul_v2,gpt-6-luna,none,0.0,300,29370.243704368542,29370.243704368546,True,True,,True,"[[""SEXO"", ""loc""], [""SEXO==Male""], [""mean""]]",False,False,stop,260,260,21413,78,0,0,,1.71,,"    ['RETRINOIN', 'SEXO']
+    # The types of the columns used to answer the question: ['number[double]', 'category']
+    # The type of the answer: number
+
+    male_mean_retrinoin = df.loc[df['SEXO'] == 'Male', 'RETRINOIN'].mean()
+    return male_mean_retrinoin","    ['RETRINOIN', 'SEXO']
+    # The types of the columns used to answer the question: ['number[double]', 'category']
+    # The type of the answer: number
+
+    male_mean_retrinoin = df.loc[df['SEXO'] == 'Male', 'RETRINOIN'].mean()
+    return male_mean_retrinoin"
+R245_eNone_T0,90,1,024_Salary,,,prefill_emul_v2,gpt-6-luna,none,0.0,300,199496.34,199496.34,True,True,,True,"[[""RETRINOIN_ac1q""], [], [""max""]]",False,False,stop,177,177,21415,56,0,0,,1.37,,"    ['RETRINOIN_ac1q']
+    # The types of the columns used to answer the question: ['number[double]']
+    # The type of the answer: number
+
+    return df['RETRINOIN_ac1q'].max()","    ['RETRINOIN_ac1q']
+    # The types of the columns used to answer the question: ['number[double]']
+    # The type of the answer: number
+
+    return df['RETRINOIN_ac1q'].max()"
+R245_eNone_T0,91,1,024_Salary,,,prefill_emul_v2,gpt-6-luna,none,0.0,300,73.0,73.0,True,True,,True,"[[""umap_cluster""], [], [""nunique""]]",False,False,stop,214,214,21414,55,0,0,,1.23,,"    # The columns used to answer the question: ['umap_cluster']
+    # The types of the columns used to answer the question: ['category']
+    # The type of the answer: number
+
+    return df['umap_cluster'].nunique()","    # The columns used to answer the question: ['umap_cluster']
+    # The types of the columns used to answer the question: ['category']
+    # The type of the answer: number
+
+    return df['umap_cluster'].nunique()"
+R245_eNone_T0,92,1,025_Data,,,prefill_emul_v2,gpt-6-luna,none,0.0,300,28.0,28.0,True,True,,True,"[[""URLs""], [], [""nunique""]]",False,False,stop,198,198,19196,51,0,0,,1.8,,"    # The columns used to answer the question: ['URLs']
+    # The types of the columns used to answer the question: ['category']
+    # The type of the answer: number
+
+    return df['URLs'].nunique()","    # The columns used to answer the question: ['URLs']
+    # The types of the columns used to answer the question: ['category']
+    # The type of the answer: number
+
+    return df['URLs'].nunique()"
+R245_eNone_T0,93,1,025_Data,,,prefill_emul_v2,gpt-6-luna,none,0.0,300,11.0,11.0,True,True,,True,"[[""Ranking""], [], [""max""]]",False,False,stop,205,205,19197,54,0,0,,1.3,,"    # The columns used to answer the question: ['Ranking']
+    # The types of the columns used to answer the question: ['number[uint8]']
+    # The type of the answer: number
+
+    return df['Ranking'].max()","    # The columns used to answer the question: ['Ranking']
+    # The types of the columns used to answer the question: ['number[uint8]']
+    # The type of the answer: number
+
+    return df['Ranking'].max()"
+R245_eNone_T0,94,1,025_Data,,,prefill_emul_v2,gpt-6-luna,none,0.0,300,50.0,50.0,True,True,,True,"[[""Avg. monthly searches""], [], [""min""]]",False,False,stop,190,190,19198,51,0,0,,1.44,,"    ['Avg. monthly searches']
+    # The types of the columns used to answer the question: ['number[uint8]']
+    # The type of the answer: number
+
+    return df['Avg. monthly searches'].min()","    ['Avg. monthly searches']
+    # The types of the columns used to answer the question: ['number[uint8]']
+    # The type of the answer: number
+
+    return df['Avg. monthly searches'].min()"
+R245_eNone_T0,95,1,025_Data,,,prefill_emul_v2,gpt-6-luna,none,0.0,300,6.0,6.0,True,True,,True,"[[""Keyword""], [], [""nunique""]]",False,False,stop,204,204,19197,51,0,0,,1.73,,"    # The columns used to answer the question: ['Keyword']
+    # The types of the columns used to answer the question: ['category']
+    # The type of the answer: number
+
+    return df['Keyword'].nunique()","    # The columns used to answer the question: ['Keyword']
+    # The types of the columns used to answer the question: ['category']
+    # The type of the answer: number
+
+    return df['Keyword'].nunique()"
+R245_eNone_T0,96,1,026_Predicting,,,prefill_emul_v2,gpt-6-luna,none,0.0,300,6.0,6.0,True,True,,True,"[[""quality""], [], [""nunique""]]",False,False,stop,88,88,19391,26,0,0,,1.44,,"    ['quality']
+    # The type of the answer: number
+
+    return df['quality'].nunique()","    ['quality']
+    # The type of the answer: number
+
+    return df['quality'].nunique()"
+R245_eNone_T0,97,1,026_Predicting,,,prefill_emul_v2,gpt-6-luna,none,0.0,300,15.9,15.9,True,True,,True,"[[""fixed acidity""], [], [""max""]]",False,False,stop,140,140,19392,37,0,0,,2.28,,"    ['fixed acidity']
+    # The type of the answer is number.
+    max_fixed_acidity = df['fixed acidity'].max()
+    return max_fixed_acidity","    ['fixed acidity']
+    # The type of the answer is number.
+    max_fixed_acidity = df['fixed acidity'].max()
+    return max_fixed_acidity"
+R245_eNone_T0,98,1,026_Predicting,,,prefill_emul_v2,gpt-6-luna,none,0.0,300,0.12,0.12,True,True,,True,"[[""volatile acidity""], [], [""min""]]",False,False,stop,224,224,19391,55,0,0,,1.52,,"    # The columns used to answer the question: ['volatile acidity']
+    # The types of the columns used to answer the question: ['number[double]']
+    # The type of the answer: number
+
+    return df['volatile acidity'].min()","    # The columns used to answer the question: ['volatile acidity']
+    # The types of the columns used to answer the question: ['number[double]']
+    # The type of the answer: number
+
+    return df['volatile acidity'].min()"
+R245_eNone_T0,99,1,026_Predicting,,,prefill_emul_v2,gpt-6-luna,none,0.0,300,16.0,16.0,True,True,,True,"[[""free sulfur dioxide""], [""free sulfur dioxide>50""], [""sum""]]",False,False,stop,242,242,19396,63,0,0,,1.32,,"    # The columns used to answer the question: ['free sulfur dioxide']
+    # The types of the columns used to answer the question: ['number[double]']
+    # The type of the answer: number
+
+    return int((df['free sulfur dioxide'] > 50).sum())","    # The columns used to answer the question: ['free sulfur dioxide']
+    # The types of the columns used to answer the question: ['number[double]']
+    # The type of the answer: number
+
+    return int((df['free sulfur dioxide'] > 50).sum())"
+R245_eNone_T0,100,1,027_Supermarket,,,prefill_emul_v2,gpt-6-luna,none,0.0,300,3.0,3.0,True,True,,True,"[[""Branch""], [], [""nunique""]]",False,False,stop,202,202,19800,51,0,0,,1.4,,"    # The columns used to answer the question: ['Branch']
+    # The types of the columns used to answer the question: ['category']
+    # The type of the answer: number
+
+    return df['Branch'].nunique()","    # The columns used to answer the question: ['Branch']
+    # The types of the columns used to answer the question: ['category']
+    # The type of the answer: number
+
+    return df['Branch'].nunique()"
+R245_eNone_T0,101,1,027_Supermarket,,,prefill_emul_v2,gpt-6-luna,none,0.0,300,10.0,10.0,True,True,,True,"[[""Quantity""], [], [""max""]]",False,False,stop,207,207,19803,54,0,0,,1.42,,"    # The columns used to answer the question: ['Quantity']
+    # The types of the columns used to answer the question: ['number[uint8]']
+    # The type of the answer: number
+
+    return df['Quantity'].max()","    # The columns used to answer the question: ['Quantity']
+    # The types of the columns used to answer the question: ['number[uint8]']
+    # The type of the answer: number
+
+    return df['Quantity'].max()"
+R245_eNone_T0,102,1,027_Supermarket,,,prefill_emul_v2,gpt-6-luna,none,0.0,300,10.6785,10.6785,True,True,,True,"[[""Total""], [], [""min""]]",False,False,stop,202,202,19803,53,0,0,,1.29,,"    # The columns used to answer the question: ['Total']
+    # The types of the columns used to answer the question: ['number[double]']
+    # The type of the answer: number
+
+    return df['Total'].min()","    # The columns used to answer the question: ['Total']
+    # The types of the columns used to answer the question: ['number[double]']
+    # The type of the answer: number
+
+    return df['Total'].min()"
+R245_eNone_T0,103,1,027_Supermarket,,,prefill_emul_v2,gpt-6-luna,none,0.0,300,340.0,340.0,True,True,,True,"[[""City""], [""City==Yangon""], [""sum""]]",False,False,stop,208,208,19799,56,0,0,,2.14,,"    # The columns used to answer the question: ['City']
+    # The types of the columns used to answer the question: ['category']
+    # The type of the answer: number
+
+    return (df['City'] == 'Yangon').sum()","    # The columns used to answer the question: ['City']
+    # The types of the columns used to answer the question: ['category']
+    # The type of the answer: number
+
+    return (df['City'] == 'Yangon').sum()"
+R245_eNone_T0,104,1,028_Predict,,,prefill_emul_v2,gpt-6-luna,none,0.0,300,17.0,17.0,True,True,,True,"[[""Pregnancies""], [], [""max""]]",False,False,stop,135,135,19169,38,0,0,,1.37,,"    # The columns used to answer the question: ['Pregnancies']
+    # The type of the answer: number
+
+    return df['Pregnancies'].max()","    # The columns used to answer the question: ['Pregnancies']
+    # The type of the answer: number
+
+    return df['Pregnancies'].max()"
+R245_eNone_T0,105,1,028_Predict,,,prefill_emul_v2,gpt-6-luna,none,0.0,300,0.0,0.0,True,True,,True,"[[""BloodPressure""], [], [""min""]]",False,False,stop,217,217,19169,56,0,0,,1.65,,"    # The columns used to answer the question: ['BloodPressure']
+    # The types of the columns used to answer the question: ['number[uint8]']
+    # The type of the answer: number
+
+    return df['BloodPressure'].min()","    # The columns used to answer the question: ['BloodPressure']
+    # The types of the columns used to answer the question: ['number[uint8]']
+    # The type of the answer: number
+
+    return df['BloodPressure'].min()"
+R245_eNone_T0,106,1,028_Predict,,,prefill_emul_v2,gpt-6-luna,none,0.0,300,31.992578125,31.992578124999998,True,True,,True,"[[""BMI""], [], [""mean""]]",False,False,stop,200,200,19167,54,0,0,,1.84,,"    # The columns used to answer the question: ['BMI']
+    # The types of the columns used to answer the question: ['number[float64]']
+    # The type of the answer: number
+
+    return df['BMI'].mean()","    # The columns used to answer the question: ['BMI']
+    # The types of the columns used to answer the question: ['number[float64]']
+    # The type of the answer: number
+
+    return df['BMI'].mean()"
+R245_eNone_T0,107,1,029_NYTimes,,,prefill_emul_v2,gpt-6-luna,none,0.0,300,16.0,16.0,True,True,,True,"[[""material_type""], [], [""nunique""]]",False,False,stop,216,216,19399,53,0,0,,1.5,,"    # The columns used to answer the question: ['material_type']
+    # The types of the columns used to answer the question: ['category']
+    # The type of the answer: number
+
+    return df['material_type'].nunique()","    # The columns used to answer the question: ['material_type']
+    # The types of the columns used to answer the question: ['category']
+    # The type of the answer: number
+
+    return df['material_type'].nunique()"
+R245_eNone_T0,108,1,029_NYTimes,,,prefill_emul_v2,gpt-6-luna,none,0.0,300,147.0,145.0,False,True,,True,"[[""headline""], [], [""len"", ""max""]]",False,False,stop,148,148,19400,40,0,0,,1.2,,"    # The columns used to answer the question: ['headline']
+    # The type of the answer: number
+
+    return df['headline'].dropna().str.len().max()","    # The columns used to answer the question: ['headline']
+    # The type of the answer: number
+
+    return df['headline'].dropna().str.len().max()"
+R245_eNone_T0,109,1,029_NYTimes,,,prefill_emul_v2,gpt-6-luna,none,0.0,300,45.0,45.0,True,True,,True,"[[""keywords""], [], [""max""]]",False,False,stop,281,281,19401,67,0,0,,1.18,,"    # The columns used to answer the question: ['keywords']
+    # The types of the columns used to answer the question: ['object']
+    # The type of the answer: number
+
+    # Count the keywords for each article and return the largest count.
+    return df['keywords'].map(len).max()","    # The columns used to answer the question: ['keywords']
+    # The types of the columns used to answer the question: ['object']
+    # The type of the answer: number
+
+    # Count the keywords for each article and return the largest count.
+    return df['keywords'].map(len).max()"
+R245_eNone_T0,110,1,030_Professionals,,,prefill_emul_v2,gpt-6-luna,none,0.0,300,14.0,14.0,True,True,,True,"[[], [], [""nunique""]]",False,False,stop,391,390,24956,90,0,0,,1.93,,"    # The columns used to answer the question: ['Select the title most similar to your current role (or most recent title if retired)']
+    # The types of the columns used to answer the question: ['category']
+    # The type of the answer: number
+
+    title_column = 'Select the title most similar to your current role (or most recent title if retired)'
+    return df[title_column].nunique()","    # The columns used to answer the question: ['Select the title most similar to your current role (or most recent title if retired)']
+    # The types of the columns used to answer the question: ['category']
+    # The type of the answer: number
+
+    title_column = 'Select the title most similar to your current role (or most recent title if retired)'
+    return df[title_column].nunique()
+"
+R245_eNone_T0,111,1,030_Professionals,,,prefill_emul_v2,gpt-6-luna,none,0.0,300,1.5,1.5,True,True,,True,"[[""(Average) For how many years have you used machine learning methods?""], [], [""median""]]",False,False,stop,331,331,24961,79,0,0,,1.78,,"    # The columns used to answer the question: ['(Average) For how many years have you used machine learning methods?']
+    # The types of the columns used to answer the question: ['number[double]']
+    # The type of the answer: number
+
+    return df['(Average) For how many years have you used machine learning methods?'].median()","    # The columns used to answer the question: ['(Average) For how many years have you used machine learning methods?']
+    # The types of the columns used to answer the question: ['number[double]']
+    # The type of the answer: number
+
+    return df['(Average) For how many years have you used machine learning methods?'].median()"
+R245_eNone_T0,112,1,030_Professionals,,,prefill_emul_v2,gpt-6-luna,none,0.0,300,450.0,,False,False,"SyntaxError: '(' was never closed (<agent>, line 7)",False,"[[], [], []]",False,True,stop,350,216,24954,80,0,0,,1.77,,"    # The columns used to answer the question: ['In which country do you currently reside?']
+    # The types of the columns used to answer the question: ['category']
+    # The type of the answer: number
+
+    return (","    # The columns used to answer the question: ['In which country do you currently reside?']
+    # The types of the columns used to answer the question: ['category']
+    # The type of the answer: number
+
+    return (
+        df['In which country do you currently reside?']
+        == 'United Kingdom of Great Britain and Northern Ireland'
+    ).sum()"
+R245_eNone_T0,113,1,030_Professionals,,,prefill_emul_v2,gpt-6-luna,none,0.0,300,2.0,2.0,True,True,,True,"[[""What programming languages do you use on a regular basis?""], [], [""idxmax"", ""value_counts""]]",False,False,stop,436,436,24962,101,0,0,,2.1,,"    # The columns used to answer the question: ['What programming languages do you use on a regular basis?']
+    # The types of the columns used to answer the question: ['object (arrays)']
+    # The type of the answer: number
+
+    language_counts = df[
+        'What programming languages do you use on a regular basis?'
+    ].apply(len)
+    most_common_count = language_counts.value_counts().idxmax()
+
+    return int(most_common_count)","    # The columns used to answer the question: ['What programming languages do you use on a regular basis?']
+    # The types of the columns used to answer the question: ['object (arrays)']
+    # The type of the answer: number
+
+    language_counts = df[
+        'What programming languages do you use on a regular basis?'
+    ].apply(len)
+    most_common_count = language_counts.value_counts().idxmax()
+
+    return int(most_common_count)"
+R245_eNone_T0,114,1,031_Trustpilot,,,prefill_emul_v2,gpt-6-luna,none,0.0,300,3840.0,3840.0,True,True,,True,"[[""Company""], [""Company==Wise""], [""sum""]]",False,False,stop,144,144,19190,40,0,0,,1.45,,"    # The columns used to answer the question: ['Company']
+    # The type of the answer: number
+
+    return int((df['Company'] == 'Wise').sum())","    # The columns used to answer the question: ['Company']
+    # The type of the answer: number
+
+    return int((df['Company'] == 'Wise').sum())"
+R245_eNone_T0,115,1,031_Trustpilot,,,prefill_emul_v2,gpt-6-luna,none,0.0,300,120.0,120.0,True,True,,True,"[[""Company"", ""loc"", ""rating""], [""Company==Wise"", ""rating==5""], [""nunique""]]",False,False,stop,357,357,19193,98,0,0,,1.8,,"    # ['Company', 'rating', 'country_code']
+    # The types of the columns used to answer the question: ['category', 'number[uint8]', 'category']
+    # The type of the answer: number
+
+    # Filter for Wise reviews with a rating of 5, then count distinct countries.
+    return df.loc[(df['Company'] == 'Wise') & (df['rating'] == 5), 'country_code'].nunique()","    # ['Company', 'rating', 'country_code']
+    # The types of the columns used to answer the question: ['category', 'number[uint8]', 'category']
+    # The type of the answer: number
+
+    # Filter for Wise reviews with a rating of 5, then count distinct countries.
+    return df.loc[(df['Company'] == 'Wise') & (df['rating'] == 5), 'country_code'].nunique()"
+R245_eNone_T0,116,1,031_Trustpilot,,,prefill_emul_v2,gpt-6-luna,none,0.0,300,5.0,5.0,True,True,,True,"[[""rating""], [], [""max""]]",False,False,stop,84,84,19186,26,0,0,,1.5,,"    # ['rating']
+    # The type of the answer: number
+
+    return df['rating'].max()","    # ['rating']
+    # The type of the answer: number
+
+    return df['rating'].max()"
+R245_eNone_T0,117,1,031_Trustpilot,,,prefill_emul_v2,gpt-6-luna,none,0.0,300,4.097755610972569,4.097755610972569,True,True,,True,"[[""rating""], [], [""mean""]]",False,False,stop,85,85,19187,26,0,0,,1.19,,"    # ['rating']
+    # The type of the answer: number
+
+    return df['rating'].mean()","    # ['rating']
+    # The type of the answer: number
+
+    return df['rating'].mean()"
+R245_eNone_T0,118,1,032_Delicatessen,,,prefill_emul_v2,gpt-6-luna,none,0.0,300,2240.0,2240.0,True,True,,True,"[[], [], []]",False,False,stop,165,165,20173,48,0,0,,1.6,,"    # The columns used to answer the question: []
+    # The type of the answer: number
+
+    # Each row represents one customer, so count the rows.
+    return len(df)","    # The columns used to answer the question: []
+    # The type of the answer: number
+
+    # Each row represents one customer, so count the rows.
+    return len(df)"
+R245_eNone_T0,119,1,032_Delicatessen,,,prefill_emul_v2,gpt-6-luna,none,0.0,300,52247.25135379061,52247.25135379061,True,True,,True,"[[""Income""], [], [""mean""]]",False,False,stop,206,206,20171,54,0,0,,1.41,,"    # The columns used to answer the question: ['Income']
+    # The types of the columns used to answer the question: ['number[float64]']
+    # The type of the answer: number
+
+    return df['Income'].mean()","    # The columns used to answer the question: ['Income']
+    # The types of the columns used to answer the question: ['number[float64]']
+    # The type of the answer: number
+
+    return df['Income'].mean()"
+R245_eNone_T0,120,1,032_Delicatessen,,,prefill_emul_v2,gpt-6-luna,none,0.0,300,27.0,27.0,True,True,,True,"[[""NumWebPurchases""], [], [""max""]]",False,False,stop,221,221,20175,60,0,0,,1.51,,"    # The columns used to answer the question: ['NumWebPurchases']
+    # The types of the columns used to answer the question: ['number[uint8]']
+    # The type of the answer: number
+
+    return df['NumWebPurchases'].max()","    # The columns used to answer the question: ['NumWebPurchases']
+    # The types of the columns used to answer the question: ['number[uint8]']
+    # The type of the answer: number
+
+    return df['NumWebPurchases'].max()"
+R245_eNone_T0,121,1,032_Delicatessen,,,prefill_emul_v2,gpt-6-luna,none,0.0,300,0.0,0.0,True,True,,True,"[[""Recency""], [], [""min""]]",False,False,stop,205,205,20174,56,0,0,,1.19,,"    # The columns used to answer the question: ['Recency']
+    # The types of the columns used to answer the question: ['number[uint8]']
+    # The type of the answer: number
+
+    return df['Recency'].min()","    # The columns used to answer the question: ['Recency']
+    # The types of the columns used to answer the question: ['number[uint8]']
+    # The type of the answer: number
+
+    return df['Recency'].min()"
+R245_eNone_T0,122,1,033_Employee,,,prefill_emul_v2,gpt-6-luna,none,0.0,300,14999.0,14999.0,True,True,,True,"[[], [], []]",False,False,stop,228,228,19439,56,0,0,,1.79,,"    # The columns used to answer the question: []
+    # The types of the columns used to answer the question: []
+    # The type of the answer: number
+
+    # Each row represents one employee, so count the rows.
+    return len(df)","    # The columns used to answer the question: []
+    # The types of the columns used to answer the question: []
+    # The type of the answer: number
+
+    # Each row represents one employee, so count the rows.
+    return len(df)"
+R245_eNone_T0,123,1,033_Employee,,,prefill_emul_v2,gpt-6-luna,none,0.0,300,0.64,0.64,True,True,,True,"[[""Satisfaction Level""], [], [""median""]]",False,False,stop,111,111,19438,30,0,0,,1.23,,"    # ['Satisfaction Level']
+    # The type of the answer: number
+
+    return df['Satisfaction Level'].median()","    # ['Satisfaction Level']
+    # The type of the answer: number
+
+    return df['Satisfaction Level'].median()"
+R245_eNone_T0,124,1,033_Employee,,,prefill_emul_v2,gpt-6-luna,none,0.0,300,7.0,7.0,True,True,,True,"[[""Number of Projects""], [], [""max""]]",False,False,stop,163,163,19440,40,0,0,,1.46,,"    ['Number of Projects']
+    # The type of the answer: number
+
+    # Return the highest project count for any employee.
+    return df['Number of Projects'].max()","    ['Number of Projects']
+    # The type of the answer: number
+
+    # Return the highest project count for any employee.
+    return df['Number of Projects'].max()"
+R245_eNone_T0,125,1,034_World,,,prefill_emul_v2,gpt-6-luna,none,0.0,300,7.222675085250001,7.222675085250001,True,True,,True,"[[""Generosity"", ""Ladder score"", ""Regional indicator"", ""Social support""], [""Generosity>0.2"", ""Regional indicator==Western Europe"", ""Social support>0.7""], [""mean""]]",False,False,stop,436,436,20072,120,0,0,,1.5,,"    ['Regional indicator', 'Generosity', 'Social support', 'Ladder score']
+    # The types of the columns used to answer the question: ['category', 'number[double]', 'number[double]', 'number[double]']
+    # The type of the answer: number
+
+    filtered = df[
+        (df['Regional indicator'] == 'Western Europe')
+        & (df['Generosity'] > 0.2)
+        & (df['Social support'] > 0.7)
+    ]
+    return filtered['Ladder score'].mean()","    ['Regional indicator', 'Generosity', 'Social support', 'Ladder score']
+    # The types of the columns used to answer the question: ['category', 'number[double]', 'number[double]', 'number[double]']
+    # The type of the answer: number
+
+    filtered = df[
+        (df['Regional indicator'] == 'Western Europe')
+        & (df['Generosity'] > 0.2)
+        & (df['Social support'] > 0.7)
+    ]
+    return filtered['Ladder score'].mean()"
+R245_eNone_T0,126,1,034_World,,,prefill_emul_v2,gpt-6-luna,none,0.0,300,0.7493706045,0.7493706045,True,True,,True,"[[""Ladder score"", ""Regional indicator"", ""Social support"", ""loc""], [""Ladder score<5"", ""Regional indicator==Sub-Saharan Africa"", ""Social support<0.5""], [""mean""]]",False,False,stop,509,509,20074,136,0,0,,1.83,,"    # The columns used to answer the question: ['Regional indicator', 'Ladder score', 'Social support', 'Perceptions of corruption']
+    # The types of the columns used to answer the question: ['category', 'number[double]', 'number[double]', 'number[double]']
+    # The type of the answer: number
+
+    mask = (
+        (df['Regional indicator'] == 'Sub-Saharan Africa')
+        & (df['Ladder score'] < 5)
+        & (df['Social support'] < 0.5)
+    )
+    return df.loc[mask, 'Perceptions of corruption'].mean()","    # The columns used to answer the question: ['Regional indicator', 'Ladder score', 'Social support', 'Perceptions of corruption']
+    # The types of the columns used to answer the question: ['category', 'number[double]', 'number[double]', 'number[double]']
+    # The type of the answer: number
+
+    mask = (
+        (df['Regional indicator'] == 'Sub-Saharan Africa')
+        & (df['Ladder score'] < 5)
+        & (df['Social support'] < 0.5)
+    )
+    return df.loc[mask, 'Perceptions of corruption'].mean()"
+R245_eNone_T0,127,1,034_World,,,prefill_emul_v2,gpt-6-luna,none,0.0,300,0.560663998,0.560663998,True,True,,True,"[[""Generosity""], [], [""max""]]",False,False,stop,169,169,20050,46,0,0,,1.52,,"    ['Generosity']
+    # The types of the columns used to answer the question: ['number[double]']
+    # The type of the answer: number
+
+    return df['Generosity'].max()","    ['Generosity']
+    # The types of the columns used to answer the question: ['number[double]']
+    # The type of the answer: number
+
+    return df['Generosity'].max()"
+R245_eNone_T0,128,1,034_World,,,prefill_emul_v2,gpt-6-luna,none,0.0,300,0.319459856,0.319459856,True,True,,True,"[[""Social support""], [], [""min""]]",False,False,stop,100,100,20050,28,0,0,,1.42,,"    # ['Social support']
+    # The type of the answer: number
+
+    return df['Social support'].min()","    # ['Social support']
+    # The type of the answer: number
+
+    return df['Social support'].min()"
+R245_eNone_T0,129,1,035_Billboard,,,prefill_emul_v2,gpt-6-luna,none,0.0,300,100.0,100.0,True,True,,True,"[[""Year""], [""Year==1965""], [""sum""]]",False,False,stop,215,215,19168,61,0,0,,1.27,,"    # The columns used to answer the question: ['Year']
+    # The types of the columns used to answer the question: ['number[uint16]']
+    # The type of the answer: number
+
+    return int((df['Year'] == 1965).sum())","    # The columns used to answer the question: ['Year']
+    # The types of the columns used to answer the question: ['number[uint16]']
+    # The type of the answer: number
+
+    return int((df['Year'] == 1965).sum())"
+R245_eNone_T0,130,1,035_Billboard,,,prefill_emul_v2,gpt-6-luna,none,0.0,300,1965.0,1965.0,True,True,,True,"[[""Rank"", ""loc""], [], [""idxmin""]]",False,False,stop,308,308,19170,86,0,0,,1.7,,"    # The columns used to answer the question: ['Rank', 'Year']
+    # The types of the columns used to answer the question: ['number[uint8]', 'number[uint16]']
+    # The type of the answer: number
+
+    # Rank 1 is the highest rank; return the year for that row.
+    return df.loc[df['Rank'].idxmin(), 'Year']","    # The columns used to answer the question: ['Rank', 'Year']
+    # The types of the columns used to answer the question: ['number[uint8]', 'number[uint16]']
+    # The type of the answer: number
+
+    # Rank 1 is the highest rank; return the year for that row.
+    return df.loc[df['Rank'].idxmin(), 'Year']"
+R245_eNone_T0,131,1,035_Billboard,,,prefill_emul_v2,gpt-6-luna,none,0.0,300,19.0,19.0,True,True,,True,"[[""Lyrics"", ""loc""], [], [""idxmax"", ""len""]]",False,False,stop,364,364,19169,97,0,0,,1.59,,"    # The columns used to answer the question: ['Rank', 'Lyrics']
+    # The types of the columns used to answer the question: ['number[uint8]', 'str']
+    # The type of the answer: number
+
+    # Find the row with the longest non-null lyrics and return its rank.
+    longest_lyrics_idx = df['Lyrics'].str.len().idxmax()
+    return df.loc[longest_lyrics_idx, 'Rank']","    # The columns used to answer the question: ['Rank', 'Lyrics']
+    # The types of the columns used to answer the question: ['number[uint8]', 'str']
+    # The type of the answer: number
+
+    # Find the row with the longest non-null lyrics and return its rank.
+    longest_lyrics_idx = df['Lyrics'].str.len().idxmax()
+    return df.loc[longest_lyrics_idx, 'Rank']"
+R245_eNone_T0,132,1,035_Billboard,,,prefill_emul_v2,gpt-6-luna,none,0.0,300,2473.0,2473.0,True,True,,True,"[[""Artist""], [], [""nunique""]]",False,False,stop,202,202,19168,51,0,0,,1.16,,"    # The columns used to answer the question: ['Artist']
+    # The types of the columns used to answer the question: ['category']
+    # The type of the answer: number
+
+    return df['Artist'].nunique()","    # The columns used to answer the question: ['Artist']
+    # The types of the columns used to answer the question: ['category']
+    # The type of the answer: number
+
+    return df['Artist'].nunique()"
+R245_eNone_T0,133,1,036_US,,,prefill_emul_v2,gpt-6-luna,none,0.0,300,3219.0,3219.0,True,True,,True,"[[""dest""], [], [""nunique""]]",False,False,stop,84,84,19273,27,0,0,,1.05,,"    # ['dest']
+    # The type of the answer: number
+
+    return df['dest'].nunique()","    # ['dest']
+    # The type of the answer: number
+
+    return df['dest'].nunique()"
+R245_eNone_T0,134,1,036_US,,,prefill_emul_v2,gpt-6-luna,none,0.0,300,67.7453798126951,67.7453798126951,True,True,,True,"[[""count""], [], [""mean""]]",False,False,stop,152,152,19277,38,0,0,,1.25,,"    ['count']
+    # The type of the answer: number
+
+    # Average the reported counts across all origin-destination pairs.
+    return df['count'].mean()","    ['count']
+    # The type of the answer: number
+
+    # Average the reported counts across all origin-destination pairs.
+    return df['count'].mean()"
+R245_eNone_T0,135,1,036_US,,,prefill_emul_v2,gpt-6-luna,none,0.0,300,40580.0,40580.0,True,True,,True,"[[""count""], [], [""max""]]",False,False,stop,202,202,19272,54,0,0,,2.03,,"    # The columns used to answer the question: ['count']
+    # The types of the columns used to answer the question: ['number[uint16]']
+    # The type of the answer: number
+
+    return df['count'].max()","    # The columns used to answer the question: ['count']
+    # The types of the columns used to answer the question: ['number[uint16]']
+    # The type of the answer: number
+
+    return df['count'].max()"
+R245_eNone_T0,136,1,036_US,,,prefill_emul_v2,gpt-6-luna,none,0.0,300,1904.0,1904.0,True,True,,True,"[[""name_origin""], [], [""nunique""]]",False,False,stop,212,212,19274,53,0,0,,1.51,,"    # The columns used to answer the question: ['name_origin']
+    # The types of the columns used to answer the question: ['category']
+    # The type of the answer: number
+
+    return df['name_origin'].nunique()","    # The columns used to answer the question: ['name_origin']
+    # The types of the columns used to answer the question: ['category']
+    # The type of the answer: number
+
+    return df['name_origin'].nunique()"
+R245_eNone_T0,137,1,037_Ted,,,prefill_emul_v2,gpt-6-luna,none,0.0,300,3274.0,3274.0,True,True,,True,"[[""speaker_1""], [], [""nunique""]]",False,False,stop,208,208,20553,55,0,0,,1.3,,"    # The columns used to answer the question: ['speaker_1']
+    # The types of the columns used to answer the question: ['category']
+    # The type of the answer: number
+
+    return df['speaker_1'].nunique()","    # The columns used to answer the question: ['speaker_1']
+    # The types of the columns used to answer the question: ['category']
+    # The type of the answer: number
+
+    return df['speaker_1'].nunique()"
+R245_eNone_T0,138,1,037_Ted,,,prefill_emul_v2,gpt-6-luna,none,0.0,300,2148005.573782772,2148005.5737827714,True,True,,True,"[[""views""], [], [""mean""]]",False,False,stop,203,203,20553,54,0,0,,1.43,,"    # The columns used to answer the question: ['views']
+    # The types of the columns used to answer the question: ['number[uint32]']
+    # The type of the answer: number
+
+    return df['views'].mean()","    # The columns used to answer the question: ['views']
+    # The types of the columns used to answer the question: ['number[uint32]']
+    # The type of the answer: number
+
+    return df['views'].mean()"
+R245_eNone_T0,139,1,037_Ted,,,prefill_emul_v2,gpt-6-luna,none,0.0,300,3922.0,3922.0,True,True,,True,"[[""duration""], [], [""max""]]",False,False,stop,208,208,20554,54,0,0,,2.15,,"    # The columns used to answer the question: ['duration']
+    # The types of the columns used to answer the question: ['number[uint16]']
+    # The type of the answer: number
+
+    return df['duration'].max()","    # The columns used to answer the question: ['duration']
+    # The types of the columns used to answer the question: ['number[uint16]']
+    # The type of the answer: number
+
+    return df['duration'].max()"
+R245_eNone_T0,140,1,037_Ted,,,prefill_emul_v2,gpt-6-luna,none,0.0,300,186.0,186.0,True,True,,True,"[[""comments""], [""comments>500""], [""sum""]]",False,False,stop,222,222,20553,60,0,0,,1.33,,"    # The columns used to answer the question: ['comments']
+    # The types of the columns used to answer the question: ['number[float64]']
+    # The type of the answer: number
+
+    return int((df['comments'] > 500).sum())","    # The columns used to answer the question: ['comments']
+    # The types of the columns used to answer the question: ['number[float64]']
+    # The type of the answer: number
+
+    return int((df['comments'] > 500).sum())"
+R245_eNone_T0,141,1,038_Stroke,,,prefill_emul_v2,gpt-6-luna,none,0.0,300,249.0,249.0,True,True,,True,"[[""stroke""], [], [""sum""]]",False,False,stop,130,130,19354,35,0,0,,1.49,,"    # The columns used to answer the question: ['stroke']
+    # The type of the answer: number
+
+    return int(df['stroke'].sum())","    # The columns used to answer the question: ['stroke']
+    # The type of the answer: number
+
+    return int(df['stroke'].sum())"
+R245_eNone_T0,142,1,038_Stroke,,,prefill_emul_v2,gpt-6-luna,none,0.0,300,47.09632446134347,47.09632446134347,True,True,,True,"[[""age"", ""smoking_status""], [""smoking_status==smokes""], [""mean""]]",False,False,stop,285,285,19354,75,0,0,,1.51,,"    # The columns used to answer the question: ['age', 'smoking_status']
+    # The types of the columns used to answer the question: ['number[double]', 'category']
+    # The type of the answer: number
+
+    smokers = df[df['smoking_status'] == 'smokes']
+    return smokers['age'].mean()","    # The columns used to answer the question: ['age', 'smoking_status']
+    # The types of the columns used to answer the question: ['number[double]', 'category']
+    # The type of the answer: number
+
+    smokers = df[df['smoking_status'] == 'smokes']
+    return smokers['age'].mean()"
+R245_eNone_T0,143,1,038_Stroke,,,prefill_emul_v2,gpt-6-luna,none,0.0,300,271.74,271.74,True,True,,True,"[[""avg_glucose_level""], [], [""max""]]",False,False,stop,226,226,19355,59,0,0,,1.52,,"    # The columns used to answer the question: ['avg_glucose_level']
+    # The types of the columns used to answer the question: ['number[double]']
+    # The type of the answer: number
+
+    return df['avg_glucose_level'].max()","    # The columns used to answer the question: ['avg_glucose_level']
+    # The types of the columns used to answer the question: ['number[double]']
+    # The type of the answer: number
+
+    return df['avg_glucose_level'].max()"
+R245_eNone_T0,144,1,038_Stroke,,,prefill_emul_v2,gpt-6-luna,none,0.0,300,5.0,5.0,True,True,,True,"[[""work_type""], [], [""nunique""]]",False,False,stop,208,208,19358,53,0,0,,1.31,,"    # The columns used to answer the question: ['work_type']
+    # The types of the columns used to answer the question: ['category']
+    # The type of the answer: number
+
+    return df['work_type'].nunique()","    # The columns used to answer the question: ['work_type']
+    # The types of the columns used to answer the question: ['category']
+    # The type of the answer: number
+
+    return df['work_type'].nunique()"
+R245_eNone_T0,145,1,039_Happy,,,prefill_emul_v2,gpt-6-luna,none,0.0,300,2.0,2.0,True,True,,True,"[[""reflection_period""], [], [""nunique""]]",False,False,stop,224,224,19413,53,0,0,,1.05,,"    # The columns used to answer the question: ['reflection_period']
+    # The types of the columns used to answer the question: ['category']
+    # The type of the answer: number
+
+    return df['reflection_period'].nunique()","    # The columns used to answer the question: ['reflection_period']
+    # The types of the columns used to answer the question: ['category']
+    # The type of the answer: number
+
+    return df['reflection_period'].nunique()"
+R245_eNone_T0,146,1,039_Happy,,,prefill_emul_v2,gpt-6-luna,none,0.0,300,1.3407668971005122,1.3407668971005122,True,True,,True,"[[""num_sentence""], [], [""mean""]]",False,False,stop,216,216,19417,56,0,0,,1.61,,"    # The columns used to answer the question: ['num_sentence']
+    # The types of the columns used to answer the question: ['number[uint8]']
+    # The type of the answer: number
+
+    return df['num_sentence'].mean()","    # The columns used to answer the question: ['num_sentence']
+    # The types of the columns used to answer the question: ['number[uint8]']
+    # The type of the answer: number
+
+    return df['num_sentence'].mean()"
+R245_eNone_T0,147,1,039_Happy,,,prefill_emul_v2,gpt-6-luna,none,0.0,300,233.0,233.0,True,True,,True,"[[""age""], [], [""max""]]",False,False,stop,198,198,19416,53,0,0,,2.44,,"    # The columns used to answer the question: ['age']
+    # The types of the columns used to answer the question: ['number[double]']
+    # The type of the answer: number
+
+    return df['age'].max()","    # The columns used to answer the question: ['age']
+    # The types of the columns used to answer the question: ['number[double]']
+    # The type of the answer: number
+
+    return df['age'].max()"
+R245_eNone_T0,148,1,039_Happy,,,prefill_emul_v2,gpt-6-luna,none,0.0,300,16729.0,16729.0,True,True,,True,"[[""country""], [""country==IND""], [""sum""]]",False,False,stop,211,211,19414,55,0,0,,1.44,,"    # The columns used to answer the question: ['country']
+    # The types of the columns used to answer the question: ['category']
+    # The type of the answer: number
+
+    return (df['country'] == 'IND').sum()","    # The columns used to answer the question: ['country']
+    # The types of the columns used to answer the question: ['category']
+    # The type of the answer: number
+
+    return (df['country'] == 'IND').sum()"
+R245_eNone_T0,149,1,040_Speed,,,prefill_emul_v2,gpt-6-luna,none,0.0,300,1380.0,1380.0,True,True,,True,"[[""match""], [""match==1""], [""sum""]]",False,False,stop,292,292,25742,78,0,0,,1.58,,"    # The columns used to answer the question: ['match']
+    # The types of the columns used to answer the question: ['number[uint8]']
+    # The type of the answer: number
+
+    # Count participants whose match value is 1.
+    match_count = (df['match'] == 1).sum()
+    return int(match_count)","    # The columns used to answer the question: ['match']
+    # The types of the columns used to answer the question: ['number[uint8]']
+    # The type of the answer: number
+
+    # Count participants whose match value is 1.
+    match_count = (df['match'] == 1).sum()
+    return int(match_count)"
+R245_eNone_T0,150,1,040_Speed,,,prefill_emul_v2,gpt-6-luna,none,0.0,300,26.390236506973924,26.390236506973924,True,True,,True,"[[""age"", ""race"", ""race_o""], [""race==?""], [""mean""]]",False,False,stop,385,385,25751,101,0,0,,1.68,,"    # The columns used to answer the question: ['race', 'race_o', 'age']
+    # The types of the columns used to answer the question: ['category', 'category', 'number[double]']
+    # The type of the answer: number
+
+    # Keep participants whose race matches their partner's race, then average their ages.
+    same_race = df[df['race'] == df['race_o']]
+    return same_race['age'].mean()","    # The columns used to answer the question: ['race', 'race_o', 'age']
+    # The types of the columns used to answer the question: ['category', 'category', 'number[double]']
+    # The type of the answer: number
+
+    # Keep participants whose race matches their partner's race, then average their ages.
+    same_race = df[df['race'] == df['race_o']]
+    return same_race['age'].mean()"
+R245_eNone_T0,151,1,040_Speed,,,prefill_emul_v2,gpt-6-luna,none,0.0,300,18.0,18.0,True,True,,True,"[[""expected_num_matches""], [], [""max""]]",False,False,stop,252,252,25750,61,0,0,,1.19,,"    ['expected_num_matches']
+    # The types of the columns used to answer the question: ['number[float64]']
+    # The type of the answer: number
+
+    # Return the highest non-null expected number of matches.
+    return df['expected_num_matches'].max()","    ['expected_num_matches']
+    # The types of the columns used to answer the question: ['number[float64]']
+    # The type of the answer: number
+
+    # Return the highest non-null expected number of matches.
+    return df['expected_num_matches'].max()"
+R245_eNone_T0,152,1,040_Speed,,,prefill_emul_v2,gpt-6-luna,none,0.0,300,5.0,5.0,True,True,,True,"[[""race""], [], [""nunique""]]",False,False,stop,245,245,25748,60,0,0,,1.83,,"    # The columns used to answer the question: ['race']
+    # The types of the columns used to answer the question: ['category']
+    # The type of the answer: number
+
+    # Count distinct non-null race categories.
+    return df['race'].nunique()","    # The columns used to answer the question: ['race']
+    # The types of the columns used to answer the question: ['category']
+    # The type of the answer: number
+
+    # Count distinct non-null race categories.
+    return df['race'].nunique()"
+R245_eNone_T0,153,1,041_Airline,,,prefill_emul_v2,gpt-6-luna,none,0.0,300,85.0,85.0,True,True,,True,"[[""user_timezone""], [], [""nunique""]]",False,False,stop,216,216,19853,53,0,0,,2.05,,"    # The columns used to answer the question: ['user_timezone']
+    # The types of the columns used to answer the question: ['category']
+    # The type of the answer: number
+
+    return df['user_timezone'].nunique()","    # The columns used to answer the question: ['user_timezone']
+    # The types of the columns used to answer the question: ['category']
+    # The type of the answer: number
+
+    return df['user_timezone'].nunique()"
+R245_eNone_T0,154,1,041_Airline,,,prefill_emul_v2,gpt-6-luna,none,0.0,300,0.9001688524590165,0.9001688524590165,True,True,,True,"[[""airline_sentiment_confidence""], [], [""mean""]]",False,False,stop,249,249,19853,69,0,0,,1.78,,"    # The columns used to answer the question: ['airline_sentiment_confidence']
+    # The types of the columns used to answer the question: ['number[double]']
+    # The type of the answer: number
+
+    return df['airline_sentiment_confidence'].mean()","    # The columns used to answer the question: ['airline_sentiment_confidence']
+    # The types of the columns used to answer the question: ['number[double]']
+    # The type of the answer: number
+
+    return df['airline_sentiment_confidence'].mean()"
+R245_eNone_T0,155,1,041_Airline,,,prefill_emul_v2,gpt-6-luna,none,0.0,300,44.0,44.0,True,True,,True,"[[""retweet_count""], [], [""max""]]",False,False,stop,95,95,19853,29,0,0,,1.08,,"    ['retweet_count']
+    # The type of the answer: number
+    return df['retweet_count'].max()","    ['retweet_count']
+    # The type of the answer: number
+    return df['retweet_count'].max()"
+R245_eNone_T0,156,1,041_Airline,,,prefill_emul_v2,gpt-6-luna,none,0.0,300,504.0,504.0,True,True,,True,"[[""airline""], [""airline==Virgin America""], [""sum""]]",False,False,stop,149,149,19852,42,0,0,,1.27,,"    # The columns used to answer the question: ['airline']
+    # The type of the answer: number
+
+    return (df['airline'] == 'Virgin America').sum()","    # The columns used to answer the question: ['airline']
+    # The type of the answer: number
+
+    return (df['airline'] == 'Virgin America').sum()"
+R245_eNone_T0,157,1,042_Predict,,,prefill_emul_v2,gpt-6-luna,none,0.0,300,131.0,131.0,True,True,,True,"[[""Medu""], [""Medu>3""], [""sum""]]",False,False,stop,210,210,20139,62,0,0,,1.8,,"    # The columns used to answer the question: ['Medu']
+    # The types of the columns used to answer the question: ['number[uint8]']
+    # The type of the answer: number
+
+    return int((df['Medu'] > 3).sum())","    # The columns used to answer the question: ['Medu']
+    # The types of the columns used to answer the question: ['number[uint8]']
+    # The type of the answer: number
+
+    return int((df['Medu'] > 3).sum())"
+R245_eNone_T0,158,1,042_Predict,,,prefill_emul_v2,gpt-6-luna,none,0.0,300,16.634666666666668,16.634666666666668,True,True,,True,"[[""higher"", ""loc""], [""higher==yes""], [""mean""]]",False,False,stop,344,344,20143,87,0,0,,1.48,,"    # The columns used to answer the question: ['higher', 'age']
+    # The types of the columns used to answer the question: ['category', 'number[uint8]']
+    # The type of the answer: number
+
+    # Filter for students who want to pursue higher education, then calculate their average age.
+    return df.loc[df['higher'] == 'yes', 'age'].mean()","    # The columns used to answer the question: ['higher', 'age']
+    # The types of the columns used to answer the question: ['category', 'number[uint8]']
+    # The type of the answer: number
+
+    # Filter for students who want to pursue higher education, then calculate their average age.
+    return df.loc[df['higher'] == 'yes', 'age'].mean()"
+R245_eNone_T0,159,1,042_Predict,,,prefill_emul_v2,gpt-6-luna,none,0.0,300,75.0,75.0,True,True,,True,"[[""absences""], [], [""max""]]",False,False,stop,207,207,20134,56,0,0,,1.21,,"    # The columns used to answer the question: ['absences']
+    # The types of the columns used to answer the question: ['number[uint8]']
+    # The type of the answer: number
+
+    return df['absences'].max()","    # The columns used to answer the question: ['absences']
+    # The types of the columns used to answer the question: ['number[uint8]']
+    # The type of the answer: number
+
+    return df['absences'].max()"
+R245_eNone_T0,160,1,042_Predict,,,prefill_emul_v2,gpt-6-luna,none,0.0,300,2.0,2.0,True,True,,True,"[[""school""], [], [""nunique""]]",False,False,stop,202,202,20133,51,0,0,,1.19,,"    # The columns used to answer the question: ['school']
+    # The types of the columns used to answer the question: ['category']
+    # The type of the answer: number
+
+    return df['school'].nunique()","    # The columns used to answer the question: ['school']
+    # The types of the columns used to answer the question: ['category']
+    # The type of the answer: number
+
+    return df['school'].nunique()"
+R245_eNone_T0,161,1,043_Predict,,,prefill_emul_v2,gpt-6-luna,none,0.0,300,57340.0,57340.0,True,True,,True,"[[""FranchiseCode""], [""FranchiseCode==1""], [""sum""]]",False,False,stop,230,230,19928,64,0,0,,1.56,,"    # The columns used to answer the question: ['FranchiseCode']
+    # The types of the columns used to answer the question: ['number[uint32]']
+    # The type of the answer: number
+
+    return int((df['FranchiseCode'] == 1).sum())","    # The columns used to answer the question: ['FranchiseCode']
+    # The types of the columns used to answer the question: ['number[uint32]']
+    # The type of the answer: number
+
+    return int((df['FranchiseCode'] == 1).sum())"
+R245_eNone_T0,162,1,043_Predict,,,prefill_emul_v2,gpt-6-luna,none,0.0,300,164636.4123068934,164636.4123068934,True,True,,True,"[[""DisbursementGross"", ""Sector""], [""Sector==Retail trade""], [""mean""]]",False,False,stop,321,321,19932,85,0,0,,1.58,,"    # ['Sector', 'DisbursementGross']
+    # The types of the columns used to answer the question: ['category', 'number[uint32]']
+    # The type of the answer: number
+
+    retail = df[df['Sector'] == 'Retail trade']
+    average_disbursement_gross = retail['DisbursementGross'].mean()
+
+    return average_disbursement_gross","    # ['Sector', 'DisbursementGross']
+    # The types of the columns used to answer the question: ['category', 'number[uint32]']
+    # The type of the answer: number
+
+    retail = df[df['Sector'] == 'Retail trade']
+    average_disbursement_gross = retail['DisbursementGross'].mean()
+
+    return average_disbursement_gross"
+R245_eNone_T0,163,1,043_Predict,,,prefill_emul_v2,gpt-6-luna,none,0.0,300,2010.0,2010.0,True,True,,True,"[[""ApprovalFY""], [], [""max""]]",False,False,stop,212,212,19927,56,0,0,,1.26,,"    # The columns used to answer the question: ['ApprovalFY']
+    # The types of the columns used to answer the question: ['number[uint16]']
+    # The type of the answer: number
+
+    return df['ApprovalFY'].max()","    # The columns used to answer the question: ['ApprovalFY']
+    # The types of the columns used to answer the question: ['number[uint16]']
+    # The type of the answer: number
+
+    return df['ApprovalFY'].max()"
+R245_eNone_T0,164,1,043_Predict,,,prefill_emul_v2,gpt-6-luna,none,0.0,300,20.0,20.0,True,True,,True,"[[""Sector""], [], [""nunique""]]",False,False,stop,202,202,19927,51,0,0,,1.27,,"    # The columns used to answer the question: ['Sector']
+    # The types of the columns used to answer the question: ['category']
+    # The type of the answer: number
+
+    return df['Sector'].nunique()","    # The columns used to answer the question: ['Sector']
+    # The types of the columns used to answer the question: ['category']
+    # The type of the answer: number
+
+    return df['Sector'].nunique()"
+R245_eNone_T0,165,1,044_IMDb,,,prefill_emul_v2,gpt-6-luna,none,0.0,300,6.0,6.0,True,True,,True,"[[""country"", ""genre"", ""metascore""], [], [""sum""]]",False,False,stop,366,366,20393,102,0,0,,1.68,,"    # ['country', 'genre', 'metascore']
+    # The types of the columns used to answer the question: ['category', 'category', 'number[double]']
+    # The type of the answer: number
+
+    mask = (
+        df['country'].str.contains('USA', na=False)
+        & df['genre'].str.contains('Drama', na=False)
+        & df['metascore'].eq(100)
+    )
+    return int(mask.sum())","    # ['country', 'genre', 'metascore']
+    # The types of the columns used to answer the question: ['category', 'category', 'number[double]']
+    # The type of the answer: number
+
+    mask = (
+        df['country'].str.contains('USA', na=False)
+        & df['genre'].str.contains('Drama', na=False)
+        & df['metascore'].eq(100)
+    )
+    return int(mask.sum())"
+R245_eNone_T0,166,1,044_IMDb,,,prefill_emul_v2,gpt-6-luna,none,0.0,300,96.07926963408374,94.70994052676296,False,True,,True,"[[""country"", ""genre"", ""language"", ""loc""], [], [""mean""]]",False,False,stop,459,459,20392,122,0,0,,2.01,,"    ['genre', 'country', 'language', 'duration']
+    # The types of the columns used to answer the question: ['category', 'category', 'category', 'number[uint16]']
+    # The type of the answer: number
+
+    # Keep drama movies from the USA with English-language audio.
+    mask = (
+        df['genre'].str.contains(r'\bDrama\b', na=False)
+        & df['country'].eq('USA')
+        & df['language'].eq('English')
+    )
+    return df.loc[mask, 'duration'].mean()","    ['genre', 'country', 'language', 'duration']
+    # The types of the columns used to answer the question: ['category', 'category', 'category', 'number[uint16]']
+    # The type of the answer: number
+
+    # Keep drama movies from the USA with English-language audio.
+    mask = (
+        df['genre'].str.contains(r'\bDrama\b', na=False)
+        & df['country'].eq('USA')
+        & df['language'].eq('English')
+    )
+    return df.loc[mask, 'duration'].mean()"
+R245_eNone_T0,167,1,044_IMDb,,,prefill_emul_v2,gpt-6-luna,none,0.0,300,2020.0,2020.0,True,True,,True,"[[""country"", ""language"", ""loc""], [], [""max""]]",False,False,stop,479,479,20389,123,0,0,,2.01,,"    # The columns used to answer the question: ['year', 'country', 'language']
+    # The types of the columns used to answer the question: ['number[double]', 'category', 'category']
+    # The type of the answer: number
+
+    # Filter for English-language movies from the USA and return the latest year.
+    mask = (
+        df['country'].str.contains(r'\bUSA\b', na=False)
+        & df['language'].str.contains(r'\bEnglish\b', na=False)
+    )
+    return df.loc[mask, 'year'].max()","    # The columns used to answer the question: ['year', 'country', 'language']
+    # The types of the columns used to answer the question: ['number[double]', 'category', 'category']
+    # The type of the answer: number
+
+    # Filter for English-language movies from the USA and return the latest year.
+    mask = (
+        df['country'].str.contains(r'\bUSA\b', na=False)
+        & df['language'].str.contains(r'\bEnglish\b', na=False)
+    )
+    return df.loc[mask, 'year'].max()"
+R245_eNone_T0,168,1,044_IMDb,,,prefill_emul_v2,gpt-6-luna,none,0.0,300,650.0,650.0,True,True,,True,"[[""country"", ""loc""], [""country==USA""], [""nunique""]]",False,False,stop,291,291,20388,72,0,0,,2.02,,"    # The columns used to answer the question: ['country', 'language']
+    # The types of the columns used to answer the question: ['category', 'category']
+    # The type of the answer: number
+
+    usa_languages = df.loc[df['country'] == 'USA', 'language'].nunique()
+    return usa_languages","    # The columns used to answer the question: ['country', 'language']
+    # The types of the columns used to answer the question: ['category', 'category']
+    # The type of the answer: number
+
+    usa_languages = df.loc[df['country'] == 'USA', 'language'].nunique()
+    return usa_languages"
+R245_eNone_T0,169,1,045_Predict,,,prefill_emul_v2,gpt-6-luna,none,0.0,300,94.0,94.0,True,True,,True,"[[""popularity""], [], [""max""]]",False,False,stop,211,211,19872,56,0,0,,1.4,,"    # The columns used to answer the question: ['popularity']
+    # The types of the columns used to answer the question: ['number[uint8]']
+    # The type of the answer: number
+
+    return df['popularity'].max()","    # The columns used to answer the question: ['popularity']
+    # The types of the columns used to answer the question: ['number[uint8]']
+    # The type of the answer: number
+
+    return df['popularity'].max()"
+R245_eNone_T0,170,1,045_Predict,,,prefill_emul_v2,gpt-6-luna,none,0.0,300,489.0,489.0,True,True,,True,"[[""release_year""], [], [""max"", ""value_counts""]]",False,False,stop,295,295,19876,72,0,0,,2.04,,"    # The columns used to answer the question: ['release_year']
+    # The types of the columns used to answer the question: ['number[uint16]']
+    # The type of the answer: number
+
+    # Count songs by release year and return the largest count.
+    return df['release_year'].value_counts().max()","    # The columns used to answer the question: ['release_year']
+    # The types of the columns used to answer the question: ['number[uint16]']
+    # The type of the answer: number
+
+    # Count songs by release year and return the largest count.
+    return df['release_year'].value_counts().max()"
+R245_eNone_T0,171,1,046_120,,,prefill_emul_v2,gpt-6-luna,none,0.0,300,25.55689835729737,25.556898357297374,True,True,,True,"[[""Age""], [], [""mean""]]",False,False,stop,163,163,19645,42,0,0,,1.71,,"    ['Age']
+    # The type of the answer: number
+
+    # Calculate the mean age, ignoring missing values.
+    average_age = df['Age'].mean()
+
+    return average_age","    ['Age']
+    # The type of the answer: number
+
+    # Calculate the mean age, ignoring missing values.
+    average_age = df['Age'].mean()
+
+    return average_age"
+R245_eNone_T0,172,1,046_120,,,prefill_emul_v2,gpt-6-luna,none,0.0,300,214.0,214.0,True,True,,True,"[[""Weight""], [], [""max""]]",False,False,stop,205,205,19645,54,0,0,,1.41,,"    # The columns used to answer the question: ['Weight']
+    # The types of the columns used to answer the question: ['number[float64]']
+    # The type of the answer: number
+
+    return df['Weight'].max()","    # The columns used to answer the question: ['Weight']
+    # The types of the columns used to answer the question: ['number[float64]']
+    # The type of the answer: number
+
+    return df['Weight'].max()"
+R245_eNone_T0,173,1,047_Bank,,,prefill_emul_v2,gpt-6-luna,none,0.0,300,34516.0,34516.0,True,True,,True,"[[""credit_limit""], [], [""max""]]",False,False,stop,216,216,19585,55,0,0,,1.49,,"    # The columns used to answer the question: ['credit_limit']
+    # The types of the columns used to answer the question: ['number[double]']
+    # The type of the answer: number
+
+    return df['credit_limit'].max()","    # The columns used to answer the question: ['credit_limit']
+    # The types of the columns used to answer the question: ['number[double]']
+    # The type of the answer: number
+
+    return df['credit_limit'].max()"
+R245_eNone_T0,174,1,047_Bank,,,prefill_emul_v2,gpt-6-luna,none,0.0,300,18484.0,18484.0,True,True,,True,"[[""total_trans_amt""], [], [""max""]]",False,False,stop,222,222,19584,58,0,0,,1.43,,"    # The columns used to answer the question: ['total_trans_amt']
+    # The types of the columns used to answer the question: ['number[uint16]']
+    # The type of the answer: number
+
+    return df['total_trans_amt'].max()","    # The columns used to answer the question: ['total_trans_amt']
+    # The types of the columns used to answer the question: ['number[uint16]']
+    # The type of the answer: number
+
+    return df['total_trans_amt'].max()"
+R245_eNone_T0,175,1,047_Bank,,,prefill_emul_v2,gpt-6-luna,none,0.0,300,2517.0,2517.0,True,True,,True,"[[""total_revolving_bal""], [], [""max""]]",False,False,stop,230,230,19586,60,0,0,,1.39,,"    # The columns used to answer the question: ['total_revolving_bal']
+    # The types of the columns used to answer the question: ['number[uint16]']
+    # The type of the answer: number
+
+    return df['total_revolving_bal'].max()","    # The columns used to answer the question: ['total_revolving_bal']
+    # The types of the columns used to answer the question: ['number[uint16]']
+    # The type of the answer: number
+
+    return df['total_revolving_bal'].max()"
+R245_eNone_T0,176,1,047_Bank,,,prefill_emul_v2,gpt-6-luna,none,0.0,300,73.0,73.0,True,True,,True,"[[""customer_age""], [], [""max""]]",False,False,stop,137,137,19585,36,0,0,,1.41,,"    # The columns used to answer the question: ['customer_age']
+    # The type of the answer: number
+
+    return df['customer_age'].max()","    # The columns used to answer the question: ['customer_age']
+    # The type of the answer: number
+
+    return df['customer_age'].max()"
+R245_eNone_T0,177,1,048_Data,,,prefill_emul_v2,gpt-6-luna,none,0.0,300,264.0,264.0,True,True,,True,"[[""Job Title""], [], [""nunique""]]",False,False,stop,167,167,20547,45,0,0,,2.71,,"    # ['Job Title']
+    # The types of the columns used to answer the question: ['category']
+    # The type of the answer: number
+
+    return df['Job Title'].nunique()","    # ['Job Title']
+    # The types of the columns used to answer the question: ['category']
+    # The type of the answer: number
+
+    return df['Job Title'].nunique()"
+R245_eNone_T0,178,1,048_Data,,,prefill_emul_v2,gpt-6-luna,none,0.0,300,46.59164420485176,46.591644204851754,True,True,,True,"[[""age""], [], [""mean""]]",False,False,stop,176,176,20552,44,0,0,,1.5,,"    # ['age']
+    # The type of the answer: number
+
+    # Calculate the average age of the companies.
+    average_company_age = df['age'].mean()
+
+    return average_company_age","    # ['age']
+    # The type of the answer: number
+
+    # Calculate the average age of the companies.
+    average_company_age = df['age'].mean()
+
+    return average_company_age"
+R245_eNone_T0,179,1,048_Data,,,prefill_emul_v2,gpt-6-luna,none,0.0,300,5.0,5.0,True,True,,True,"[[""Rating""], [], [""max""]]",False,False,stop,204,204,20548,53,0,0,,1.81,,"    # The columns used to answer the question: ['Rating']
+    # The types of the columns used to answer the question: ['number[double]']
+    # The type of the answer: number
+
+    return df['Rating'].max()","    # The columns used to answer the question: ['Rating']
+    # The types of the columns used to answer the question: ['number[double]']
+    # The type of the answer: number
+
+    return df['Rating'].max()"
+R245_eNone_T0,180,1,048_Data,,,prefill_emul_v2,gpt-6-luna,none,0.0,300,15.0,15.0,True,True,,True,"[[""Type of ownership""], [""Type of ownership==Government""], [""sum""]]",False,False,stop,129,129,20553,36,0,0,,1.19,,"    # ['Type of ownership']
+    # The type of the answer: number
+
+    return int((df['Type of ownership'] == 'Government').sum())","    # ['Type of ownership']
+    # The type of the answer: number
+
+    return int((df['Type of ownership'] == 'Government').sum())"
+R245_eNone_T0,181,1,049_Boris,,,prefill_emul_v2,gpt-6-luna,none,0.0,300,1.0,1.0,True,True,,True,"[[""author_name<gx:category>""], [], [""nunique""]]",False,False,stop,122,122,21623,38,0,0,,1.17,,"    ['author_name<gx:category>']
+    # The type of the answer: number
+
+    return df['author_name<gx:category>'].nunique()","    ['author_name<gx:category>']
+    # The type of the answer: number
+
+    return df['author_name<gx:category>'].nunique()"
+R245_eNone_T0,182,1,049_Boris,,,prefill_emul_v2,gpt-6-luna,none,0.0,300,117386.0,117386.0,True,True,,True,"[[""retweets<gx:number>""], [], [""max""]]",False,False,stop,110,110,21631,36,0,0,,1.17,,"    # ['retweets<gx:number>']
+    # The type of the answer: number
+
+    return df['retweets<gx:number>'].max()","    # ['retweets<gx:number>']
+    # The type of the answer: number
+
+    return df['retweets<gx:number>'].max()"
+R245_eNone_T0,183,1,049_Boris,,,prefill_emul_v2,gpt-6-luna,none,0.0,300,5081.805590062112,5081.805590062112,True,True,,True,"[[""favorites<gx:number>""], [], [""mean""]]",False,False,stop,113,113,21623,34,0,0,,1.44,,"    # ['favorites<gx:number>']
+    # The type of the answer: number
+
+    return df['favorites<gx:number>'].mean()","    # ['favorites<gx:number>']
+    # The type of the answer: number
+
+    return df['favorites<gx:number>'].mean()"
+R245_eNone_T0,184,1,049_Boris,,,prefill_emul_v2,gpt-6-luna,none,0.0,300,3220.0,3220.0,True,True,,True,"[[""user_verified<gx:boolean>""], [], [""sum""]]",False,False,stop,237,237,21623,61,0,0,,1.32,,"    # The columns used to answer the question: ['user_verified<gx:boolean>']
+    # The types of the columns used to answer the question: ['bool']
+    # The type of the answer: number
+
+    return int(df['user_verified<gx:boolean>'].sum())","    # The columns used to answer the question: ['user_verified<gx:boolean>']
+    # The types of the columns used to answer the question: ['bool']
+    # The type of the answer: number
+
+    return int(df['user_verified<gx:boolean>'].sum())"
+R245_eNone_T0,185,1,050_ING,,,prefill_emul_v2,gpt-6-luna,none,0.0,300,61.0,61.0,True,True,,True,"[[""text""], [], [""len"", ""max""]]",False,False,stop,276,276,20508,70,0,0,,1.44,,"    # The columns used to answer the question: ['text']
+    # The types of the columns used to answer the question: ['str']
+    # The type of the answer: number
+
+    # Count the words in each post and return the largest count.
+    return df['text'].str.split().str.len().max()","    # The columns used to answer the question: ['text']
+    # The types of the columns used to answer the question: ['str']
+    # The type of the answer: number
+
+    # Count the words in each post and return the largest count.
+    return df['text'].str.split().str.len().max()"
+R245_eNone_T0,186,1,050_ING,,,prefill_emul_v2,gpt-6-luna,none,0.0,300,1243.0,1243.0,True,True,,True,"[[""retweets""], [], [""sum""]]",False,False,stop,243,243,20508,64,0,0,,1.96,,"    # The columns used to answer the question: ['retweets']
+    # The types of the columns used to answer the question: ['number[uint8]']
+    # The type of the answer: number
+
+    total_retweets = df['retweets'].sum()
+    return total_retweets","    # The columns used to answer the question: ['retweets']
+    # The types of the columns used to answer the question: ['number[uint8]']
+    # The type of the answer: number
+
+    total_retweets = df['retweets'].sum()
+    return total_retweets"
+R245_eNone_T0,187,1,050_ING,,,prefill_emul_v2,gpt-6-luna,none,0.0,300,3788.0,3788.0,True,True,,True,"[[""mention_ids""], [], [""sum""]]",False,False,stop,275,275,20504,70,0,0,,1.46,,"    # The columns used to answer the question: ['mention_ids']
+    # The types of the columns used to answer the question: ['object']
+    # The type of the answer: number
+
+    # Count posts whose mention_ids array is empty.
+    return df['mention_ids'].apply(len).eq(0).sum()","    # The columns used to answer the question: ['mention_ids']
+    # The types of the columns used to answer the question: ['object']
+    # The type of the answer: number
+
+    # Count posts whose mention_ids array is empty.
+    return df['mention_ids'].apply(len).eq(0).sum()"
+R245_eNone_T0,188,1,051_Pokemon,,,prefill_emul_v2,gpt-6-luna,none,0.0,300,20.0,20.0,True,True,,True,"[[""type1""], [], [""nunique""]]",False,False,stop,86,86,19359,29,0,0,,1.5,,"    # ['type1']
+    # The type of the answer: number
+
+    return df['type1'].nunique()","    # ['type1']
+    # The type of the answer: number
+
+    return df['type1'].nunique()"
+R245_eNone_T0,189,1,051_Pokemon,,,prefill_emul_v2,gpt-6-luna,none,0.0,300,1125.0,1125.0,True,True,,True,"[[""total""], [], [""max""]]",False,False,stop,202,202,19355,54,0,0,,1.73,,"    # The columns used to answer the question: ['total']
+    # The types of the columns used to answer the question: ['number[uint16]']
+    # The type of the answer: number
+
+    return df['total'].max()","    # The columns used to answer the question: ['total']
+    # The types of the columns used to answer the question: ['number[uint16]']
+    # The type of the answer: number
+
+    return df['total'].max()"
+R245_eNone_T0,190,1,051_Pokemon,,,prefill_emul_v2,gpt-6-luna,none,0.0,300,160.0,160.0,True,True,,True,"[[""generation""], [""generation==3""], [""sum""]]",False,False,stop,247,247,19354,65,0,0,,1.62,,"    ['generation']
+    
+    # The columns used to answer the question: ['generation']
+    # The types of the columns used to answer the question: ['number[uint8]']
+    # The type of the answer: number
+
+    return int((df['generation'] == 3).sum())","    ['generation']
+    
+    # The columns used to answer the question: ['generation']
+    # The types of the columns used to answer the question: ['number[uint8]']
+    # The type of the answer: number
+
+    return int((df['generation'] == 3).sum())"
+R245_eNone_T0,191,1,051_Pokemon,,,prefill_emul_v2,gpt-6-luna,none,0.0,300,80.93843283582089,80.93843283582089,True,True,,True,"[[""attack""], [], [""mean""]]",False,False,stop,204,204,19354,54,0,0,,1.52,,"    # The columns used to answer the question: ['attack']
+    # The types of the columns used to answer the question: ['number[uint8]']
+    # The type of the answer: number
+
+    return df['attack'].mean()","    # The columns used to answer the question: ['attack']
+    # The types of the columns used to answer the question: ['number[uint8]']
+    # The type of the answer: number
+
+    return df['attack'].mean()"
+R245_eNone_T0,192,1,052_Professional,,,prefill_emul_v2,gpt-6-luna,none,0.0,300,0.7826336180787501,0.7826336180787501,True,True,,True,"[[""Self-enhancement""], [], [""max""]]",False,False,stop,224,224,19484,57,0,0,,1.5,,"    # The columns used to answer the question: ['Self-enhancement']
+    # The types of the columns used to answer the question: ['number[double]']
+    # The type of the answer: number
+
+    return df['Self-enhancement'].max()","    # The columns used to answer the question: ['Self-enhancement']
+    # The types of the columns used to answer the question: ['number[double]']
+    # The type of the answer: number
+
+    return df['Self-enhancement'].max()"
+R245_eNone_T0,193,1,052_Professional,,,prefill_emul_v2,gpt-6-luna,none,0.0,300,1002.0,1002.0,True,True,,True,"[[""Emotional_Range""], [""Emotional_Range>0.5""], [""sum""]]",False,False,stop,108,108,19485,38,0,0,,1.83,,"    ['Emotional_Range']
+    # The type of the answer: number
+
+    return (df['Emotional_Range'] > 0.5).sum()","    ['Emotional_Range']
+    # The type of the answer: number
+
+    return (df['Emotional_Range'] > 0.5).sum()"
+R245_eNone_T0,194,1,052_Professional,,,prefill_emul_v2,gpt-6-luna,none,0.0,300,0.373214039767641,0.373214039767641,True,True,,True,"[[""loc"", ""n""], [], [""idxmax""]]",False,False,stop,263,263,19491,73,0,0,,2.75,,"    # ['n', 'Extraversion']
+    # The type of the answer: number
+
+    # Find the profession with the highest number of records, then return its
+    # average Extraversion level.
+    highest_n_idx = df['n'].idxmax()
+    return df.loc[highest_n_idx, 'Extraversion']","    # ['n', 'Extraversion']
+    # The type of the answer: number
+
+    # Find the profession with the highest number of records, then return its
+    # average Extraversion level.
+    highest_n_idx = df['n'].idxmax()
+    return df.loc[highest_n_idx, 'Extraversion']"
+R245_eNone_T0,195,1,052_Professional,,,prefill_emul_v2,gpt-6-luna,none,0.0,300,0.0353641396193574,0.035364139619357415,True,True,,True,"[[""Self-transcendence""], [], [""min""]]",False,False,stop,185,185,19483,52,0,0,,1.22,,"    ['Self-transcendence']
+    # The types of the columns used to answer the question: ['number[double]']
+    # The type of the answer: number
+
+    return df['Self-transcendence'].min()","    ['Self-transcendence']
+    # The types of the columns used to answer the question: ['number[double]']
+    # The type of the answer: number
+
+    return df['Self-transcendence'].min()"
+R245_eNone_T0,196,1,053_Patents,,,prefill_emul_v2,gpt-6-luna,none,0.0,300,3574.0,3574.0,True,True,,True,"[[""organization""], [], [""nunique""]]",False,False,stop,259,259,20422,59,0,0,,1.49,,"    # The columns used to answer the question: ['organization']
+    # The types of the columns used to answer the question: ['category']
+    # The type of the answer: number
+
+    # Count distinct non-null organizations.
+    return df['organization'].nunique()","    # The columns used to answer the question: ['organization']
+    # The types of the columns used to answer the question: ['category']
+    # The type of the answer: number
+
+    # Count distinct non-null organizations.
+    return df['organization'].nunique()"
+R245_eNone_T0,197,1,053_Patents,,,prefill_emul_v2,gpt-6-luna,none,0.0,300,14.745974597459746,14.745974597459746,True,True,,True,"[[""num_claims""], [], [""mean""]]",False,False,stop,212,212,20425,58,0,0,,1.7,,"    # The columns used to answer the question: ['num_claims']
+    # The types of the columns used to answer the question: ['number[uint8]']
+    # The type of the answer: number
+
+    return df['num_claims'].mean()","    # The columns used to answer the question: ['num_claims']
+    # The types of the columns used to answer the question: ['number[uint8]']
+    # The type of the answer: number
+
+    return df['num_claims'].mean()"
+R245_eNone_T0,198,1,053_Patents,,,prefill_emul_v2,gpt-6-luna,none,0.0,300,100.0,100.0,True,True,,True,"[[""num_claims""], [], [""max""]]",False,False,stop,211,211,20424,58,0,0,,1.6,,"    # The columns used to answer the question: ['num_claims']
+    # The types of the columns used to answer the question: ['number[uint8]']
+    # The type of the answer: number
+
+    return df['num_claims'].max()","    # The columns used to answer the question: ['num_claims']
+    # The types of the columns used to answer the question: ['number[uint8]']
+    # The type of the answer: number
+
+    return df['num_claims'].max()"
+R245_eNone_T0,199,1,053_Patents,,,prefill_emul_v2,gpt-6-luna,none,0.0,300,8848.0,8848.0,True,True,,True,"[[""type""], [""type==utility""], [""sum""]]",False,False,stop,209,209,20424,55,0,0,,1.49,,"    # The columns used to answer the question: ['type']
+    # The types of the columns used to answer the question: ['category']
+    # The type of the answer: number
+
+    return (df['type'] == 'utility').sum()","    # The columns used to answer the question: ['type']
+    # The types of the columns used to answer the question: ['category']
+    # The type of the answer: number
+
+    return (df['type'] == 'utility').sum()"
+R245_eNone_T0,200,1,054_Joe,,,prefill_emul_v2,gpt-6-luna,none,0.0,300,30308047.0,30308047.0,True,True,,True,"[[""user_followers_count<gx:number>""], [], [""max""]]",False,False,stop,134,134,21686,40,0,0,,1.27,,"    # ['user_followers_count<gx:number>']
+    # The type of the answer: number
+
+    return df['user_followers_count<gx:number>'].max()","    # ['user_followers_count<gx:number>']
+    # The type of the answer: number
+
+    return df['user_followers_count<gx:number>'].max()"
+R245_eNone_T0,201,1,054_Joe,,,prefill_emul_v2,gpt-6-luna,none,0.0,300,1.0,1.0,True,True,,True,"[[""favorites<gx:number>"", ""loc""], [""favorites<gx:number>>10000""], [""nunique""]]",False,False,stop,300,300,21688,79,0,0,,1.52,,"    # ['author_name<gx:category>', 'favorites<gx:number>']
+    # Count distinct authors with at least one tweet receiving more than 10,000 favorites.
+    qualifying_authors = df.loc[
+        df['favorites<gx:number>'] > 10000, 'author_name<gx:category>'
+    ].nunique()
+
+    return qualifying_authors","    # ['author_name<gx:category>', 'favorites<gx:number>']
+    # Count distinct authors with at least one tweet receiving more than 10,000 favorites.
+    qualifying_authors = df.loc[
+        df['favorites<gx:number>'] > 10000, 'author_name<gx:category>'
+    ].nunique()
+
+    return qualifying_authors"
+R245_eNone_T0,202,1,054_Joe,,,prefill_emul_v2,gpt-6-luna,none,0.0,300,205169.0,205169.0,True,True,,True,"[[""retweets<gx:number>""], [], [""max""]]",False,False,stop,187,187,21684,55,0,0,,2.1,,"    ['retweets<gx:number>']
+    # The types of the columns used to answer the question: ['number[uint32]']
+    # The type of the answer: number
+
+    return df['retweets<gx:number>'].max()","    ['retweets<gx:number>']
+    # The types of the columns used to answer the question: ['number[uint32]']
+    # The type of the answer: number
+
+    return df['retweets<gx:number>'].max()"
+R245_eNone_T0,203,1,055_German,,,prefill_emul_v2,gpt-6-luna,none,0.0,300,18424.0,18424.0,True,True,,True,"[[""Loan Amount""], [], [""max""]]",False,False,stop,214,214,19867,56,0,0,,1.81,,"    # The columns used to answer the question: ['Loan Amount']
+    # The types of the columns used to answer the question: ['number[uint16]']
+    # The type of the answer: number
+
+    return df['Loan Amount'].max()","    # The columns used to answer the question: ['Loan Amount']
+    # The types of the columns used to answer the question: ['number[uint16]']
+    # The type of the answer: number
+
+    return df['Loan Amount'].max()"
+R245_eNone_T0,204,1,055_German,,,prefill_emul_v2,gpt-6-luna,none,0.0,300,367.0,367.0,True,True,,True,"[[""Number of Existing Loans""], [""Number of Existing Loans>1""], [""sum""]]",False,False,stop,202,202,19868,56,0,0,,1.52,,"    ['Number of Existing Loans']
+    # The types of the columns used to answer the question: ['number[uint8]']
+    # The type of the answer: number
+
+    return (df['Number of Existing Loans'] > 1).sum()","    ['Number of Existing Loans']
+    # The types of the columns used to answer the question: ['number[uint8]']
+    # The type of the answer: number
+
+    return (df['Number of Existing Loans'] > 1).sum()"
+R245_eNone_T0,205,1,055_German,,,prefill_emul_v2,gpt-6-luna,none,0.0,300,72.0,72.0,True,True,,True,"[[""Loan Duration - Months""], [], [""max""]]",False,False,stop,235,235,19867,60,0,0,,1.51,,"    # The columns used to answer the question: ['Loan Duration - Months']
+    # The types of the columns used to answer the question: ['number[uint8]']
+    # The type of the answer: number
+
+    return df['Loan Duration - Months'].max()","    # The columns used to answer the question: ['Loan Duration - Months']
+    # The types of the columns used to answer the question: ['number[uint8]']
+    # The type of the answer: number
+
+    return df['Loan Duration - Months'].max()"
+R245_eNone_T0,206,1,055_German,,,prefill_emul_v2,gpt-6-luna,none,0.0,300,113.0,113.0,True,True,,True,"[[""Age""], [""Age>50""], [""sum""]]",False,False,stop,209,209,19866,60,0,0,,1.31,,"    # The columns used to answer the question: ['Age']
+    # The types of the columns used to answer the question: ['number[uint8]']
+    # The type of the answer: number
+
+    return int((df['Age'] > 50).sum())","    # The columns used to answer the question: ['Age']
+    # The types of the columns used to answer the question: ['number[uint8]']
+    # The type of the answer: number
+
+    return int((df['Age'] > 50).sum())"
+R245_eNone_T0,207,1,056_Emoji,,,prefill_emul_v2,gpt-6-luna,none,0.0,300,0.0,0.0,True,True,,True,"[[""Calories (kcal)""], [""Calories (kcal)>500""], [""sum""]]",False,False,stop,235,235,20867,67,0,0,,3.06,,"    # The columns used to answer the question: ['Calories (kcal)']
+    # The types of the columns used to answer the question: ['number[double]']
+    # The type of the answer: number
+
+    return int((df['Calories (kcal)'] > 500).sum())","    # The columns used to answer the question: ['Calories (kcal)']
+    # The types of the columns used to answer the question: ['number[double]']
+    # The type of the answer: number
+
+    return int((df['Calories (kcal)'] > 500).sum())"
+R245_eNone_T0,208,1,056_Emoji,,,prefill_emul_v2,gpt-6-luna,none,0.0,300,0.08465,0.08465,True,True,,True,"[[""Total Fat (g)""], [], [""mean""]]",False,False,stop,176,176,20873,52,0,0,,1.69,,"    ['Total Fat (g)']
+    # The types of the columns used to answer the question: ['number[double]']
+    # The type of the answer: number
+
+    return df['Total Fat (g)'].mean()","    ['Total Fat (g)']
+    # The types of the columns used to answer the question: ['number[double]']
+    # The type of the answer: number
+
+    return df['Total Fat (g)'].mean()"
+R245_eNone_T0,209,1,056_Emoji,,,prefill_emul_v2,gpt-6-luna,none,0.0,300,18.0,18.0,True,True,,True,"[[""Sodium (g)""], [""Sodium (g)>1""], [""sum""]]",False,False,stop,103,103,20871,40,0,0,,1.39,,"    # ['Sodium (g)']
+    # The type of the answer: number
+
+    return int((df['Sodium (g)'] > 1).sum())","    # ['Sodium (g)']
+    # The type of the answer: number
+
+    return int((df['Sodium (g)'] > 1).sum())"
+R245_eNone_T0,210,1,056_Emoji,,,prefill_emul_v2,gpt-6-luna,none,0.0,300,0.2748,0.2748,True,True,,True,"[[""Protein (g)""], [], [""max""]]",False,False,stop,171,171,20873,50,0,0,,1.64,,"    ['Protein (g)']
+    # The types of the columns used to answer the question: ['number[double]']
+    # The type of the answer: number
+
+    return df['Protein (g)'].max()","    ['Protein (g)']
+    # The types of the columns used to answer the question: ['number[double]']
+    # The type of the answer: number
+
+    return df['Protein (g)'].max()"
+R245_eNone_T0,211,1,057_Spain,,,prefill_emul_v2,gpt-6-luna,none,0.0,300,372.0,372.0,True,True,,True,"[[""User self- placement on Progressive-Conservative economic values axis""], [""User self- placement on Progressive-Conservative economic values axis==10""], [""sum""]]",False,False,stop,352,348,22227,82,0,0,,1.68,,"```python
+    # The columns used to answer the question: ['User self- placement on Progressive-Conservative economic values axis']
+    # The types of the columns used to answer the question: ['number[double]']
+    # The type of the answer: number
+
+    return (df['User self- placement on Progressive-Conservative economic values axis'] == 10).sum()","```python
+    # The columns used to answer the question: ['User self- placement on Progressive-Conservative economic values axis']
+    # The types of the columns used to answer the question: ['number[double]']
+    # The type of the answer: number
+
+    return (df['User self- placement on Progressive-Conservative economic values axis'] == 10).sum()
+```"
+R245_eNone_T0,212,1,057_Spain,,,prefill_emul_v2,gpt-6-luna,none,0.0,300,37.42012059318812,37.420120593188116,True,True,,True,"[[""Age""], [], [""mean""]]",False,False,stop,199,199,22219,53,0,0,,1.73,,"    # The columns used to answer the question: ['Age']
+    # The types of the columns used to answer the question: ['number[double]']
+    # The type of the answer: number
+
+    return df['Age'].mean()","    # The columns used to answer the question: ['Age']
+    # The types of the columns used to answer the question: ['number[double]']
+    # The type of the answer: number
+
+    return df['Age'].mean()"
+R245_eNone_T0,213,1,057_Spain,,,prefill_emul_v2,gpt-6-luna,none,0.0,300,10344.0,19910.0,False,True,,True,"[[""It should be more difficult for companies to lay off workers""], [], [""count""]]",False,False,stop,194,194,22226,46,0,0,,1.24,,"    # ['It should be more difficult for companies to lay off workers']
+    # The type of the answer: number
+
+    return df['It should be more difficult for companies to lay off workers'].count()","    # ['It should be more difficult for companies to lay off workers']
+    # The type of the answer: number
+
+    return df['It should be more difficult for companies to lay off workers'].count()"
+R245_eNone_T0,214,1,057_Spain,,,prefill_emul_v2,gpt-6-luna,none,0.0,300,105.0,105.0,True,True,,True,"[[""gender"", ""loc""], [""gender==I prefer not to say""], [""max""]]",False,False,stop,294,290,22225,82,0,0,,1.62,,"```python
+    # The columns used to answer the question: ['Age', 'gender']
+    # The types of the columns used to answer the question: ['number[float64]', 'category']
+    # The type of the answer: number
+
+    mask = df['gender'] == 'I prefer not to say'
+    return df.loc[mask, 'Age'].max()","```python
+    # The columns used to answer the question: ['Age', 'gender']
+    # The types of the columns used to answer the question: ['number[float64]', 'category']
+    # The type of the answer: number
+
+    mask = df['gender'] == 'I prefer not to say'
+    return df.loc[mask, 'Age'].max()
+```"
+R245_eNone_T0,215,1,058_US,,,prefill_emul_v2,gpt-6-luna,none,0.0,300,1315.0,2371.0,False,True,,True,"[[""likely_voter""], [""likely_voter==Yes""], [""sum""]]",False,False,stop,178,178,23939,50,0,0,,1.76,,"    ['likely_voter']
+    # The types of the columns used to answer the question: ['category']
+    # The type of the answer: number
+
+    return (df['likely_voter'] == 'Yes').sum()","    ['likely_voter']
+    # The types of the columns used to answer the question: ['category']
+    # The type of the answer: number
+
+    return (df['likely_voter'] == 'Yes').sum()"
+R245_eNone_T0,216,1,058_US,,,prefill_emul_v2,gpt-6-luna,none,0.0,300,799.0,,False,False,"SyntaxError: '(' was never closed (<agent>, line 8)",False,"[[], [], []]",False,True,stop,322,194,23950,83,0,0,,1.71,,"```python
+    ['Who are you most likely to vote for on election day?']
+    # The types of the columns used to answer the question: ['category']
+    # The type of the answer: number
+
+    return (","```python
+    ['Who are you most likely to vote for on election day?']
+    # The types of the columns used to answer the question: ['category']
+    # The type of the answer: number
+
+    return (
+        df['Who are you most likely to vote for on election day?']
+        .eq('Joe Biden (Democrat)')
+        .sum()
+    )
+```"
+R245_eNone_T0,217,1,058_US,,,prefill_emul_v2,gpt-6-luna,none,0.0,300,0.0,835.0,False,True,,True,"[[], [], [""sum""]]",False,False,stop,503,503,23945,118,0,0,,1.78,,"    # The columns used to answer the question: ['What is the highest degree or level of school you have *completed* ?']
+    # The types of the columns used to answer the question: ['category']
+    # The type of the answer: number
+
+    education_col = 'What is the highest degree or level of school you have *completed* ?'
+    high_school_or_less = {
+        'Less than high school',
+        'High school graduate (includes equivalency)'
+    }
+    return df[education_col].isin(high_school_or_less).sum()","    # The columns used to answer the question: ['What is the highest degree or level of school you have *completed* ?']
+    # The types of the columns used to answer the question: ['category']
+    # The type of the answer: number
+
+    education_col = 'What is the highest degree or level of school you have *completed* ?'
+    high_school_or_less = {
+        'Less than high school',
+        'High school graduate (includes equivalency)'
+    }
+    return df[education_col].isin(high_school_or_less).sum()"
+R245_eNone_T0,218,1,058_US,,,prefill_emul_v2,gpt-6-luna,none,0.0,300,774.0,774.0,True,True,,True,"[[""Division""], [""Division==South Atlantic""], [""sum""]]",False,False,stop,334,334,23942,81,0,0,,1.56,,"    # The columns used to answer the question: ['Division']
+    # The types of the columns used to answer the question: ['category']
+    # The type of the answer: number
+
+    # Count respondents in the South Atlantic division.
+    south_atlantic_count = (df['Division'] == 'South Atlantic').sum()
+
+    return int(south_atlantic_count)","    # The columns used to answer the question: ['Division']
+    # The types of the columns used to answer the question: ['category']
+    # The type of the answer: number
+
+    # Count respondents in the South Atlantic division.
+    south_atlantic_count = (df['Division'] == 'South Atlantic').sum()
+
+    return int(south_atlantic_count)"
+R245_eNone_T0,219,1,059_Second,,,prefill_emul_v2,gpt-6-luna,none,0.0,300,940.0,940.0,True,True,,True,"[[""model""], [], [""nunique""]]",False,False,stop,200,200,20397,51,0,0,,1.53,,"    # The columns used to answer the question: ['model']
+    # The types of the columns used to answer the question: ['category']
+    # The type of the answer: number
+
+    return df['model'].nunique()","    # The columns used to answer the question: ['model']
+    # The types of the columns used to answer the question: ['category']
+    # The type of the answer: number
+
+    return df['model'].nunique()"
+R245_eNone_T0,220,1,059_Second,,,prefill_emul_v2,gpt-6-luna,none,0.0,300,16.19912,16.19912,True,True,,True,"[[""photos""], [], [""mean""]]",False,False,stop,204,204,20401,54,0,0,,1.65,,"    # The columns used to answer the question: ['photos']
+    # The types of the columns used to answer the question: ['number[uint8]']
+    # The type of the answer: number
+
+    return df['photos'].mean()","    # The columns used to answer the question: ['photos']
+    # The types of the columns used to answer the question: ['number[uint8]']
+    # The type of the answer: number
+
+    return df['photos'].mean()"
+R245_eNone_T0,221,1,059_Second,,,prefill_emul_v2,gpt-6-luna,none,0.0,300,549900.0,549900.0,True,True,,True,"[[""price""], [], [""max""]]",False,False,stop,202,202,20399,54,0,0,,1.65,,"    # The columns used to answer the question: ['price']
+    # The types of the columns used to answer the question: ['number[uint32]']
+    # The type of the answer: number
+
+    return df['price'].max()","    # The columns used to answer the question: ['price']
+    # The types of the columns used to answer the question: ['number[uint32]']
+    # The type of the answer: number
+
+    return df['price'].max()"
+R245_eNone_T0,222,1,059_Second,,,prefill_emul_v2,gpt-6-luna,none,0.0,300,4237.0,4237.0,True,True,,True,"[[""year""], [""year==2020""], [""sum""]]",False,False,stop,215,215,20400,60,0,0,,2.58,,"    # The columns used to answer the question: ['year']
+    # The types of the columns used to answer the question: ['number[double]']
+    # The type of the answer: number
+
+    return int((df['year'] == 2020).sum())","    # The columns used to answer the question: ['year']
+    # The types of the columns used to answer the question: ['number[double]']
+    # The type of the answer: number
+
+    return int((df['year'] == 2020).sum())"
+R245_eNone_T0,223,1,060_Bakery,,,prefill_emul_v2,gpt-6-luna,none,0.0,300,94.0,94.0,True,True,,True,"[[""Item""], [], [""nunique""]]",False,False,stop,82,82,19130,26,0,0,,1.19,,"    ['Item']
+    # The type of the answer: number
+
+    return df['Item'].nunique()","    ['Item']
+    # The type of the answer: number
+
+    return df['Item'].nunique()"
+R245_eNone_T0,224,1,060_Bakery,,,prefill_emul_v2,gpt-6-luna,none,0.0,300,159.0,1.0,False,True,,True,"[[""date_time""], [], [""nunique""]]",False,False,stop,287,287,19129,72,0,0,,1.82,,"    # The columns used to answer the question: ['date_time']
+    # The types of the columns used to answer the question: ['category']
+    # The type of the answer: number
+
+    # Extract the date portion and count the distinct days.
+    return df['date_time'].str.split().str[0].nunique()","    # The columns used to answer the question: ['date_time']
+    # The types of the columns used to answer the question: ['category']
+    # The type of the answer: number
+
+    # Extract the date portion and count the distinct days.
+    return df['date_time'].str.split().str[0].nunique()"
+R245_eNone_T0,225,1,060_Bakery,,,prefill_emul_v2,gpt-6-luna,none,0.0,300,9684.0,9684.0,True,True,,True,"[[""Transaction""], [], [""max""]]",False,False,stop,171,171,19126,45,0,0,,1.49,,"    ['Transaction']
+    # The types of the columns used to answer the question: ['number[uint16]']
+    # The type of the answer: number
+
+    return df['Transaction'].max()","    ['Transaction']
+    # The types of the columns used to answer the question: ['number[uint16]']
+    # The type of the answer: number
+
+    return df['Transaction'].max()"
+R245_eNone_T0,226,1,061_Disneyland,,,prefill_emul_v2,gpt-6-luna,none,0.0,300,162.0,162.0,True,True,,True,"[[""Reviewer_Location""], [], [""nunique""]]",False,False,stop,224,224,19195,55,0,0,,2.01,,"    # The columns used to answer the question: ['Reviewer_Location']
+    # The types of the columns used to answer the question: ['category']
+    # The type of the answer: number
+
+    return df['Reviewer_Location'].nunique()","    # The columns used to answer the question: ['Reviewer_Location']
+    # The types of the columns used to answer the question: ['category']
+    # The type of the answer: number
+
+    return df['Reviewer_Location'].nunique()"
+R245_eNone_T0,227,1,061_Disneyland,,,prefill_emul_v2,gpt-6-luna,none,0.0,300,4.204158004158004,4.204158004158004,True,True,,True,"[[""Branch"", ""loc""], [""Branch==Disneyland_HongKong""], [""mean""]]",False,False,stop,305,305,19199,80,0,0,,1.41,,"    # The columns used to answer the question: ['Branch', 'Rating']
+    # The types of the columns used to answer the question: ['category', 'number[uint8]']
+    # The type of the answer: number
+
+    average_rating = df.loc[df['Branch'] == 'Disneyland_HongKong', 'Rating'].mean()
+    return average_rating","    # The columns used to answer the question: ['Branch', 'Rating']
+    # The types of the columns used to answer the question: ['category', 'number[uint8]']
+    # The type of the answer: number
+
+    average_rating = df.loc[df['Branch'] == 'Disneyland_HongKong', 'Rating'].mean()
+    return average_rating"
+R245_eNone_T0,228,1,061_Disneyland,,,prefill_emul_v2,gpt-6-luna,none,0.0,300,670801367.0,670801367.0,True,True,,True,"[[""Review_ID""], [], [""max""]]",False,False,stop,131,131,19205,36,0,0,,1.73,,"    # The columns used to answer the question: ['Review_ID']
+    # The type of the answer: number
+
+    return df['Review_ID'].max()","    # The columns used to answer the question: ['Review_ID']
+    # The type of the answer: number
+
+    return df['Review_ID'].max()"
+R245_eNone_T0,229,1,061_Disneyland,,,prefill_emul_v2,gpt-6-luna,none,0.0,300,786.0,786.0,True,True,,True,"[[""Year_Month""], [], [""sum""]]",False,False,stop,303,303,19197,79,0,0,,1.27,,"    # The columns used to answer the question: ['Year_Month']
+    # The types of the columns used to answer the question: ['category']
+    # The type of the answer: number
+
+    # Count reviews whose Year_Month value starts with 2019.
+    return df['Year_Month'].astype(str).str.startswith('2019-').sum()","    # The columns used to answer the question: ['Year_Month']
+    # The types of the columns used to answer the question: ['category']
+    # The type of the answer: number
+
+    # Count reviews whose Year_Month value starts with 2019.
+    return df['Year_Month'].astype(str).str.startswith('2019-').sum()"
+R245_eNone_T0,230,1,062_Trump,,,prefill_emul_v2,gpt-6-luna,none,0.0,300,1.0,1.0,True,True,,True,"[[""author_name""], [], [""nunique""]]",False,False,stop,212,212,20289,53,0,0,,1.47,,"    # The columns used to answer the question: ['author_name']
+    # The types of the columns used to answer the question: ['category']
+    # The type of the answer: number
+
+    return df['author_name'].nunique()","    # The columns used to answer the question: ['author_name']
+    # The types of the columns used to answer the question: ['category']
+    # The type of the answer: number
+
+    return df['author_name'].nunique()"
+R245_eNone_T0,231,1,062_Trump,,,prefill_emul_v2,gpt-6-luna,none,0.0,300,8774.52044683822,8774.52044683822,True,True,,True,"[[""retweets""], [], [""mean""]]",False,False,stop,209,209,20291,56,0,0,,1.54,,"    # The columns used to answer the question: ['retweets']
+    # The types of the columns used to answer the question: ['number[uint32]']
+    # The type of the answer: number
+
+    return df['retweets'].mean()","    # The columns used to answer the question: ['retweets']
+    # The types of the columns used to answer the question: ['number[uint32]']
+    # The type of the answer: number
+
+    return df['retweets'].mean()"
+R245_eNone_T0,232,1,062_Trump,,,prefill_emul_v2,gpt-6-luna,none,0.0,300,589793.0,589793.0,True,True,,True,"[[""favorites""], [], [""max""]]",False,False,stop,210,210,20295,54,0,0,,1.44,,"    # The columns used to answer the question: ['favorites']
+    # The types of the columns used to answer the question: ['number[uint32]']
+    # The type of the answer: number
+
+    return df['favorites'].max()","    # The columns used to answer the question: ['favorites']
+    # The types of the columns used to answer the question: ['number[uint32]']
+    # The type of the answer: number
+
+    return df['favorites'].max()"
+R245_eNone_T0,233,1,062_Trump,,,prefill_emul_v2,gpt-6-luna,none,0.0,300,2891.0,2891.0,True,True,,True,"[[""date""], [""year==2018""], [""sum""]]",False,False,stop,267,267,20292,76,0,0,,2.15,,"    # The columns used to answer the question: ['date']
+    # The types of the columns used to answer the question: ['date[ns, UTC]']
+    # The type of the answer: number
+
+    # Count tweets whose date falls in 2018.
+    return int((df['date'].dt.year == 2018).sum())","    # The columns used to answer the question: ['date']
+    # The types of the columns used to answer the question: ['date[ns, UTC]']
+    # The type of the answer: number
+
+    # Count tweets whose date falls in 2018.
+    return int((df['date'].dt.year == 2018).sum())"
+R245_eNone_T0,234,1,063_Influencers,,,prefill_emul_v2,gpt-6-luna,none,0.0,300,9.0,9.0,True,True,,True,"[[""community""], [], [""nunique""]]",False,False,stop,214,214,20477,55,0,0,,1.4,,"    # The columns used to answer the question: ['community']
+    # The types of the columns used to answer the question: ['number[uint32]']
+    # The type of the answer: number
+
+    return df['community'].nunique()","    # The columns used to answer the question: ['community']
+    # The types of the columns used to answer the question: ['number[uint32]']
+    # The type of the answer: number
+
+    return df['community'].nunique()"
+R245_eNone_T0,235,1,063_Influencers,,,prefill_emul_v2,gpt-6-luna,none,0.0,300,0.0884803326079451,0.08848033260794515,True,True,,True,"[[""page_rank_norm""], [], [""mean""]]",False,False,stop,142,142,20478,38,0,0,,1.71,,"    # The columns used to answer the question: ['page_rank_norm']
+    # The type of the answer: number
+
+    return df['page_rank_norm'].mean()","    # The columns used to answer the question: ['page_rank_norm']
+    # The type of the answer: number
+
+    return df['page_rank_norm'].mean()"
+R245_eNone_T0,236,1,063_Influencers,,,prefill_emul_v2,gpt-6-luna,none,0.0,300,770.5,770.5,True,True,,True,"[[""weight""], [], [""max""]]",False,False,stop,204,204,20479,53,0,0,,1.92,,"    # The columns used to answer the question: ['weight']
+    # The types of the columns used to answer the question: ['number[double]']
+    # The type of the answer: number
+
+    return df['weight'].max()","    # The columns used to answer the question: ['weight']
+    # The types of the columns used to answer the question: ['number[double]']
+    # The type of the answer: number
+
+    return df['weight'].max()"
+R245_eNone_T0,237,1,063_Influencers,,,prefill_emul_v2,gpt-6-luna,none,0.0,300,651.0,651.0,True,True,,True,"[[""community""], [""community==16744206""], [""sum""]]",False,False,stop,229,229,20483,62,0,0,,1.51,,"    # The columns used to answer the question: ['community']
+    # The types of the columns used to answer the question: ['number[uint32]']
+    # The type of the answer: number
+
+    return int((df['community'] == 16744206).sum())","    # The columns used to answer the question: ['community']
+    # The types of the columns used to answer the question: ['number[uint32]']
+    # The type of the answer: number
+
+    return int((df['community'] == 16744206).sum())"
+R245_eNone_T0,238,1,064_Clustering,,,prefill_emul_v2,gpt-6-luna,none,0.0,300,7.0,100.0,False,True,,True,"[[""animal_name""], [], [""nunique""]]",False,False,stop,212,212,19497,53,0,0,,1.5,,"    # The columns used to answer the question: ['animal_name']
+    # The types of the columns used to answer the question: ['category']
+    # The type of the answer: number
+
+    return df['animal_name'].nunique()","    # The columns used to answer the question: ['animal_name']
+    # The types of the columns used to answer the question: ['category']
+    # The type of the answer: number
+
+    return df['animal_name'].nunique()"
+R245_eNone_T0,239,1,064_Clustering,,,prefill_emul_v2,gpt-6-luna,none,0.0,300,2.841584158415841,2.8415841584158414,True,True,,True,"[[""legs""], [], [""mean""]]",False,False,stop,200,200,19496,54,0,0,,1.22,,"    # The columns used to answer the question: ['legs']
+    # The types of the columns used to answer the question: ['number[uint8]']
+    # The type of the answer: number
+
+    return df['legs'].mean()","    # The columns used to answer the question: ['legs']
+    # The types of the columns used to answer the question: ['number[uint8]']
+    # The type of the answer: number
+
+    return df['legs'].mean()"
+R245_eNone_T0,240,1,064_Clustering,,,prefill_emul_v2,gpt-6-luna,none,0.0,300,8.0,8.0,True,True,,True,"[[""legs""], [], [""max""]]",False,False,stop,121,121,19499,34,0,0,,1.11,,"    # The columns used to answer the question: ['legs']
+    # The type of the answer: number
+
+    return df['legs'].max()","    # The columns used to answer the question: ['legs']
+    # The type of the answer: number
+
+    return df['legs'].max()"
+R245_eNone_T0,241,1,064_Clustering,,,prefill_emul_v2,gpt-6-luna,none,0.0,300,27.0,27.0,True,True,,True,"[[""legs""], [""legs==2""], [""sum""]]",False,False,stop,211,211,19498,60,0,0,,1.62,,"    # The columns used to answer the question: ['legs']
+    # The types of the columns used to answer the question: ['number[uint8]']
+    # The type of the answer: number
+
+    return int((df['legs'] == 2).sum())","    # The columns used to answer the question: ['legs']
+    # The types of the columns used to answer the question: ['number[uint8]']
+    # The type of the answer: number
+
+    return int((df['legs'] == 2).sum())"
+R245_eNone_T0,242,1,065_RFM,,,prefill_emul_v2,gpt-6-luna,none,0.0,300,4070.0,4070.0,True,True,,True,"[[""StockCode""], [], [""nunique""]]",False,False,stop,94,94,19406,29,0,0,,1.22,,"    # ['StockCode']
+    # The type of the answer: number
+
+    return df['StockCode'].nunique()","    # ['StockCode']
+    # The type of the answer: number
+
+    return df['StockCode'].nunique()"
+R245_eNone_T0,243,1,065_RFM,,,prefill_emul_v2,gpt-6-luna,none,0.0,300,4.611113626088514,4.611113626088514,True,True,,True,"[[""UnitPrice""], [], [""mean""]]",False,False,stop,89,89,19405,27,0,0,,1.22,,"    ['UnitPrice']
+    # The type of the answer: number
+
+    return df['UnitPrice'].mean()","    ['UnitPrice']
+    # The type of the answer: number
+
+    return df['UnitPrice'].mean()"
+R245_eNone_T0,244,1,065_RFM,,,prefill_emul_v2,gpt-6-luna,none,0.0,300,80995.0,80995.0,True,True,,True,"[[""Quantity""], [], [""max""]]",False,False,stop,154,154,19409,37,0,0,,1.23,,"    ['Quantity']
+    # The type of the answer: number
+
+    # Return the largest quantity recorded in a single transaction.
+    return df['Quantity'].max()","    ['Quantity']
+    # The type of the answer: number
+
+    # Return the largest quantity recorded in a single transaction.
+    return df['Quantity'].max()"
+R245_eNone_T0,245,1,065_RFM,,,prefill_emul_v2,gpt-6-luna,none,0.0,300,495478.0,495478.0,True,True,,True,"[[""Country""], [""Country==United Kingdom""], [""sum""]]",False,False,stop,222,222,19408,56,0,0,,1.37,,"    # The columns used to answer the question: ['Country']
+    # The types of the columns used to answer the question: ['category']
+    # The type of the answer: number
+
+    return (df['Country'] == 'United Kingdom').sum()","    # The columns used to answer the question: ['Country']
+    # The types of the columns used to answer the question: ['category']
+    # The type of the answer: number
+
+    return (df['Country'] == 'United Kingdom').sum()"

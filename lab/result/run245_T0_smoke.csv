@@ -1,0 +1,30 @@
+﻿condition,n,rep,dataset,A,B,harness,model,effort,temperature,max_tokens,answer_ref,answer_agent,correct,exec_ok,exec_err,sig_ok,sig_key,def_written,null_answer,finish_reason,text_len,body_len,prompt_tokens,completion_tokens,reasoning_tokens,cached_tokens,system_fingerprint,latency_s,call_error,body,raw
+R245_eNone_T0,1,1,001_Forbes,,,prefill_emul_v2,gpt-6-luna,none,0.0,300,19.0,19.0,True,True,,True,"[[""age""], [], [""min""]]",False,False,stop,199,199,19881,54,0,0,,1.91,,"    # The columns used to answer the question: ['age']
+    # The types of the columns used to answer the question: ['number[float64]']
+    # The type of the answer: number
+
+    return df['age'].min()","    # The columns used to answer the question: ['age']
+    # The types of the columns used to answer the question: ['number[float64]']
+    # The type of the answer: number
+
+    return df['age'].min()"
+R245_eNone_T0,2,1,001_Forbes,,,prefill_emul_v2,gpt-6-luna,none,0.0,300,343.0,343.0,True,True,,True,"[[""category""], [""category==Technology""], [""sum""]]",False,False,stop,182,182,19885,47,0,0,,1.79,,"    ['category']
+    # The types of the columns used to answer the question: ['category']
+    # The type of the answer: number
+
+    return int((df['category'] == 'Technology').sum())","    ['category']
+    # The types of the columns used to answer the question: ['category']
+    # The type of the answer: number
+
+    return int((df['category'] == 'Technology').sum())"
+R245_eNone_T0,3,1,001_Forbes,,,prefill_emul_v2,gpt-6-luna,none,0.0,300,583600.0,583600.0,True,True,,True,"[[""category"", ""loc""], [""category==Automotive""], [""sum""]]",False,False,stop,302,302,19887,80,0,0,,1.71,,"    # The columns used to answer the question: ['category', 'finalWorth']
+    # The types of the columns used to answer the question: ['category', 'number[uint32]']
+    # The type of the answer: number
+
+    total_worth = df.loc[df['category'] == 'Automotive', 'finalWorth'].sum()
+    return total_worth","    # The columns used to answer the question: ['category', 'finalWorth']
+    # The types of the columns used to answer the question: ['category', 'number[uint32]']
+    # The type of the answer: number
+
+    total_worth = df.loc[df['category'] == 'Automotive', 'finalWorth'].sum()
+    return total_worth"

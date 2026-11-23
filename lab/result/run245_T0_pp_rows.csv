@@ -1,0 +1,491 @@
+﻿variant,n,exec_ok,err,answer,answer_ref,correct,null
+현행 (PP 1회),1,True,,19.0,19.0,True,False
+PP 없음,1,True,,19.0,19.0,True,False
+현행 (PP 1회),2,True,,343.0,343.0,True,False
+PP 없음,2,True,,343.0,343.0,True,False
+현행 (PP 1회),3,True,,583600.0,583600.0,True,False
+PP 없음,3,True,,583600.0,583600.0,True,False
+현행 (PP 1회),4,True,,25.0,25.0,True,False
+PP 없음,4,True,,25.0,25.0,True,False
+현행 (PP 1회),5,True,,3.0,3.0,True,False
+PP 없음,5,True,,3.0,3.0,True,False
+현행 (PP 1회),6,True,,3.0,3.0,True,False
+PP 없음,6,True,,3.0,3.0,True,False
+현행 (PP 1회),7,True,,80.0,80.0,True,False
+PP 없음,7,True,,80.0,80.0,True,False
+현행 (PP 1회),8,True,,604.0,604.0,True,False
+PP 없음,8,True,,604.0,604.0,True,False
+현행 (PP 1회),9,True,,32.30542018038331,32.30542018038331,True,False
+PP 없음,9,True,,32.30542018038331,32.30542018038331,True,False
+현행 (PP 1회),10,True,,13.0,13.0,True,False
+PP 없음,10,True,,13.0,13.0,True,False
+현행 (PP 1회),11,True,,56332.81720430108,56332.81720430108,True,False
+PP 없음,11,True,,56332.81720430108,56332.81720430108,True,False
+현행 (PP 1회),12,True,,98.0,98.0,True,False
+PP 없음,12,True,,98.0,98.0,True,False
+현행 (PP 1회),13,True,,33.0,33.0,True,False
+PP 없음,13,True,,33.0,33.0,True,False
+현행 (PP 1회),14,True,,75.25,75.25,True,False
+PP 없음,14,True,,75.25,75.25,True,False
+현행 (PP 1회),15,True,,96.0,96.0,True,False
+PP 없음,15,True,,96.0,96.0,True,False
+현행 (PP 1회),16,True,,2.7366808000000002,2.7366808,True,False
+PP 없음,16,True,,2.7366808000000002,2.7366808,True,False
+현행 (PP 1회),17,True,,0.0,99807.0,False,False
+PP 없음,17,True,,0.0,99807.0,False,False
+현행 (PP 1회),18,True,,23110.0,23110.0,True,False
+PP 없음,18,True,,23110.0,23110.0,True,False
+현행 (PP 1회),19,True,,14811.0,14811.0,True,False
+PP 없음,19,True,,14811.0,14811.0,True,False
+현행 (PP 1회),20,True,,1131.0,1131.0,True,False
+PP 없음,20,True,,1131.0,1131.0,True,False
+현행 (PP 1회),21,True,,33.0,563.0,False,False
+PP 없음,21,True,,33.0,563.0,False,False
+현행 (PP 1회),22,True,,6.0,6.0,True,False
+PP 없음,22,True,,6.0,6.0,True,False
+현행 (PP 1회),23,True,,22.0,22.0,True,False
+PP 없음,23,True,,22.0,22.0,True,False
+현행 (PP 1회),24,True,,67.86143187066975,67.86143187066975,True,False
+PP 없음,24,True,,67.86143187066975,67.86143187066975,True,False
+현행 (PP 1회),25,True,,683.0,683.0,True,False
+PP 없음,25,True,,683.0,683.0,True,False
+현행 (PP 1회),26,True,,105500000.0,105500000.0,True,False
+PP 없음,26,False,"IndentationError: unexpected indent (<rescore>, line 7)",,105500000.0,False,True
+현행 (PP 1회),27,True,,53.0,53.0,True,False
+PP 없음,27,True,,53.0,53.0,True,False
+현행 (PP 1회),28,True,,5.0,5.0,True,False
+PP 없음,28,True,,5.0,5.0,True,False
+현행 (PP 1회),29,True,,234.7,234.7,True,False
+PP 없음,29,False,"SyntaxError: invalid syntax (<rescore>, line 3)",,234.7,False,True
+현행 (PP 1회),30,True,,1740.0,1740.0,True,False
+PP 없음,30,True,,1740.0,1740.0,True,False
+현행 (PP 1회),31,True,,8.28,8.28,True,False
+PP 없음,31,True,,8.28,8.28,True,False
+현행 (PP 1회),32,True,,106.0,106.0,True,False
+PP 없음,32,True,,106.0,106.0,True,False
+현행 (PP 1회),33,True,,26.0,26.0,True,False
+PP 없음,33,True,,26.0,26.0,True,False
+현행 (PP 1회),34,True,,43.198543813335604,43.1985438133356,True,False
+PP 없음,34,True,,43.198543813335604,43.1985438133356,True,False
+현행 (PP 1회),35,True,,122.0,122.0,True,False
+PP 없음,35,True,,122.0,122.0,True,False
+현행 (PP 1회),36,True,,5.0,5.0,True,False
+PP 없음,36,True,,5.0,5.0,True,False
+현행 (PP 1회),37,True,,1206.0,1206.0,True,False
+PP 없음,37,True,,1206.0,1206.0,True,False
+현행 (PP 1회),38,True,,49.0,49.0,True,False
+PP 없음,38,True,,49.0,49.0,True,False
+현행 (PP 1회),39,True,,144099.0,144099.0,True,False
+PP 없음,39,True,,144099.0,144099.0,True,False
+현행 (PP 1회),40,True,,11.0,11.0,True,False
+PP 없음,40,True,,11.0,11.0,True,False
+현행 (PP 1회),41,True,,118851.16666666667,118851.16666666669,True,False
+PP 없음,41,True,,118851.16666666667,118851.16666666669,True,False
+현행 (PP 1회),42,True,,77.0,77.0,True,False
+PP 없음,42,True,,77.0,77.0,True,False
+현행 (PP 1회),43,True,,0.0,0.0,True,False
+PP 없음,43,True,,0.0,0.0,True,False
+현행 (PP 1회),44,True,,198.7995642701525,198.7995642701525,True,False
+PP 없음,44,True,,198.7995642701525,198.7995642701525,True,False
+현행 (PP 1회),45,True,,25.4603341382503,25.4603341382503,True,False
+PP 없음,45,True,,25.4603341382503,25.4603341382503,True,False
+현행 (PP 1회),46,True,,149.1,149.1,True,False
+PP 없음,46,True,,149.1,149.1,True,False
+현행 (PP 1회),47,True,,47.0,47.0,True,False
+PP 없음,47,True,,47.0,47.0,True,False
+현행 (PP 1회),48,True,,3.8240055248618785,3.82400552486188,True,False
+PP 없음,48,True,,3.8240055248618785,3.82400552486188,True,False
+현행 (PP 1회),49,True,,0.0,0.0,True,False
+PP 없음,49,True,,0.0,0.0,True,False
+현행 (PP 1회),50,True,,20776.0,20776.0,True,False
+PP 없음,50,True,,20776.0,20776.0,True,False
+현행 (PP 1회),51,True,,18.0,18.0,True,False
+PP 없음,51,True,,18.0,18.0,True,False
+현행 (PP 1회),52,True,,95150.0,95150.0,True,False
+PP 없음,52,False,"SyntaxError: invalid syntax (<rescore>, line 3)",,95150.0,False,True
+현행 (PP 1회),53,True,,870.0,870.0,True,False
+PP 없음,53,True,,870.0,870.0,True,False
+현행 (PP 1회),54,True,,906.0,906.0,True,False
+PP 없음,54,True,,906.0,906.0,True,False
+현행 (PP 1회),55,True,,24.0,24.0,True,False
+PP 없음,55,True,,24.0,24.0,True,False
+현행 (PP 1회),56,True,,123.0,123.0,True,False
+PP 없음,56,True,,123.0,123.0,True,False
+현행 (PP 1회),57,True,,906.0,906.0,True,False
+PP 없음,57,True,,906.0,906.0,True,False
+현행 (PP 1회),58,True,,4.0,4.0,True,False
+PP 없음,58,True,,4.0,4.0,True,False
+현행 (PP 1회),59,True,,5.0,5.0,True,False
+PP 없음,59,True,,5.0,5.0,True,False
+현행 (PP 1회),60,True,,4.0,4.0,True,False
+PP 없음,60,True,,4.0,4.0,True,False
+현행 (PP 1회),61,True,,1516.0,1516.0,True,False
+PP 없음,61,True,,1516.0,1516.0,True,False
+현행 (PP 1회),62,True,,6015.0,6015.0,True,False
+PP 없음,62,True,,6015.0,6015.0,True,False
+현행 (PP 1회),63,True,,339.2486205432937,339.2486205432937,True,False
+PP 없음,63,True,,339.2486205432937,339.2486205432937,True,False
+현행 (PP 1회),64,True,,2301.0,2301.0,True,False
+PP 없음,64,True,,2301.0,2301.0,True,False
+현행 (PP 1회),65,True,,10.0,10.0,True,False
+PP 없음,65,True,,10.0,10.0,True,False
+현행 (PP 1회),66,True,,10.0,10.0,True,False
+PP 없음,66,True,,10.0,10.0,True,False
+현행 (PP 1회),67,True,,319.0,319.0,True,False
+PP 없음,67,True,,319.0,319.0,True,False
+현행 (PP 1회),68,True,,201.0503366891126,201.0503366891126,True,False
+PP 없음,68,True,,201.0503366891126,201.0503366891126,True,False
+현행 (PP 1회),69,True,,3523.0,3523.0,True,False
+PP 없음,69,True,,3523.0,3523.0,True,False
+현행 (PP 1회),70,True,,524.0,524.0,True,False
+PP 없음,70,True,,524.0,524.0,True,False
+현행 (PP 1회),71,True,,7.0,7.0,True,False
+PP 없음,71,True,,7.0,7.0,True,False
+현행 (PP 1회),72,True,,17000000.0,17000000.0,True,False
+PP 없음,72,True,,17000000.0,17000000.0,True,False
+현행 (PP 1회),73,True,,26026.0,26026.0,True,False
+PP 없음,73,True,,26026.0,26026.0,True,False
+현행 (PP 1회),74,True,,2535.0,2535.0,True,False
+PP 없음,74,True,,2535.0,2535.0,True,False
+현행 (PP 1회),75,True,,5504.0,5504.0,True,False
+PP 없음,75,True,,5504.0,5504.0,True,False
+현행 (PP 1회),76,True,,7043.0,7043.0,True,False
+PP 없음,76,True,,7043.0,7043.0,True,False
+현행 (PP 1회),77,True,,118.75,118.75,True,False
+PP 없음,77,True,,118.75,118.75,True,False
+현행 (PP 1회),78,True,,7043.0,7043.0,True,False
+PP 없음,78,True,,7043.0,7043.0,True,False
+현행 (PP 1회),79,True,,72.0,72.0,True,False
+PP 없음,79,True,,72.0,72.0,True,False
+현행 (PP 1회),80,True,,26765.0,26765.0,True,False
+PP 없음,80,True,,26765.0,26765.0,True,False
+현행 (PP 1회),81,True,,2739.0,2739.0,True,False
+PP 없음,81,True,,2739.0,2739.0,True,False
+현행 (PP 1회),82,True,,1316.0,1316.0,True,False
+PP 없음,82,True,,1316.0,1316.0,True,False
+현행 (PP 1회),83,True,,93.76718825858012,93.76718825858012,True,False
+PP 없음,83,True,,93.76718825858012,93.76718825858012,True,False
+현행 (PP 1회),84,True,,5500.0,5500.0,True,False
+PP 없음,84,True,,5500.0,5500.0,True,False
+현행 (PP 1회),85,True,,2.7196082770831027,2.7196082770831027,True,False
+PP 없음,85,True,,2.7196082770831027,2.7196082770831027,True,False
+현행 (PP 1회),86,True,,28615.0,28615.0,True,False
+PP 없음,86,True,,28615.0,28615.0,True,False
+현행 (PP 1회),87,True,,32.2,32.2,True,False
+PP 없음,87,True,,32.2,32.2,True,False
+현행 (PP 1회),88,True,,58852.0,58852.0,True,False
+PP 없음,88,True,,58852.0,58852.0,True,False
+현행 (PP 1회),89,True,,29370.243704368546,29370.243704368542,True,False
+PP 없음,89,True,,29370.243704368546,29370.243704368542,True,False
+현행 (PP 1회),90,True,,199496.34,199496.34,True,False
+PP 없음,90,True,,199496.34,199496.34,True,False
+현행 (PP 1회),91,True,,73.0,73.0,True,False
+PP 없음,91,True,,73.0,73.0,True,False
+현행 (PP 1회),92,True,,28.0,28.0,True,False
+PP 없음,92,True,,28.0,28.0,True,False
+현행 (PP 1회),93,True,,11.0,11.0,True,False
+PP 없음,93,True,,11.0,11.0,True,False
+현행 (PP 1회),94,True,,50.0,50.0,True,False
+PP 없음,94,True,,50.0,50.0,True,False
+현행 (PP 1회),95,True,,6.0,6.0,True,False
+PP 없음,95,True,,6.0,6.0,True,False
+현행 (PP 1회),96,True,,6.0,6.0,True,False
+PP 없음,96,True,,6.0,6.0,True,False
+현행 (PP 1회),97,True,,15.9,15.9,True,False
+PP 없음,97,True,,15.9,15.9,True,False
+현행 (PP 1회),98,True,,0.12,0.12,True,False
+PP 없음,98,True,,0.12,0.12,True,False
+현행 (PP 1회),99,True,,16.0,16.0,True,False
+PP 없음,99,True,,16.0,16.0,True,False
+현행 (PP 1회),100,True,,3.0,3.0,True,False
+PP 없음,100,True,,3.0,3.0,True,False
+현행 (PP 1회),101,True,,10.0,10.0,True,False
+PP 없음,101,True,,10.0,10.0,True,False
+현행 (PP 1회),102,True,,10.6785,10.6785,True,False
+PP 없음,102,True,,10.6785,10.6785,True,False
+현행 (PP 1회),103,True,,340.0,340.0,True,False
+PP 없음,103,True,,340.0,340.0,True,False
+현행 (PP 1회),104,True,,17.0,17.0,True,False
+PP 없음,104,True,,17.0,17.0,True,False
+현행 (PP 1회),105,True,,0.0,0.0,True,False
+PP 없음,105,True,,0.0,0.0,True,False
+현행 (PP 1회),106,True,,31.992578124999998,31.992578125,True,False
+PP 없음,106,True,,31.992578124999998,31.992578125,True,False
+현행 (PP 1회),107,True,,16.0,16.0,True,False
+PP 없음,107,True,,16.0,16.0,True,False
+현행 (PP 1회),108,True,,145.0,147.0,False,False
+PP 없음,108,True,,145.0,147.0,False,False
+현행 (PP 1회),109,True,,45.0,45.0,True,False
+PP 없음,109,True,,45.0,45.0,True,False
+현행 (PP 1회),110,True,,14.0,14.0,True,False
+PP 없음,110,True,,14.0,14.0,True,False
+현행 (PP 1회),111,True,,1.5,1.5,True,False
+PP 없음,111,True,,1.5,1.5,True,False
+현행 (PP 1회),112,False,"SyntaxError: '(' was never closed (<rescore>, line 7)",,450.0,False,True
+PP 없음,112,False,"SyntaxError: '(' was never closed (<rescore>, line 7)",,450.0,False,True
+현행 (PP 1회),113,True,,2.0,2.0,True,False
+PP 없음,113,True,,2.0,2.0,True,False
+현행 (PP 1회),114,True,,3840.0,3840.0,True,False
+PP 없음,114,True,,3840.0,3840.0,True,False
+현행 (PP 1회),115,True,,120.0,120.0,True,False
+PP 없음,115,True,,120.0,120.0,True,False
+현행 (PP 1회),116,True,,5.0,5.0,True,False
+PP 없음,116,True,,5.0,5.0,True,False
+현행 (PP 1회),117,True,,4.097755610972569,4.097755610972569,True,False
+PP 없음,117,True,,4.097755610972569,4.097755610972569,True,False
+현행 (PP 1회),118,True,,2240.0,2240.0,True,False
+PP 없음,118,True,,2240.0,2240.0,True,False
+현행 (PP 1회),119,True,,52247.25135379061,52247.25135379061,True,False
+PP 없음,119,True,,52247.25135379061,52247.25135379061,True,False
+현행 (PP 1회),120,True,,27.0,27.0,True,False
+PP 없음,120,True,,27.0,27.0,True,False
+현행 (PP 1회),121,True,,0.0,0.0,True,False
+PP 없음,121,True,,0.0,0.0,True,False
+현행 (PP 1회),122,True,,14999.0,14999.0,True,False
+PP 없음,122,True,,14999.0,14999.0,True,False
+현행 (PP 1회),123,True,,0.64,0.64,True,False
+PP 없음,123,True,,0.64,0.64,True,False
+현행 (PP 1회),124,True,,7.0,7.0,True,False
+PP 없음,124,True,,7.0,7.0,True,False
+현행 (PP 1회),125,True,,7.222675085250001,7.222675085250001,True,False
+PP 없음,125,True,,7.222675085250001,7.222675085250001,True,False
+현행 (PP 1회),126,True,,0.7493706045,0.7493706045,True,False
+PP 없음,126,True,,0.7493706045,0.7493706045,True,False
+현행 (PP 1회),127,True,,0.560663998,0.560663998,True,False
+PP 없음,127,True,,0.560663998,0.560663998,True,False
+현행 (PP 1회),128,True,,0.319459856,0.319459856,True,False
+PP 없음,128,True,,0.319459856,0.319459856,True,False
+현행 (PP 1회),129,True,,100.0,100.0,True,False
+PP 없음,129,True,,100.0,100.0,True,False
+현행 (PP 1회),130,True,,1965.0,1965.0,True,False
+PP 없음,130,True,,1965.0,1965.0,True,False
+현행 (PP 1회),131,True,,19.0,19.0,True,False
+PP 없음,131,True,,19.0,19.0,True,False
+현행 (PP 1회),132,True,,2473.0,2473.0,True,False
+PP 없음,132,True,,2473.0,2473.0,True,False
+현행 (PP 1회),133,True,,3219.0,3219.0,True,False
+PP 없음,133,True,,3219.0,3219.0,True,False
+현행 (PP 1회),134,True,,67.7453798126951,67.7453798126951,True,False
+PP 없음,134,True,,67.7453798126951,67.7453798126951,True,False
+현행 (PP 1회),135,True,,40580.0,40580.0,True,False
+PP 없음,135,True,,40580.0,40580.0,True,False
+현행 (PP 1회),136,True,,1904.0,1904.0,True,False
+PP 없음,136,True,,1904.0,1904.0,True,False
+현행 (PP 1회),137,True,,3274.0,3274.0,True,False
+PP 없음,137,True,,3274.0,3274.0,True,False
+현행 (PP 1회),138,True,,2148005.5737827714,2148005.573782772,True,False
+PP 없음,138,True,,2148005.5737827714,2148005.573782772,True,False
+현행 (PP 1회),139,True,,3922.0,3922.0,True,False
+PP 없음,139,True,,3922.0,3922.0,True,False
+현행 (PP 1회),140,True,,186.0,186.0,True,False
+PP 없음,140,True,,186.0,186.0,True,False
+현행 (PP 1회),141,True,,249.0,249.0,True,False
+PP 없음,141,True,,249.0,249.0,True,False
+현행 (PP 1회),142,True,,47.09632446134347,47.09632446134347,True,False
+PP 없음,142,True,,47.09632446134347,47.09632446134347,True,False
+현행 (PP 1회),143,True,,271.74,271.74,True,False
+PP 없음,143,True,,271.74,271.74,True,False
+현행 (PP 1회),144,True,,5.0,5.0,True,False
+PP 없음,144,True,,5.0,5.0,True,False
+현행 (PP 1회),145,True,,2.0,2.0,True,False
+PP 없음,145,True,,2.0,2.0,True,False
+현행 (PP 1회),146,True,,1.3407668971005122,1.3407668971005122,True,False
+PP 없음,146,True,,1.3407668971005122,1.3407668971005122,True,False
+현행 (PP 1회),147,True,,233.0,233.0,True,False
+PP 없음,147,True,,233.0,233.0,True,False
+현행 (PP 1회),148,True,,16729.0,16729.0,True,False
+PP 없음,148,True,,16729.0,16729.0,True,False
+현행 (PP 1회),149,True,,1380.0,1380.0,True,False
+PP 없음,149,True,,1380.0,1380.0,True,False
+현행 (PP 1회),150,True,,26.390236506973924,26.390236506973924,True,False
+PP 없음,150,True,,26.390236506973924,26.390236506973924,True,False
+현행 (PP 1회),151,True,,18.0,18.0,True,False
+PP 없음,151,True,,18.0,18.0,True,False
+현행 (PP 1회),152,True,,5.0,5.0,True,False
+PP 없음,152,True,,5.0,5.0,True,False
+현행 (PP 1회),153,True,,85.0,85.0,True,False
+PP 없음,153,True,,85.0,85.0,True,False
+현행 (PP 1회),154,True,,0.9001688524590165,0.9001688524590165,True,False
+PP 없음,154,True,,0.9001688524590165,0.9001688524590165,True,False
+현행 (PP 1회),155,True,,44.0,44.0,True,False
+PP 없음,155,True,,44.0,44.0,True,False
+현행 (PP 1회),156,True,,504.0,504.0,True,False
+PP 없음,156,True,,504.0,504.0,True,False
+현행 (PP 1회),157,True,,131.0,131.0,True,False
+PP 없음,157,True,,131.0,131.0,True,False
+현행 (PP 1회),158,True,,16.634666666666668,16.634666666666668,True,False
+PP 없음,158,True,,16.634666666666668,16.634666666666668,True,False
+현행 (PP 1회),159,True,,75.0,75.0,True,False
+PP 없음,159,True,,75.0,75.0,True,False
+현행 (PP 1회),160,True,,2.0,2.0,True,False
+PP 없음,160,True,,2.0,2.0,True,False
+현행 (PP 1회),161,True,,57340.0,57340.0,True,False
+PP 없음,161,True,,57340.0,57340.0,True,False
+현행 (PP 1회),162,True,,164636.4123068934,164636.4123068934,True,False
+PP 없음,162,True,,164636.4123068934,164636.4123068934,True,False
+현행 (PP 1회),163,True,,2010.0,2010.0,True,False
+PP 없음,163,True,,2010.0,2010.0,True,False
+현행 (PP 1회),164,True,,20.0,20.0,True,False
+PP 없음,164,True,,20.0,20.0,True,False
+현행 (PP 1회),165,True,,6.0,6.0,True,False
+PP 없음,165,True,,6.0,6.0,True,False
+현행 (PP 1회),166,True,,94.70994052676296,96.07926963408374,False,False
+PP 없음,166,True,,94.70994052676296,96.07926963408374,False,False
+현행 (PP 1회),167,True,,2020.0,2020.0,True,False
+PP 없음,167,True,,2020.0,2020.0,True,False
+현행 (PP 1회),168,True,,650.0,650.0,True,False
+PP 없음,168,True,,650.0,650.0,True,False
+현행 (PP 1회),169,True,,94.0,94.0,True,False
+PP 없음,169,True,,94.0,94.0,True,False
+현행 (PP 1회),170,True,,489.0,489.0,True,False
+PP 없음,170,True,,489.0,489.0,True,False
+현행 (PP 1회),171,True,,25.556898357297374,25.55689835729737,True,False
+PP 없음,171,True,,25.556898357297374,25.55689835729737,True,False
+현행 (PP 1회),172,True,,214.0,214.0,True,False
+PP 없음,172,True,,214.0,214.0,True,False
+현행 (PP 1회),173,True,,34516.0,34516.0,True,False
+PP 없음,173,True,,34516.0,34516.0,True,False
+현행 (PP 1회),174,True,,18484.0,18484.0,True,False
+PP 없음,174,True,,18484.0,18484.0,True,False
+현행 (PP 1회),175,True,,2517.0,2517.0,True,False
+PP 없음,175,True,,2517.0,2517.0,True,False
+현행 (PP 1회),176,True,,73.0,73.0,True,False
+PP 없음,176,True,,73.0,73.0,True,False
+현행 (PP 1회),177,True,,264.0,264.0,True,False
+PP 없음,177,True,,264.0,264.0,True,False
+현행 (PP 1회),178,True,,46.591644204851754,46.59164420485176,True,False
+PP 없음,178,True,,46.591644204851754,46.59164420485176,True,False
+현행 (PP 1회),179,True,,5.0,5.0,True,False
+PP 없음,179,True,,5.0,5.0,True,False
+현행 (PP 1회),180,True,,15.0,15.0,True,False
+PP 없음,180,True,,15.0,15.0,True,False
+현행 (PP 1회),181,True,,1.0,1.0,True,False
+PP 없음,181,True,,1.0,1.0,True,False
+현행 (PP 1회),182,True,,117386.0,117386.0,True,False
+PP 없음,182,True,,117386.0,117386.0,True,False
+현행 (PP 1회),183,True,,5081.805590062112,5081.805590062112,True,False
+PP 없음,183,True,,5081.805590062112,5081.805590062112,True,False
+현행 (PP 1회),184,True,,3220.0,3220.0,True,False
+PP 없음,184,True,,3220.0,3220.0,True,False
+현행 (PP 1회),185,True,,61.0,61.0,True,False
+PP 없음,185,True,,61.0,61.0,True,False
+현행 (PP 1회),186,True,,1243.0,1243.0,True,False
+PP 없음,186,True,,1243.0,1243.0,True,False
+현행 (PP 1회),187,True,,3788.0,3788.0,True,False
+PP 없음,187,True,,3788.0,3788.0,True,False
+현행 (PP 1회),188,True,,20.0,20.0,True,False
+PP 없음,188,True,,20.0,20.0,True,False
+현행 (PP 1회),189,True,,1125.0,1125.0,True,False
+PP 없음,189,True,,1125.0,1125.0,True,False
+현행 (PP 1회),190,True,,160.0,160.0,True,False
+PP 없음,190,True,,160.0,160.0,True,False
+현행 (PP 1회),191,True,,80.93843283582089,80.93843283582089,True,False
+PP 없음,191,True,,80.93843283582089,80.93843283582089,True,False
+현행 (PP 1회),192,True,,0.7826336180787501,0.7826336180787501,True,False
+PP 없음,192,True,,0.7826336180787501,0.7826336180787501,True,False
+현행 (PP 1회),193,True,,1002.0,1002.0,True,False
+PP 없음,193,True,,1002.0,1002.0,True,False
+현행 (PP 1회),194,True,,0.373214039767641,0.373214039767641,True,False
+PP 없음,194,True,,0.373214039767641,0.373214039767641,True,False
+현행 (PP 1회),195,True,,0.035364139619357415,0.0353641396193574,True,False
+PP 없음,195,True,,0.035364139619357415,0.0353641396193574,True,False
+현행 (PP 1회),196,True,,3574.0,3574.0,True,False
+PP 없음,196,True,,3574.0,3574.0,True,False
+현행 (PP 1회),197,True,,14.745974597459746,14.745974597459746,True,False
+PP 없음,197,True,,14.745974597459746,14.745974597459746,True,False
+현행 (PP 1회),198,True,,100.0,100.0,True,False
+PP 없음,198,True,,100.0,100.0,True,False
+현행 (PP 1회),199,True,,8848.0,8848.0,True,False
+PP 없음,199,True,,8848.0,8848.0,True,False
+현행 (PP 1회),200,True,,30308047.0,30308047.0,True,False
+PP 없음,200,True,,30308047.0,30308047.0,True,False
+현행 (PP 1회),201,True,,1.0,1.0,True,False
+PP 없음,201,True,,1.0,1.0,True,False
+현행 (PP 1회),202,True,,205169.0,205169.0,True,False
+PP 없음,202,True,,205169.0,205169.0,True,False
+현행 (PP 1회),203,True,,18424.0,18424.0,True,False
+PP 없음,203,True,,18424.0,18424.0,True,False
+현행 (PP 1회),204,True,,367.0,367.0,True,False
+PP 없음,204,True,,367.0,367.0,True,False
+현행 (PP 1회),205,True,,72.0,72.0,True,False
+PP 없음,205,True,,72.0,72.0,True,False
+현행 (PP 1회),206,True,,113.0,113.0,True,False
+PP 없음,206,True,,113.0,113.0,True,False
+현행 (PP 1회),207,True,,0.0,0.0,True,False
+PP 없음,207,True,,0.0,0.0,True,False
+현행 (PP 1회),208,True,,0.08465,0.08465,True,False
+PP 없음,208,True,,0.08465,0.08465,True,False
+현행 (PP 1회),209,True,,18.0,18.0,True,False
+PP 없음,209,True,,18.0,18.0,True,False
+현행 (PP 1회),210,True,,0.2748,0.2748,True,False
+PP 없음,210,True,,0.2748,0.2748,True,False
+현행 (PP 1회),211,True,,372.0,372.0,True,False
+PP 없음,211,False,"SyntaxError: invalid syntax (<rescore>, line 3)",,372.0,False,True
+현행 (PP 1회),212,True,,37.420120593188116,37.42012059318812,True,False
+PP 없음,212,True,,37.420120593188116,37.42012059318812,True,False
+현행 (PP 1회),213,True,,19910.0,10344.0,False,False
+PP 없음,213,True,,19910.0,10344.0,False,False
+현행 (PP 1회),214,True,,105.0,105.0,True,False
+PP 없음,214,False,"SyntaxError: invalid syntax (<rescore>, line 3)",,105.0,False,True
+현행 (PP 1회),215,True,,2371.0,1315.0,False,False
+PP 없음,215,True,,2371.0,1315.0,False,False
+현행 (PP 1회),216,False,"SyntaxError: '(' was never closed (<rescore>, line 8)",,799.0,False,True
+PP 없음,216,False,"SyntaxError: invalid syntax (<rescore>, line 3)",,799.0,False,True
+현행 (PP 1회),217,True,,835.0,0.0,False,False
+PP 없음,217,True,,835.0,0.0,False,False
+현행 (PP 1회),218,True,,774.0,774.0,True,False
+PP 없음,218,True,,774.0,774.0,True,False
+현행 (PP 1회),219,True,,940.0,940.0,True,False
+PP 없음,219,True,,940.0,940.0,True,False
+현행 (PP 1회),220,True,,16.19912,16.19912,True,False
+PP 없음,220,True,,16.19912,16.19912,True,False
+현행 (PP 1회),221,True,,549900.0,549900.0,True,False
+PP 없음,221,True,,549900.0,549900.0,True,False
+현행 (PP 1회),222,True,,4237.0,4237.0,True,False
+PP 없음,222,True,,4237.0,4237.0,True,False
+현행 (PP 1회),223,True,,94.0,94.0,True,False
+PP 없음,223,True,,94.0,94.0,True,False
+현행 (PP 1회),224,True,,1.0,159.0,False,False
+PP 없음,224,True,,1.0,159.0,False,False
+현행 (PP 1회),225,True,,9684.0,9684.0,True,False
+PP 없음,225,True,,9684.0,9684.0,True,False
+현행 (PP 1회),226,True,,162.0,162.0,True,False
+PP 없음,226,True,,162.0,162.0,True,False
+현행 (PP 1회),227,True,,4.204158004158004,4.204158004158004,True,False
+PP 없음,227,True,,4.204158004158004,4.204158004158004,True,False
+현행 (PP 1회),228,True,,670801367.0,670801367.0,True,False
+PP 없음,228,True,,670801367.0,670801367.0,True,False
+현행 (PP 1회),229,True,,786.0,786.0,True,False
+PP 없음,229,True,,786.0,786.0,True,False
+현행 (PP 1회),230,True,,1.0,1.0,True,False
+PP 없음,230,True,,1.0,1.0,True,False
+현행 (PP 1회),231,True,,8774.52044683822,8774.52044683822,True,False
+PP 없음,231,True,,8774.52044683822,8774.52044683822,True,False
+현행 (PP 1회),232,True,,589793.0,589793.0,True,False
+PP 없음,232,True,,589793.0,589793.0,True,False
+현행 (PP 1회),233,True,,2891.0,2891.0,True,False
+PP 없음,233,True,,2891.0,2891.0,True,False
+현행 (PP 1회),234,True,,9.0,9.0,True,False
+PP 없음,234,True,,9.0,9.0,True,False
+현행 (PP 1회),235,True,,0.08848033260794515,0.0884803326079451,True,False
+PP 없음,235,True,,0.08848033260794515,0.0884803326079451,True,False
+현행 (PP 1회),236,True,,770.5,770.5,True,False
+PP 없음,236,True,,770.5,770.5,True,False
+현행 (PP 1회),237,True,,651.0,651.0,True,False
+PP 없음,237,True,,651.0,651.0,True,False
+현행 (PP 1회),238,True,,100.0,7.0,False,False
+PP 없음,238,True,,100.0,7.0,False,False
+현행 (PP 1회),239,True,,2.8415841584158414,2.841584158415841,True,False
+PP 없음,239,True,,2.8415841584158414,2.841584158415841,True,False
+현행 (PP 1회),240,True,,8.0,8.0,True,False
+PP 없음,240,True,,8.0,8.0,True,False
+현행 (PP 1회),241,True,,27.0,27.0,True,False
+PP 없음,241,True,,27.0,27.0,True,False
+현행 (PP 1회),242,True,,4070.0,4070.0,True,False
+PP 없음,242,True,,4070.0,4070.0,True,False
+현행 (PP 1회),243,True,,4.611113626088514,4.611113626088514,True,False
+PP 없음,243,True,,4.611113626088514,4.611113626088514,True,False
+현행 (PP 1회),244,True,,80995.0,80995.0,True,False
+PP 없음,244,True,,80995.0,80995.0,True,False
+현행 (PP 1회),245,True,,495478.0,495478.0,True,False
+PP 없음,245,True,,495478.0,495478.0,True,False
