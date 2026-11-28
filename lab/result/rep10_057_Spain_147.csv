@@ -1,0 +1,104 @@
+﻿condition,n,rep,dataset,A,B,harness,model,effort,temperature,max_tokens,answer_ref,answer_agent,correct,exec_ok,exec_err,sig_ok,sig_key,def_written,null_answer,finish_reason,text_len,body_len,prompt_tokens,completion_tokens,reasoning_tokens,cached_tokens,system_fingerprint,latency_s,call_error,body,raw
+REP10_enone_T0,213,1,057_Spain,,,prefill_emul_v2,gpt-6-luna,none,0,300,10344.0,10344,True,True,,True,"[[""It should be more difficult for companies to lay off workers""], [], [""sum""]]",False,False,stop,395,395,22226,99,0,0,,4.22,,"    # The columns used to answer the question: ['It should be more difficult for companies to lay off workers']
+    # The types of the columns used to answer the question: ['number[float64]']
+    # The type of the answer: number
+
+    # Count respondents who agree, represented by a score of 4 or 5.
+    return df['It should be more difficult for companies to lay off workers'].isin([4, 5]).sum()","    # The columns used to answer the question: ['It should be more difficult for companies to lay off workers']
+    # The types of the columns used to answer the question: ['number[float64]']
+    # The type of the answer: number
+
+    # Count respondents who agree, represented by a score of 4 or 5.
+    return df['It should be more difficult for companies to lay off workers'].isin([4, 5]).sum()"
+REP10_enone_T0,213,2,057_Spain,,,prefill_emul_v2,gpt-6-luna,none,0,300,10344.0,19910,False,True,,True,"[[""It should be more difficult for companies to lay off workers""], [], [""count""]]",False,False,stop,315,315,22226,74,0,22223,,2.33,,"    # The columns used to answer the question: ['It should be more difficult for companies to lay off workers']
+    # The types of the columns used to answer the question: ['number[float64]']
+    # The type of the answer: number
+
+    return df['It should be more difficult for companies to lay off workers'].count()","    # The columns used to answer the question: ['It should be more difficult for companies to lay off workers']
+    # The types of the columns used to answer the question: ['number[float64]']
+    # The type of the answer: number
+
+    return df['It should be more difficult for companies to lay off workers'].count()"
+REP10_enone_T0,213,3,057_Spain,,,prefill_emul_v2,gpt-6-luna,none,0,300,10344.0,19910,False,True,,True,"[[""It should be more difficult for companies to lay off workers""], [], [""count""]]",False,False,stop,329,325,22226,78,0,22223,,2.7,,"```python
+    # The columns used to answer the question: ['It should be more difficult for companies to lay off workers']
+    # The types of the columns used to answer the question: ['number[float64]']
+    # The type of the answer: number
+
+    return df['It should be more difficult for companies to lay off workers'].count()","```python
+    # The columns used to answer the question: ['It should be more difficult for companies to lay off workers']
+    # The types of the columns used to answer the question: ['number[float64]']
+    # The type of the answer: number
+
+    return df['It should be more difficult for companies to lay off workers'].count()
+```"
+REP10_enone_T0,213,4,057_Spain,,,prefill_emul_v2,gpt-6-luna,none,0,300,10344.0,10344,True,True,,True,"[[""It should be more difficult for companies to lay off workers""], [], [""sum""]]",False,False,stop,397,397,22226,98,0,22223,,2.13,,"    # The columns used to answer the question: ['It should be more difficult for companies to lay off workers']
+    # The types of the columns used to answer the question: ['number[float64]']
+    # The type of the answer: number
+
+    # Count respondents who agree with the statement (ratings 4 or 5).
+    return df['It should be more difficult for companies to lay off workers'].isin([4, 5]).sum()","    # The columns used to answer the question: ['It should be more difficult for companies to lay off workers']
+    # The types of the columns used to answer the question: ['number[float64]']
+    # The type of the answer: number
+
+    # Count respondents who agree with the statement (ratings 4 or 5).
+    return df['It should be more difficult for companies to lay off workers'].isin([4, 5]).sum()"
+REP10_enone_T0,213,5,057_Spain,,,prefill_emul_v2,gpt-6-luna,none,0,300,10344.0,10344,True,True,,True,"[[""It should be more difficult for companies to lay off workers""], [], [""sum""]]",False,False,stop,396,396,22226,98,0,22223,,2.14,,"    # The columns used to answer the question: ['It should be more difficult for companies to lay off workers']
+    # The types of the columns used to answer the question: ['number[float64]']
+    # The type of the answer: number
+
+    # Count respondents who agree with the statement (rating 4 or 5).
+    return df['It should be more difficult for companies to lay off workers'].isin([4, 5]).sum()","    # The columns used to answer the question: ['It should be more difficult for companies to lay off workers']
+    # The types of the columns used to answer the question: ['number[float64]']
+    # The type of the answer: number
+
+    # Count respondents who agree with the statement (rating 4 or 5).
+    return df['It should be more difficult for companies to lay off workers'].isin([4, 5]).sum()"
+REP10_enone_T0,213,6,057_Spain,,,prefill_emul_v2,gpt-6-luna,none,0,300,10344.0,19910,False,True,,True,"[[""It should be more difficult for companies to lay off workers""], [], [""count""]]",False,False,stop,315,315,22226,74,0,22223,,1.83,,"    # The columns used to answer the question: ['It should be more difficult for companies to lay off workers']
+    # The types of the columns used to answer the question: ['number[float64]']
+    # The type of the answer: number
+
+    return df['It should be more difficult for companies to lay off workers'].count()","    # The columns used to answer the question: ['It should be more difficult for companies to lay off workers']
+    # The types of the columns used to answer the question: ['number[float64]']
+    # The type of the answer: number
+
+    return df['It should be more difficult for companies to lay off workers'].count()"
+REP10_enone_T0,213,7,057_Spain,,,prefill_emul_v2,gpt-6-luna,none,0,300,10344.0,10344,True,True,,True,"[[""It should be more difficult for companies to lay off workers""], [], [""sum""]]",False,False,stop,396,396,22226,98,0,22223,,1.84,,"    # The columns used to answer the question: ['It should be more difficult for companies to lay off workers']
+    # The types of the columns used to answer the question: ['number[float64]']
+    # The type of the answer: number
+
+    # Count respondents who agree with the statement (rating 4 or 5).
+    return df['It should be more difficult for companies to lay off workers'].isin([4, 5]).sum()","    # The columns used to answer the question: ['It should be more difficult for companies to lay off workers']
+    # The types of the columns used to answer the question: ['number[float64]']
+    # The type of the answer: number
+
+    # Count respondents who agree with the statement (rating 4 or 5).
+    return df['It should be more difficult for companies to lay off workers'].isin([4, 5]).sum()"
+REP10_enone_T0,213,8,057_Spain,,,prefill_emul_v2,gpt-6-luna,none,0,300,10344.0,10344,True,True,,True,"[[""It should be more difficult for companies to lay off workers""], [], [""sum""]]",False,False,stop,315,315,22226,78,0,22223,,1.5,,"    # The columns used to answer the question: ['It should be more difficult for companies to lay off workers']
+    # The type of the answer: number
+
+    # Count respondents who answered positively (a score of 4 or 5).
+    return df['It should be more difficult for companies to lay off workers'].isin([4, 5]).sum()","    # The columns used to answer the question: ['It should be more difficult for companies to lay off workers']
+    # The type of the answer: number
+
+    # Count respondents who answered positively (a score of 4 or 5).
+    return df['It should be more difficult for companies to lay off workers'].isin([4, 5]).sum()"
+REP10_enone_T0,213,9,057_Spain,,,prefill_emul_v2,gpt-6-luna,none,0,300,10344.0,10344,True,True,,True,"[[""It should be more difficult for companies to lay off workers""], [], [""sum""]]",False,False,stop,396,396,22226,98,0,22223,,1.86,,"    # The columns used to answer the question: ['It should be more difficult for companies to lay off workers']
+    # The types of the columns used to answer the question: ['number[float64]']
+    # The type of the answer: number
+
+    # Count respondents who agree with the statement (rating 4 or 5).
+    return df['It should be more difficult for companies to lay off workers'].isin([4, 5]).sum()","    # The columns used to answer the question: ['It should be more difficult for companies to lay off workers']
+    # The types of the columns used to answer the question: ['number[float64]']
+    # The type of the answer: number
+
+    # Count respondents who agree with the statement (rating 4 or 5).
+    return df['It should be more difficult for companies to lay off workers'].isin([4, 5]).sum()"
+REP10_enone_T0,213,10,057_Spain,,,prefill_emul_v2,gpt-6-luna,none,0,300,10344.0,19910,False,True,,True,"[[""It should be more difficult for companies to lay off workers""], [], [""count""]]",False,False,stop,315,315,22226,74,0,22223,,1.9,,"    # The columns used to answer the question: ['It should be more difficult for companies to lay off workers']
+    # The types of the columns used to answer the question: ['number[float64]']
+    # The type of the answer: number
+
+    return df['It should be more difficult for companies to lay off workers'].count()","    # The columns used to answer the question: ['It should be more difficult for companies to lay off workers']
+    # The types of the columns used to answer the question: ['number[float64]']
+    # The type of the answer: number
+
+    return df['It should be more difficult for companies to lay off workers'].count()"
